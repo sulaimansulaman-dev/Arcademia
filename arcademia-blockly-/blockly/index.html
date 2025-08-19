@@ -6,7 +6,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <!-- Load Blockly -->
-  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+  <script src="blockly.min.js"></script>
 
   <style>
     html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
@@ -140,7 +140,7 @@
     };
 
     // Inject Blockly
-    const workspace = Blockly.inject('blocklyDiv', { toolbox, trashcan: true });
+    const workspace = Blockly.inject('blocklyDiv', { toolbox, trashcan: true, media: 'media/' });
 
     // Collect program commands
     function buildProgram() {
