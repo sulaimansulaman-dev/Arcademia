@@ -17,7 +17,7 @@ grow_vertical = 2
 
 [node name="WebView" type="WebView" parent="HBoxContainer"]
 full_window_size = false
-url = "res://blockly/index.html"
+url = "res://blockly/blockly_with_help1.html"
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
