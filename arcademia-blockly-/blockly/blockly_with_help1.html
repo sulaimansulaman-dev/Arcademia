@@ -17,9 +17,9 @@
     .hint { color: #666; font-size: 12px; }
     
     /* Help Modal Styles */
-    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
-    .modal-content { background-color: #fefefe; margin: 5% auto; padding: 20px; border-radius: 10px; width: 80%; max-width: 600px; max-height: 80%; overflow-y: auto; }
-    .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+    .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5); }
+    .modal-content {  width: 100%;  height: 100%;  margin: 0;  border-radius: 0;  background-color: #fff;  overflow-y: auto;  padding: 20px;  box-sizing: border-box;}
+    .close {  position: absolute;  top: 20px;  right: 30px;  color: #aaa;  font-size: 32px;  font-weight: bold;  cursor: pointer;}
     .close:hover { color: black; }
     .help-title { color: #4285f4; font-size: 24px; margin-bottom: 20px; text-align: center; }
     .block-help { margin: 15px 0; padding: 15px; border-radius: 8px; border-left: 4px solid; }
