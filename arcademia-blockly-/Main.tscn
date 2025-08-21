@@ -6,33 +6,40 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uu6xs")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1154.0
-offset_bottom = 648.0
+offset_left = -2.0
+offset_top = -6.0
+offset_right = 1151.0
+offset_bottom = 647.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="WebView" type="WebView" parent="HBoxContainer"]
+[node name="GameArea" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="World" type="Node2D" parent="VBoxContainer/GameArea"]
+
+[node name="Player" type="Sprite2D" parent="VBoxContainer/GameArea/World"]
+position = Vector2(521, 229)
+texture = ExtResource("2_r0du0")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+
+[node name="WebView" type="WebView" parent="VBoxContainer"]
 full_window_size = false
 url = "res://blockly/blockly_with_help1.html"
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
-custom_minimum_size = Vector2(4, 0)
-layout_mode = 2
-
-[node name="GameArea" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="World" type="Node2D" parent="HBoxContainer/GameArea"]
-
-[node name="Player" type="Sprite2D" parent="HBoxContainer/GameArea/World"]
-position = Vector2(317, 314)
-texture = ExtResource("2_r0du0")
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.43

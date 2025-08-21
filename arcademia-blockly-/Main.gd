@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var webview: Control = $HBoxContainer/WebView
-@onready var game_area: Control = $HBoxContainer/GameArea
-@onready var player_node: Node2D = $HBoxContainer/GameArea/World/Player
+@onready var webview: Control = $VBoxContainer/WebView
+@onready var game_area: Control = $VBoxContainer/GameArea
+@onready var player_node: Node2D = $VBoxContainer/GameArea/World/Player
 
 var player_target: Vector2
 
