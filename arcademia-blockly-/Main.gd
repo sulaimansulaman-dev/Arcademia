@@ -2,12 +2,19 @@ extends Node2D
 
 @onready var webview: Control = $CanvasLayer/Control/VBoxContainer/WebView
 @onready var game_area: Control = $CanvasLayer/Control/VBoxContainer/GameArea
-@onready var player_node: Node2D = $CanvasLayer/Control/VBoxContainer/GameArea/World/Player
 
+var game_instance: Node = null
+var player_node: Node2D = null;
 var player_target: Vector2
 
 func _ready() -> void:
+	# Instance the game scene
+	var game_scene: PackedScene = load("res://World.tscn")
+	game_instance = game_scene.instantiate()
+	game_area.add_child(game_instance)
+	player_node = game_instance.get_node("Player")
 	player_target = player_node.position
+	#Connect the Web View
 	if webview.has_signal("ipc_message"):
 		webview.ipc_message.connect(_on_web_view_ipc_message)
 	print("GameArea size = ", game_area.size)
