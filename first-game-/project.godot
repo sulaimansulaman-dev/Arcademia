@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="First Game"
-run/main_scene="uid://dpjwbbyg160os"
+run/main_scene="uid://bq8fbvk4hh7i8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Music="*res://scenes/music.tscn"
+
+[dotnet]
+
+project/assembly_name="First Game"
 
 [input]
 
