@@ -1,0 +1,2598 @@
+{
+	"textures": [
+		{
+			"image": "Base Blocks.png",
+			"size": {
+				"w": 628,
+				"h": 2045
+			},
+			"sprites": [
+				{
+					"filename": "Tiles/hill_large.png",
+					"region": {
+						"x": 0,
+						"y": 0,
+						"w": 48,
+						"h": 146
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/hill_largeAlt.png",
+					"region": {
+						"x": 0,
+						"y": 146,
+						"w": 48,
+						"h": 146
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/hill_small.png",
+					"region": {
+						"x": 0,
+						"y": 292,
+						"w": 48,
+						"h": 106
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/hill_smallAlt.png",
+					"region": {
+						"x": 0,
+						"y": 398,
+						"w": 48,
+						"h": 106
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/box.png",
+					"region": {
+						"x": 0,
+						"y": 504,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxAlt.png",
+					"region": {
+						"x": 48,
+						"y": 0,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxCoin.png",
+					"region": {
+						"x": 48,
+						"y": 70,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxCoinAlt.png",
+					"region": {
+						"x": 48,
+						"y": 140,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxCoinAlt_disabled.png",
+					"region": {
+						"x": 48,
+						"y": 210,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxCoin_disabled.png",
+					"region": {
+						"x": 48,
+						"y": 280,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxEmpty.png",
+					"region": {
+						"x": 48,
+						"y": 350,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxExplosive.png",
+					"region": {
+						"x": 48,
+						"y": 420,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/ropeHorizontal.png",
+					"region": {
+						"x": 48,
+						"y": 490,
+						"w": 70,
+						"h": 5
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/ropeVertical.png",
+					"region": {
+						"x": 48,
+						"y": 495,
+						"w": 5,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxExplosiveAlt.png",
+					"region": {
+						"x": 0,
+						"y": 574,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxExplosive_disabled.png",
+					"region": {
+						"x": 0,
+						"y": 644,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxItem.png",
+					"region": {
+						"x": 0,
+						"y": 714,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxItemAlt.png",
+					"region": {
+						"x": 0,
+						"y": 784,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxItemAlt_disabled.png",
+					"region": {
+						"x": 0,
+						"y": 854,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxItem_disabled.png",
+					"region": {
+						"x": 0,
+						"y": 924,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/boxWarning.png",
+					"region": {
+						"x": 0,
+						"y": 994,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/brickWall.png",
+					"region": {
+						"x": 0,
+						"y": 1064,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castle.png",
+					"region": {
+						"x": 0,
+						"y": 1134,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleCenter.png",
+					"region": {
+						"x": 0,
+						"y": 1204,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleCenter_rounded.png",
+					"region": {
+						"x": 0,
+						"y": 1274,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleCliffLeft.png",
+					"region": {
+						"x": 0,
+						"y": 1344,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleCliffLeftAlt.png",
+					"region": {
+						"x": 0,
+						"y": 1414,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleCliffRight.png",
+					"region": {
+						"x": 0,
+						"y": 1484,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleCliffRightAlt.png",
+					"region": {
+						"x": 0,
+						"y": 1554,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleHillLeft.png",
+					"region": {
+						"x": 0,
+						"y": 1624,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleHillLeft2.png",
+					"region": {
+						"x": 0,
+						"y": 1694,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleHillRight.png",
+					"region": {
+						"x": 0,
+						"y": 1764,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleHillRight2.png",
+					"region": {
+						"x": 0,
+						"y": 1834,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleLeft.png",
+					"region": {
+						"x": 0,
+						"y": 1904,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleMid.png",
+					"region": {
+						"x": 0,
+						"y": 1974,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleRight.png",
+					"region": {
+						"x": 70,
+						"y": 500,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirt.png",
+					"region": {
+						"x": 118,
+						"y": 0,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtCenter.png",
+					"region": {
+						"x": 118,
+						"y": 70,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtCenter_rounded.png",
+					"region": {
+						"x": 118,
+						"y": 140,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtCliffLeft.png",
+					"region": {
+						"x": 118,
+						"y": 210,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtCliffLeftAlt.png",
+					"region": {
+						"x": 118,
+						"y": 280,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtCliffRight.png",
+					"region": {
+						"x": 118,
+						"y": 350,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtCliffRightAlt.png",
+					"region": {
+						"x": 118,
+						"y": 420,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassLedgeLeft.png",
+					"region": {
+						"x": 118,
+						"y": 490,
+						"w": 5,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassLedgeRight.png",
+					"region": {
+						"x": 118,
+						"y": 495,
+						"w": 5,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtHillLeft.png",
+					"region": {
+						"x": 70,
+						"y": 570,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtHillLeft2.png",
+					"region": {
+						"x": 70,
+						"y": 640,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtHillRight.png",
+					"region": {
+						"x": 70,
+						"y": 710,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtHillRight2.png",
+					"region": {
+						"x": 70,
+						"y": 780,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtLeft.png",
+					"region": {
+						"x": 70,
+						"y": 850,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtMid.png",
+					"region": {
+						"x": 70,
+						"y": 920,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtRight.png",
+					"region": {
+						"x": 70,
+						"y": 990,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/door_closedMid.png",
+					"region": {
+						"x": 70,
+						"y": 1060,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/door_openMid.png",
+					"region": {
+						"x": 70,
+						"y": 1130,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grass.png",
+					"region": {
+						"x": 70,
+						"y": 1200,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassCenter.png",
+					"region": {
+						"x": 70,
+						"y": 1270,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassCenter_rounded.png",
+					"region": {
+						"x": 70,
+						"y": 1340,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassCliffLeft.png",
+					"region": {
+						"x": 70,
+						"y": 1410,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassCliffLeftAlt.png",
+					"region": {
+						"x": 70,
+						"y": 1480,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassCliffRight.png",
+					"region": {
+						"x": 70,
+						"y": 1550,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassCliffRightAlt.png",
+					"region": {
+						"x": 70,
+						"y": 1620,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassHillLeft.png",
+					"region": {
+						"x": 70,
+						"y": 1690,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassHillLeft2.png",
+					"region": {
+						"x": 70,
+						"y": 1760,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassHillRight.png",
+					"region": {
+						"x": 70,
+						"y": 1830,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassHillRight2.png",
+					"region": {
+						"x": 70,
+						"y": 1900,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassLeft.png",
+					"region": {
+						"x": 70,
+						"y": 1970,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneLedgeLeft.png",
+					"region": {
+						"x": 70,
+						"y": 2040,
+						"w": 5,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneLedgeRight.png",
+					"region": {
+						"x": 94,
+						"y": 2040,
+						"w": 5,
+						"h": 24
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleLedgeLeft.png",
+					"region": {
+						"x": 118,
+						"y": 2040,
+						"w": 5,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassMid.png",
+					"region": {
+						"x": 140,
+						"y": 500,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleLedgeRight.png",
+					"region": {
+						"x": 142,
+						"y": 490,
+						"w": 5,
+						"h": 22
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtLedgeLeft.png",
+					"region": {
+						"x": 142,
+						"y": 495,
+						"w": 5,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtLedgeRight.png",
+					"region": {
+						"x": 160,
+						"y": 495,
+						"w": 5,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandLedgeLeft.png",
+					"region": {
+						"x": 164,
+						"y": 490,
+						"w": 5,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandLedgeRight.png",
+					"region": {
+						"x": 178,
+						"y": 495,
+						"w": 5,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowLedgeLeft.png",
+					"region": {
+						"x": 182,
+						"y": 490,
+						"w": 5,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowLedgeRight.png",
+					"region": {
+						"x": 196,
+						"y": 495,
+						"w": 5,
+						"h": 18
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassRight.png",
+					"region": {
+						"x": 188,
+						"y": 0,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/ladder_mid.png",
+					"region": {
+						"x": 188,
+						"y": 70,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/ladder_top.png",
+					"region": {
+						"x": 188,
+						"y": 140,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/liquidLava.png",
+					"region": {
+						"x": 188,
+						"y": 210,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/liquidWater.png",
+					"region": {
+						"x": 188,
+						"y": 280,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/lock_blue.png",
+					"region": {
+						"x": 188,
+						"y": 350,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/lock_green.png",
+					"region": {
+						"x": 188,
+						"y": 420,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/lock_red.png",
+					"region": {
+						"x": 140,
+						"y": 570,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/lock_yellow.png",
+					"region": {
+						"x": 140,
+						"y": 640,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/rockHillLeft.png",
+					"region": {
+						"x": 140,
+						"y": 710,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/rockHillRight.png",
+					"region": {
+						"x": 140,
+						"y": 780,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sand.png",
+					"region": {
+						"x": 140,
+						"y": 850,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandCliffLeft.png",
+					"region": {
+						"x": 140,
+						"y": 920,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandCliffLeftAlt.png",
+					"region": {
+						"x": 140,
+						"y": 990,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandCliffRight.png",
+					"region": {
+						"x": 140,
+						"y": 1060,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandCliffRightAlt.png",
+					"region": {
+						"x": 140,
+						"y": 1130,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandHillLeft.png",
+					"region": {
+						"x": 140,
+						"y": 1200,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandHillLeft2.png",
+					"region": {
+						"x": 140,
+						"y": 1270,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandHillRight.png",
+					"region": {
+						"x": 140,
+						"y": 1340,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandHillRight2.png",
+					"region": {
+						"x": 140,
+						"y": 1410,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandLeft.png",
+					"region": {
+						"x": 140,
+						"y": 1480,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandMid.png",
+					"region": {
+						"x": 140,
+						"y": 1550,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandRight.png",
+					"region": {
+						"x": 140,
+						"y": 1620,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sign.png",
+					"region": {
+						"x": 140,
+						"y": 1690,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/signExit.png",
+					"region": {
+						"x": 140,
+						"y": 1760,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snow.png",
+					"region": {
+						"x": 140,
+						"y": 1830,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowCenter.png",
+					"region": {
+						"x": 140,
+						"y": 1900,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowCenter_rounded.png",
+					"region": {
+						"x": 140,
+						"y": 1970,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowCliffLeft.png",
+					"region": {
+						"x": 210,
+						"y": 500,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowCliffLeftAlt.png",
+					"region": {
+						"x": 258,
+						"y": 0,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowCliffRight.png",
+					"region": {
+						"x": 258,
+						"y": 70,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowCliffRightAlt.png",
+					"region": {
+						"x": 258,
+						"y": 140,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowHillLeft.png",
+					"region": {
+						"x": 258,
+						"y": 210,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowHillLeft2.png",
+					"region": {
+						"x": 258,
+						"y": 280,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowHillRight.png",
+					"region": {
+						"x": 258,
+						"y": 350,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowHillRight2.png",
+					"region": {
+						"x": 258,
+						"y": 420,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowLeft.png",
+					"region": {
+						"x": 210,
+						"y": 570,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowMid.png",
+					"region": {
+						"x": 210,
+						"y": 640,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowRight.png",
+					"region": {
+						"x": 210,
+						"y": 710,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stone.png",
+					"region": {
+						"x": 210,
+						"y": 780,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneCenter.png",
+					"region": {
+						"x": 210,
+						"y": 850,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneCenter_rounded.png",
+					"region": {
+						"x": 210,
+						"y": 920,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneCliffLeft.png",
+					"region": {
+						"x": 210,
+						"y": 990,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneCliffLeftAlt.png",
+					"region": {
+						"x": 210,
+						"y": 1060,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneCliffRight.png",
+					"region": {
+						"x": 210,
+						"y": 1130,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneCliffRightAlt.png",
+					"region": {
+						"x": 210,
+						"y": 1200,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneHillLeft2.png",
+					"region": {
+						"x": 210,
+						"y": 1270,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneHillRight2.png",
+					"region": {
+						"x": 210,
+						"y": 1340,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneLeft.png",
+					"region": {
+						"x": 210,
+						"y": 1410,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneMid.png",
+					"region": {
+						"x": 210,
+						"y": 1480,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneRight.png",
+					"region": {
+						"x": 210,
+						"y": 1550,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneWall.png",
+					"region": {
+						"x": 210,
+						"y": 1620,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/signLeft.png",
+					"region": {
+						"x": 210,
+						"y": 1690,
+						"w": 64,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/signRight.png",
+					"region": {
+						"x": 210,
+						"y": 1760,
+						"w": 64,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/fence.png",
+					"region": {
+						"x": 210,
+						"y": 1830,
+						"w": 70,
+						"h": 61
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/fenceBroken.png",
+					"region": {
+						"x": 210,
+						"y": 1900,
+						"w": 70,
+						"h": 61
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/liquidLavaTop.png",
+					"region": {
+						"x": 210,
+						"y": 1970,
+						"w": 70,
+						"h": 45
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/liquidLavaTop_mid.png",
+					"region": {
+						"x": 255,
+						"y": 1970,
+						"w": 70,
+						"h": 45
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/liquidWaterTop.png",
+					"region": {
+						"x": 300,
+						"y": 1970,
+						"w": 70,
+						"h": 45
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/liquidWaterTop_mid.png",
+					"region": {
+						"x": 345,
+						"y": 1970,
+						"w": 70,
+						"h": 45
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtHalf.png",
+					"region": {
+						"x": 271,
+						"y": 1830,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtHalfLeft.png",
+					"region": {
+						"x": 271,
+						"y": 1900,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtHalfMid.png",
+					"region": {
+						"x": 312,
+						"y": 1830,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/dirtHalfRight.png",
+					"region": {
+						"x": 312,
+						"y": 1900,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandHalf.png",
+					"region": {
+						"x": 353,
+						"y": 1830,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandHalfLeft.png",
+					"region": {
+						"x": 353,
+						"y": 1900,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandHalfMid.png",
+					"region": {
+						"x": 394,
+						"y": 1900,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandHalfRight.png",
+					"region": {
+						"x": 390,
+						"y": 1970,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowHalf.png",
+					"region": {
+						"x": 431,
+						"y": 1970,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowHalfLeft.png",
+					"region": {
+						"x": 274,
+						"y": 1690,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowHalfMid.png",
+					"region": {
+						"x": 274,
+						"y": 1760,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/snowHalfRight.png",
+					"region": {
+						"x": 315,
+						"y": 1760,
+						"w": 70,
+						"h": 41
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleHalf.png",
+					"region": {
+						"x": 356,
+						"y": 1760,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleHalfLeft.png",
+					"region": {
+						"x": 396,
+						"y": 1760,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleHalfMid.png",
+					"region": {
+						"x": 436,
+						"y": 1760,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/castleHalfRight.png",
+					"region": {
+						"x": 476,
+						"y": 1760,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/door_closedTop.png",
+					"region": {
+						"x": 394,
+						"y": 1830,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/door_openTop.png",
+					"region": {
+						"x": 434,
+						"y": 1830,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassHalf.png",
+					"region": {
+						"x": 435,
+						"y": 1900,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassHalfLeft.png",
+					"region": {
+						"x": 474,
+						"y": 1830,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassHalfMid.png",
+					"region": {
+						"x": 472,
+						"y": 1970,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/grassHalfRight.png",
+					"region": {
+						"x": 475,
+						"y": 1900,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneHalf.png",
+					"region": {
+						"x": 514,
+						"y": 1830,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneHalfLeft.png",
+					"region": {
+						"x": 512,
+						"y": 1970,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneHalfMid.png",
+					"region": {
+						"x": 515,
+						"y": 1900,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/stoneHalfRight.png",
+					"region": {
+						"x": 552,
+						"y": 1970,
+						"w": 70,
+						"h": 40
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/bridgeLogs.png",
+					"region": {
+						"x": 592,
+						"y": 1900,
+						"w": 70,
+						"h": 25
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/bridge.png",
+					"region": {
+						"x": 592,
+						"y": 1970,
+						"w": 70,
+						"h": 20
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/ropeAttached.png",
+					"region": {
+						"x": 612,
+						"y": 1970,
+						"w": 16,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/tochLit.png",
+					"region": {
+						"x": 555,
+						"y": 0,
+						"w": 28,
+						"h": 67
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/tochLit2.png",
+					"region": {
+						"x": 555,
+						"y": 67,
+						"w": 28,
+						"h": 67
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/torch.png",
+					"region": {
+						"x": 555,
+						"y": 134,
+						"w": 28,
+						"h": 50
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/window.png",
+					"region": {
+						"x": 328,
+						"y": 0,
+						"w": 62,
+						"h": 65
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandCenter.png",
+					"region": {
+						"x": 70,
+						"y": 1270,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Tiles/sandCenter_rounded.png",
+					"region": {
+						"x": 70,
+						"y": 1340,
+						"w": 70,
+						"h": 70
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7",
+		"format": "RGBA8888",
+	}
+}

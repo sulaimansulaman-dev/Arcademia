@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Blockly + Godot (WRY)</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <!-- Load Blockly -->
+  <script src="blockly.min.js"></script>
+
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
+    #topbar { padding: 8px; display: flex; gap: 8px; align-items: center; border-bottom: 1px solid #ddd; }
+    #blocklyDiv { position: absolute; height: calc(100% - 65px); width: 100%; }
+    button { padding: 6px 12px; cursor: pointer; }
+    .hint { color: #666; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div id="topbar">
+    <button id="run">Run in Godot</button>
+    <button id="clear">Clear</button>
+    <span class="hint">Stack blocks under <b>start</b>, then click Run.</span>
+  </div>
+  <div id="blocklyDiv"></div>
+
+  <script>
+    // Define custom blocks
+    Blockly.defineBlocksWithJsonArray([
+      {
+        "type": "start",
+        "message0": "start",
+        "nextStatement": null,
+        "colour": 210,
+        "hat": "cap"
+      },
+      {
+        "type": "move_left",
+        "message0": "move left %1 steps",
+        "args0": [
+          { "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 0
+      },
+      {
+        "type": "move_right",
+        "message0": "move right %1 steps",
+        "args0": [
+          { "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 120
+      },
+      {
+        "type": "move_up",
+        "message0": "move up %1 steps",
+        "args0": [
+          { "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 200
+      },
+      {
+        "type": "move_down",
+        "message0": "move down %1 steps",
+        "args0": [
+          { "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 260
+      }
+    ]);
+
+    // Toolbox with custom + core Blockly categories
+    const toolbox = {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "Game",
+          "colour": "210",
+          "contents": [
+            { kind: 'block', type: 'start' },
+            { kind: 'block', type: 'move_left' },
+            { kind: 'block', type: 'move_right' },
+            { kind: 'block', type: 'move_up' },
+            { kind: 'block', type: 'move_down' }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Logic",
+          "categorystyle": "logic_category",
+          "contents": [
+            { "kind": "block", "type": "controls_if" },
+            { "kind": "block", "type": "logic_compare" },
+            { "kind": "block", "type": "logic_operation" },
+            { "kind": "block", "type": "logic_boolean" },
+            { "kind": "block", "type": "logic_null" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Loops",
+          "categorystyle": "loop_category",
+          "contents": [
+            { "kind": "block", "type": "controls_repeat_ext" },
+            { "kind": "block", "type": "controls_whileUntil" },
+            { "kind": "block", "type": "controls_for" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Math",
+          "categorystyle": "math_category",
+          "contents": [
+            { "kind": "block", "type": "math_number" },
+            { "kind": "block", "type": "math_arithmetic" },
+            { "kind": "block", "type": "math_random_int" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Variables",
+          "categorystyle": "variable_category",
+          "custom": "VARIABLE"
+        },
+        {
+          "kind": "category",
+          "name": "Functions",
+          "categorystyle": "procedure_category",
+          "custom": "PROCEDURE"
+        }
+      ]
+    };
+
+    // Inject Blockly
+    const workspace = Blockly.inject('blocklyDiv', { toolbox, trashcan: true, media: 'media/' });
+
+    // Collect program commands
+    function buildProgram() {
+      const starts = workspace.getBlocksByType('start', false);
+      if (!starts.length) return [];
+      let block = starts[0].getNextBlock();
+      const commands = [];
+      while (block) {
+        if (["move_left","move_right","move_up","move_down"].includes(block.type)) {
+          const steps = Number(block.getFieldValue('STEPS') || 1);
+          commands.push({ cmd: block.type, steps });
+        }
+        block = block.getNextBlock();
+      }
+      return commands;
+    }
+
+    // Send to Godot (WRY bridge)
+    function sendToGodot(payload) {
+      if (window.ipc && typeof window.ipc.postMessage === 'function') {
+        window.ipc.postMessage(JSON.stringify(payload));
+      } else {
+        console.warn('Not inside Godot WebView; payload:', payload);
+        alert('This page is meant to run inside the Godot WebView.\nCheck console for payload.');
+      }
+    }
+
+    // Buttons
+    document.getElementById('run').addEventListener('click', () => {
+      const program = buildProgram();
+      sendToGodot({ type: 'program', commands: program });
+    });
+
+    document.getElementById('clear').addEventListener('click', () => {
+      Blockly.getMainWorkspace().clear();
+      Blockly.Xml.clearWorkspaceAndLoadFromXml(Blockly.utils.xml.createElement('xml'), workspace);
+    });
+  </script>
+</body>
+</html>

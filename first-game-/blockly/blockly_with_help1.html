@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Blockly + Godot (WRY)</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <!-- Load Blockly -->
+  <script src="blockly.min.js"></script>
+
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
+    #topbar { padding: 8px; display: flex; gap: 8px; align-items: center; border-bottom: 1px solid #ddd; }
+    #blocklyDiv { position: absolute; height: calc(100% - 65px); width: 100%; }
+    button { padding: 6px 12px; cursor: pointer; border: 1px solid #ccc; border-radius: 4px; background: white; }
+    button:hover { background: #f0f0f0; }
+    .hint { color: #666; font-size: 12px; }
+    
+    /* Help Modal Styles */
+    .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5); }
+    .modal-content {  width: 100%;  height: 100%;  margin: 0;  border-radius: 0;  background-color: #fff;  overflow-y: auto;  padding: 20px;  box-sizing: border-box;}
+    .close {  position: absolute;  top: 20px;  right: 30px;  color: #aaa;  font-size: 32px;  font-weight: bold;  cursor: pointer;}
+    .close:hover { color: black; }
+    .help-title { color: #4285f4; font-size: 24px; margin-bottom: 20px; text-align: center; }
+    .block-help { margin: 15px 0; padding: 15px; border-radius: 8px; border-left: 4px solid; }
+    .block-help h3 { margin-top: 0; font-size: 18px; }
+    .block-help p { margin: 8px 0; line-height: 1.4; }
+    .example { background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0; font-style: italic; }
+    
+    /* Block-specific colors */
+    .start-block { border-left-color: #5ba55b; background: #f0f8f0; }
+    .move-block { border-left-color: #4285f4; background: #f2f6fd; }
+    .logic-block { border-left-color: #ff9800; background: #fff8f0; }
+    .loop-block { border-left-color: #607d8b; background: #f5f6f7; }
+    .math-block { border-left-color: #2196f3; background: #f2f6fd; }
+    
+    .fun-emoji { font-size: 20px; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <div id="topbar">
+    <button id="run">🚀 Run in Godot</button>
+    <button id="clear">🗑️ Clear</button>
+    <span class="hint">Stack blocks under <b>start</b>, then click Run.</span>
+  </div>
+  <div id="blocklyDiv"></div>
+
+  <!-- Help Modal -->
+  <div id="helpModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 class="help-title">🎮 Block Help - Learn to Code!</h2>
+      
+      <!-- Game Help -->
+      <div id="help-game" class="block-help move-block">
+        <h3><span class="fun-emoji">🎮</span>Game Blocks</h3>
+        <p><b>Start:</b> Every program begins here. Place it at the top!</p>
+        <p><b>Move Left / Right / Up / Down:</b> Move your character in different directions with steps you choose.</p>
+        <div class="example">Like moving a toy car around the floor.</div>
+      </div>
+
+      <!-- Logic Help -->
+      <div id="help-logic" class="block-help logic-block">
+        <h3><span class="fun-emoji">🤔</span>Logic Blocks</h3>
+        <p>Make decisions in your code using IF, comparisons, and TRUE/FALSE values.</p>
+        <div class="example">Like deciding "IF it's raining, THEN take an umbrella".</div>
+      </div>
+
+      <!-- Loop Help -->
+      <div id="help-loops" class="block-help loop-block">
+        <h3><span class="fun-emoji">🔄</span>Loop Blocks</h3>
+        <p>Repeat actions multiple times, like a dance routine or exercise set.</p>
+        <div class="example">Like saying "Repeat 10 times: Jump".</div>
+      </div>
+
+
+      <!-- Math Help -->
+      <div id="help-math" class="block-help math-block">
+        <h3><span class="fun-emoji">🔢</span>Math Blocks</h3>
+        <p>Use numbers, add, subtract, and generate random values.</p>
+        <div class="example">Like rolling dice to get a random number.</div>
+      </div>
+
+      <div id="help-variables" class="block-help variable-block">
+        <h3>📦 Variables</h3>
+        <p>Variables are like boxes with names.</p>
+        <p><i>Example:</i> score = 0 → change score by 1 when you get a coin.</p>
+      </div>
+
+      <div id="help-functions" class="block-help function-block">
+        <h3>🛠️ Functions</h3>
+        <p>Functions are like recipes or magic spells.</p>
+        <p><i>Example:</i> Function “jumpTwice” → jump, jump. Reuse anytime!</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Define custom blocks
+    Blockly.defineBlocksWithJsonArray([
+      {
+        "type": "start",
+        "message0": "start",
+        "nextStatement": null,
+        "colour": 210,
+        "hat": "cap"
+      },
+      {
+        "type": "move_left",
+        "message0": "move left %1 steps",
+        "args0": [{ "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 0
+      },
+      {
+        "type": "move_right",
+        "message0": "move right %1 steps",
+        "args0": [{ "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 120
+      },
+      {
+        "type": "move_up",
+        "message0": "move up %1 steps",
+        "args0": [{ "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 200
+      },
+      {
+        "type": "move_down",
+        "message0": "move down %1 steps",
+        "args0": [{ "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 260
+      }
+    ]);
+
+    // Toolbox with Help buttons
+    const toolbox = {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "Game",
+          "colour": "210",
+          "contents": [
+            { "kind": "button", "text": "❓ Help for Game", "callbackKey": "HELP_GAME" },
+            { kind: 'block', type: 'start' },
+            { kind: 'block', type: 'move_left' },
+            { kind: 'block', type: 'move_right' },
+            { kind: 'block', type: 'move_up' },
+            { kind: 'block', type: 'move_down' }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Logic",
+          "categorystyle": "logic_category",
+          "contents": [
+            { "kind": "button", "text": "❓ Help for Logic", "callbackKey": "HELP_LOGIC" },
+            { "kind": "block", "type": "controls_if" },
+            { "kind": "block", "type": "logic_compare" },
+            { "kind": "block", "type": "logic_operation" },
+            { "kind": "block", "type": "logic_boolean" },
+            { "kind": "block", "type": "logic_null" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Loops",
+          "categorystyle": "loop_category",
+          "contents": [
+            { "kind": "button", "text": "❓ Help for Loops", "callbackKey": "HELP_LOOPS" },
+            { "kind": "block", "type": "controls_repeat_ext" },
+            { "kind": "block", "type": "controls_whileUntil" },
+            { "kind": "block", "type": "controls_for" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Math",
+          "categorystyle": "math_category",
+          "contents": [
+            { "kind": "button", "text": "❓ Help for Math", "callbackKey": "HELP_MATH" },
+            { "kind": "block", "type": "math_number" },
+            { "kind": "block", "type": "math_arithmetic" },
+            { "kind": "block", "type": "math_random_int" }
+          ]
+        },
+
+        {
+          "kind": "category",
+          "name": "Variables",
+          "categorystyle": "variable_category",
+          "custom": "VARIABLE",
+          "contents": [
+        { "kind": "button", "text": "❓ Help for Variables", "callbackKey": "HELP_VARIABLES" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Functions",
+          "categorystyle": "procedure_category",
+          "custom": "PROCEDURE",
+          "contents": [
+          { "kind": "button", "text": "❓ Help for Functions", "callbackKey": "HELP_FUNCTIONS" }
+          ]
+        }
+      ]
+    };
+
+    // Inject Blockly
+    const workspace = Blockly.inject('blocklyDiv', { toolbox, trashcan: true, media: 'media/' });
+
+    // Collect program commands
+    function buildProgram() {
+      const starts = workspace.getBlocksByType('start', false);
+      if (!starts.length) return [];
+      let block = starts[0].getNextBlock();
+      const commands = [];
+      while (block) {
+        if (["move_left","move_right","move_up","move_down"].includes(block.type)) {
+          const steps = Number(block.getFieldValue('STEPS') || 1);
+          commands.push({ cmd: block.type, steps });
+        }
+        block = block.getNextBlock();
+      }
+      return commands;
+    }
+
+    // Send to Godot (WRY bridge)
+    function sendToGodot(payload) {
+      if (window.ipc && typeof window.ipc.postMessage === 'function') {
+        window.ipc.postMessage(JSON.stringify(payload));
+      } else {
+        console.warn('Not inside Godot WebView; payload:', payload);
+        alert('This page is meant to run inside the Godot WebView.\nCheck console for payload.');
+      }
+    }
+
+    // Modal references
+    const modal = document.getElementById('helpModal');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    function showHelp(sectionId) {
+      // hide all sections
+      document.querySelectorAll('.block-help').forEach(div => div.style.display = 'none');
+      // show requested section
+      document.getElementById(sectionId).style.display = 'block';
+      modal.style.display = 'block';
+    }
+
+    // Register help button callbacks
+    workspace.registerButtonCallback('HELP_GAME', () => showHelp('help-game'));
+    workspace.registerButtonCallback('HELP_LOGIC', () => showHelp('help-logic'));
+    workspace.registerButtonCallback('HELP_LOOPS', () => showHelp('help-loops'));
+    workspace.registerButtonCallback('HELP_MATH', () => showHelp('help-math'));
+    workspace.registerButtonCallback('HELP_VARIABLES', () => showHelp('help-variables'));
+  workspace.registerButtonCallback('HELP_FUNCTIONS', () => showHelp('help-functions'));
+
+    // Close modal
+    closeBtn.onclick = () => modal.style.display = 'none';
+    window.onclick = (event) => { if (event.target === modal) modal.style.display = 'none'; };
+
+    // Buttons
+    document.getElementById('run').addEventListener('click', () => {
+      const program = buildProgram();
+      sendToGodot({ type: 'program', commands: program });
+    });
+
+    document.getElementById('clear').addEventListener('click', () => {
+      Blockly.getMainWorkspace().clear();
+      Blockly.Xml.clearWorkspaceAndLoadFromXml(Blockly.utils.xml.createElement('xml'), workspace);
+    });
+  </script>
+</body>
+</html>
