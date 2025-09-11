@@ -12,28 +12,34 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 368.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 texture_repeat = 2
 layout_mode = 1
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = -359.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GameArea" type="SubViewportContainer" parent="CanvasLayer/Control/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 0.0
 stretch = true
 
 [node name="GameViewport" type="SubViewport" parent="CanvasLayer/Control/VBoxContainer/GameArea"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
-size = Vector2i(2, 2)
+size = Vector2i(400, 2)
 render_target_update_mode = 4
 
 [node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/VBoxContainer"]
@@ -44,6 +50,6 @@ layout_mode = 2
 [node name="WebView" type="WebView" parent="CanvasLayer/Control/VBoxContainer"]
 full_window_size = false
 url = "res://blockly/blockly_with_help1.html"
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
