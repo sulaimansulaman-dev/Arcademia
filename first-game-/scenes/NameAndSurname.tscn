@@ -1,21 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxk4u4xdg13pr"]
+[gd_scene load_steps=7 format=3 uid="uid://bxk4u4xdg13pr"]
 
 [ext_resource type="Script" uid="uid://cddowja15s12v" path="res://scripts/Avatar_Creation.gd" id="1_7ohk3"]
-[ext_resource type="Texture2D" uid="uid://crucsf6r2nu2t" path="res://ui/stars_left.png" id="2_17ka5"]
-[ext_resource type="Texture2D" uid="uid://ba5grrj0jah6f" path="res://ui/stars_right.png" id="3_pobv5"]
-[ext_resource type="Texture2D" uid="uid://cdqnsbghf7ehv" path="res://ui/title_avatar_creation.png" id="4_kfc2s"]
+[ext_resource type="Texture2D" path="res://ui/stars_left.png" id="2_17ka5"]
+[ext_resource type="Texture2D" path="res://ui/stars_right.png" id="3_pobv5"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://fonts/PressStart2P.ttf" id="5_nsrmc"]
-[ext_resource type="Texture2D" uid="uid://bmflsiucwt33i" path="res://ui/left_button.png" id="6_qmgyv"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://fonts/montserrat.regular.ttf" id="7_kdr6d"]
-[ext_resource type="Texture2D" uid="uid://cvl00vskqtoh4" path="res://ui/right_button.png" id="8_iefpq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
-bg_color = Color(0.427451, 0.45098, 0.909804, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6wx"]
 bg_color = Color(0.843137, 0.247059, 0.811765, 1)
@@ -39,6 +28,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.129412, 0.027451, 0.215686, 1)
 
+[node name="SkinLabel" type="RichTextLabel" parent="ColorRect"]
+clip_contents = false
+custom_minimum_size = Vector2(109, 22)
+offset_left = 515.0
+offset_top = 183.0
+offset_right = 835.0
+offset_bottom = 271.0
+theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("5_nsrmc")
+theme_override_font_sizes/normal_font_size = 24
+text = "Name"
+
 [node name="BackgroundStarsLeft" type="TextureRect" parent="."]
 offset_left = 39.0
 offset_top = 40.0
@@ -60,455 +61,28 @@ grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_pobv5")
 
-[node name="TitleImage" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(903, 190)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 453.75
-offset_top = 4.0
-offset_right = 2478.75
-offset_bottom = 392.0
-grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_kfc2s")
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(598, 712)
-offset_left = 1191.0
-offset_top = 193.0
-offset_right = 1789.0
-offset_bottom = 905.0
-
-[node name="Skeleton" type="Node2D" parent="CenterContainer"]
-position = Vector2(1191, 150)
-
-[node name="Skin" type="Sprite2D" parent="CenterContainer/Skeleton"]
-
-[node name="Mouth" type="Sprite2D" parent="CenterContainer/Skeleton"]
-
-[node name="Eyes" type="Sprite2D" parent="CenterContainer/Skeleton"]
-
-[node name="Hair" type="Sprite2D" parent="CenterContainer/Skeleton"]
-
-[node name="Accessories" type="Sprite2D" parent="CenterContainer/Skeleton"]
-
-[node name="Outfit" type="Sprite2D" parent="CenterContainer/Skeleton"]
-
-[node name="FullSuit" type="Sprite2D" parent="CenterContainer/Skeleton"]
-
 [node name="SkinLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
-offset_left = 252.0
-offset_top = 261.0
-offset_right = 361.0
-offset_bottom = 291.0
+offset_left = 508.0
+offset_top = 118.0
+offset_right = 828.0
+offset_bottom = 206.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("5_nsrmc")
 theme_override_font_sizes/normal_font_size = 24
-text = "Skin"
-
-[node name="PrevSkin" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 62.0
-offset_top = 314.0
-offset_right = 123.0
-offset_bottom = 375.0
-texture_normal = ExtResource("6_qmgyv")
-
-[node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(334.66, 60)
-offset_left = 139.0
-offset_top = 314.0
-offset_right = 473.66
-offset_bottom = 374.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_right = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ValSkin" type="RichTextLabel" parent="Panel/CenterContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_kdr6d")
-theme_override_font_sizes/normal_font_size = 24
-text = "-"
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NextSkin" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 490.0
-offset_top = 314.0
-offset_right = 551.0
-offset_bottom = 406.0
-texture_normal = ExtResource("8_iefpq")
-
-[node name="MouthLabel" type="RichTextLabel" parent="."]
-clip_contents = false
-custom_minimum_size = Vector2(124, 22)
-offset_left = 244.0
-offset_top = 425.0
-offset_right = 374.0
-offset_bottom = 455.0
-theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
-theme_override_fonts/normal_font = ExtResource("5_nsrmc")
-theme_override_font_sizes/normal_font_size = 24
-text = "Mouth"
-
-[node name="PrevMouth" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 62.0
-offset_top = 478.0
-offset_right = 123.0
-offset_bottom = 570.0
-texture_normal = ExtResource("6_qmgyv")
-
-[node name="Panel2" type="Panel" parent="."]
-custom_minimum_size = Vector2(334.66, 60)
-offset_left = 139.0
-offset_top = 478.0
-offset_right = 473.66
-offset_bottom = 538.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel2"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_right = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ValMouth" type="RichTextLabel" parent="Panel2/CenterContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_kdr6d")
-theme_override_font_sizes/normal_font_size = 24
-text = "-"
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NextMouth" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 490.0
-offset_top = 478.0
-offset_right = 551.0
-offset_bottom = 539.0
-texture_normal = ExtResource("8_iefpq")
-
-[node name="EyesLabel" type="RichTextLabel" parent="."]
-clip_contents = false
-custom_minimum_size = Vector2(97, 22)
-offset_left = 257.0
-offset_top = 589.0
-offset_right = 367.0
-offset_bottom = 619.0
-theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
-theme_override_fonts/normal_font = ExtResource("5_nsrmc")
-theme_override_font_sizes/normal_font_size = 24
-text = "Eyes"
-
-[node name="PrevEyes" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 62.0
-offset_top = 642.0
-offset_right = 123.0
-offset_bottom = 734.0
-texture_normal = ExtResource("6_qmgyv")
-
-[node name="Panel3" type="Panel" parent="."]
-custom_minimum_size = Vector2(334.66, 60)
-offset_left = 138.0
-offset_top = 642.0
-offset_right = 472.66
-offset_bottom = 702.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel3"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_right = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ValEyes" type="RichTextLabel" parent="Panel3/CenterContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_kdr6d")
-theme_override_font_sizes/normal_font_size = 24
-text = "-"
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NextEyes" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 489.0
-offset_top = 642.0
-offset_right = 550.0
-offset_bottom = 703.0
-texture_normal = ExtResource("8_iefpq")
-
-[node name="HairLabel" type="RichTextLabel" parent="."]
-clip_contents = false
-custom_minimum_size = Vector2(97, 22)
-offset_left = 256.0
-offset_top = 753.0
-offset_right = 366.0
-offset_bottom = 783.0
-theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
-theme_override_fonts/normal_font = ExtResource("5_nsrmc")
-theme_override_font_sizes/normal_font_size = 24
-text = "Hair"
-
-[node name="PrevHair" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 60.0
-offset_top = 806.0
-offset_right = 121.0
-offset_bottom = 898.0
-texture_normal = ExtResource("6_qmgyv")
-
-[node name="Panel4" type="Panel" parent="."]
-custom_minimum_size = Vector2(334.66, 60)
-offset_left = 138.0
-offset_top = 806.0
-offset_right = 472.66
-offset_bottom = 866.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel4"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_right = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ValHair" type="RichTextLabel" parent="Panel4/CenterContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_kdr6d")
-theme_override_font_sizes/normal_font_size = 24
-text = "-"
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NextHair" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 488.0
-offset_top = 806.0
-offset_right = 549.0
-offset_bottom = 867.0
-texture_normal = ExtResource("8_iefpq")
 
 [node name="OutfitLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(125, 22)
-offset_left = 770.0
-offset_top = 261.0
-offset_right = 920.0
-offset_bottom = 291.0
+offset_left = 526.0
+offset_top = 271.0
+offset_right = 676.0
+offset_bottom = 301.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("5_nsrmc")
 theme_override_font_sizes/normal_font_size = 24
-text = "Outfit"
-
-[node name="PrevOutfit" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 595.0
-offset_top = 314.0
-offset_right = 656.0
-offset_bottom = 406.0
-texture_normal = ExtResource("6_qmgyv")
-
-[node name="Panel5" type="Panel" parent="."]
-custom_minimum_size = Vector2(334.66, 60)
-offset_left = 672.0
-offset_top = 314.0
-offset_right = 1006.66
-offset_bottom = 374.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel5"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_right = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ValOutfit" type="RichTextLabel" parent="Panel5/CenterContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_kdr6d")
-theme_override_font_sizes/normal_font_size = 24
-text = "-"
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NextOutfit" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 1023.0
-offset_top = 314.0
-offset_right = 1084.0
-offset_bottom = 375.0
-texture_normal = ExtResource("8_iefpq")
-
-[node name="AccessoriesLabel" type="RichTextLabel" parent="."]
-clip_contents = false
-custom_minimum_size = Vector2(269, 22)
-offset_left = 704.0
-offset_top = 425.0
-offset_right = 979.0
-offset_bottom = 455.0
-theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
-theme_override_fonts/normal_font = ExtResource("5_nsrmc")
-theme_override_font_sizes/normal_font_size = 24
-text = "Accessories"
-
-[node name="Panel6" type="Panel" parent="."]
-custom_minimum_size = Vector2(334.66, 60)
-offset_left = 671.0
-offset_top = 478.0
-offset_right = 1005.66
-offset_bottom = 538.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel6"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_right = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ValAccessories" type="RichTextLabel" parent="Panel6/CenterContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_kdr6d")
-theme_override_font_sizes/normal_font_size = 24
-text = "-"
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PrevAccessories" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 594.0
-offset_top = 478.0
-offset_right = 655.0
-offset_bottom = 570.0
-texture_normal = ExtResource("6_qmgyv")
-
-[node name="NextAccessories" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 1022.0
-offset_top = 478.0
-offset_right = 1083.0
-offset_bottom = 539.0
-texture_normal = ExtResource("8_iefpq")
-
-[node name="FullSuitLabel" type="RichTextLabel" parent="."]
-clip_contents = false
-custom_minimum_size = Vector2(300, 30)
-offset_left = 729.0
-offset_top = 589.0
-offset_right = 1029.0
-offset_bottom = 619.0
-theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
-theme_override_fonts/normal_font = ExtResource("5_nsrmc")
-theme_override_font_sizes/normal_font_size = 24
-text = "Full Suit"
-
-[node name="PrevFullSuit" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 595.0
-offset_top = 642.0
-offset_right = 656.0
-offset_bottom = 734.0
-texture_normal = ExtResource("6_qmgyv")
-
-[node name="Panel7" type="Panel" parent="."]
-custom_minimum_size = Vector2(334.66, 60)
-offset_left = 672.0
-offset_top = 642.0
-offset_right = 1006.66
-offset_bottom = 702.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
-
-[node name="CenterContainer" type="CenterContainer" parent="Panel7"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_right = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ValFullSuit" type="RichTextLabel" parent="Panel7/CenterContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_kdr6d")
-theme_override_font_sizes/normal_font_size = 24
-text = "-"
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NextFullSuit" type="TextureButton" parent="."]
-custom_minimum_size = Vector2(61, 61)
-offset_left = 1023.0
-offset_top = 642.0
-offset_right = 1084.0
-offset_bottom = 703.0
-texture_normal = ExtResource("8_iefpq")
+text = "Age"
 
 [node name="SaveButton" type="Button" parent="."]
 custom_minimum_size = Vector2(559.16, 60)
@@ -538,3 +112,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_6a6wx")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6a6wx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6a6wx")
 text = "Save"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 282.0
+offset_top = 371.0
+offset_right = 1589.0
+offset_bottom = 891.0
