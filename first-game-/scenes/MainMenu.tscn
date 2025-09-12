@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bq8fbvk4hh7i8"]
+[gd_scene load_steps=9 format=3 uid="uid://bm3tmbs13bdom"]
 
-[ext_resource type="Texture2D" uid="uid://8bgq0hh514tr" path="res://menu.png" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://cn2rsx3ioh5d4" path="res://scripts/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://cn2rsx3ioh5d4" path="res://scripts/main_menu.gd" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://8bgq0hh514tr" path="res://menu.png" id="2_2wh52"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
-texture = ExtResource("1_06t4h")
+texture = ExtResource("2_2wh52")
 modulate_color = Color(0.408329, 0.408329, 0.408329, 1)
 
 [sub_resource type="Theme" id="Theme_fu7sn"]
@@ -32,7 +32,7 @@ offset_right = 2.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7vrkn")
+script = ExtResource("1_0ykhv")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -56,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.0
-offset_top = -153.0
-offset_right = 123.0
-offset_bottom = 124.0
+offset_left = -91.0
+offset_top = -150.0
+offset_right = 136.0
+offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_fu7sn")
@@ -69,19 +69,32 @@ theme_override_constants/separation = 30
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
-text = "Level1"
+text = "Level 1"
 
 [node name="Level2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
-text = "Level2"
+text = "Level 2"
+
+[node name="Level3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
+text = "Level 3
+"
+
+[node name="Level4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
+text = "Final Level"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
-text = "Options"
+text = "Avatar Creation"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -91,13 +104,15 @@ text = "Exit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 297.0
-offset_top = 112.0
-offset_right = 891.0
-offset_bottom = 253.0
+offset_left = 700.0
+offset_top = 316.0
+offset_right = 1294.0
+offset_bottom = 389.0
 theme_override_font_sizes/font_size = 47
 text = "ASTRONAUT ADVENTURES"
 
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level3" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level4" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

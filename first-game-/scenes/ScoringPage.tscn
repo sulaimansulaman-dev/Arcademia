@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq8fbvk4hh7i8"]
+
+[ext_resource type="Texture2D" uid="uid://8bgq0hh514tr" path="res://menu.png" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://cn2rsx3ioh5d4" path="res://scripts/main_menu.gd" id="1_7vrkn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
+texture = ExtResource("1_06t4h")
+modulate_color = Color(0.408329, 0.408329, 0.408329, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.5
+offset_top = -319.5
+offset_right = 571.5
+offset_bottom = 319.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -166.0
+offset_right = 125.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 47
+text = "SCORE:"
+
+[node name="CongratsL" type="Label" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 714.0
+offset_right = 1318.0
+offset_bottom = 783.0
+theme_override_font_sizes/font_size = 50
+text = "CONGRADULATIONS YOU ARE LEVEL:"
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.288
+anchor_bottom = 0.18
+offset_left = 891.0
+offset_top = 529.0
+offset_right = 528.04
+offset_bottom = 403.6
+theme_override_font_sizes/font_size = 50
+text = "LEVEL:"
+
+[node name="ScoreN" type="Label" parent="."]
+layout_mode = 0
+offset_left = 849.0
+offset_top = 437.0
+offset_right = 1094.0
+offset_bottom = 515.0
+theme_override_colors/font_color = Color(0.827451, 0, 0, 1)
+theme_override_font_sizes/font_size = 57
+text = "1"
+horizontal_alignment = 1
+
+[node name="LevelN" type="Label" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 592.0
+offset_right = 1102.0
+offset_bottom = 670.0
+theme_override_colors/font_color = Color(5.0056e-06, 0, 0.941471, 1)
+theme_override_font_sizes/font_size = 57
+text = "1"
+horizontal_alignment = 1
+
+[node name="LevelN_Copy" type="Label" parent="LevelN"]
+offset_left = 424.0
+offset_top = 124.0
+offset_right = 686.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(5.0056e-06, 0, 0.941471, 1)
+theme_override_font_sizes/font_size = 57
+text = "1"
+horizontal_alignment = 1
