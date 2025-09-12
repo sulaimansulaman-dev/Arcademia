@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bm3tmbs13bdom"]
 
-[ext_resource type="Script" uid="uid://cn2rsx3ioh5d4" path="res://scripts/main_menu.gd" id="1_0ykhv"]
-[ext_resource type="Texture2D" uid="uid://8bgq0hh514tr" path="res://png/menu.png" id="2_2wh52"]
+[ext_resource type="Script" uid="uid://cn2rsx3ioh5d4" path="res://main menu/scripts/main_menu.gd" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://8bgq0hh514tr" path="res://main menu/png/menu.png" id="2_2wh52"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
 texture = ExtResource("2_2wh52")
@@ -104,10 +104,10 @@ text = "Exit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 680.0
-offset_top = 317.0
-offset_right = 1274.0
-offset_bottom = 390.0
+offset_left = 300.0
+offset_top = 29.0
+offset_right = 894.0
+offset_bottom = 102.0
 theme_override_font_sizes/font_size = 47
 text = "ASTRONAUT ADVENTURES"
 
