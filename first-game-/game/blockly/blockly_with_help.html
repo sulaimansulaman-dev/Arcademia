@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Blockly + Godot (WRY)</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <!-- Load Blockly -->
+  <script src="blockly.min.js"></script>
+
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
+    #topbar { padding: 8px; display: flex; gap: 8px; align-items: center; border-bottom: 1px solid #ddd; }
+    #blocklyDiv { position: absolute; height: calc(100% - 65px); width: 100%; }
+    button { padding: 6px 12px; cursor: pointer; border: 1px solid #ccc; border-radius: 4px; background: white; }
+    button:hover { background: #f0f0f0; }
+    .hint { color: #666; font-size: 12px; }
+    
+    /* Help Modal Styles */
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+    .modal-content { background-color: #fefefe; margin: 5% auto; padding: 20px; border-radius: 10px; width: 80%; max-width: 600px; max-height: 80%; overflow-y: auto; }
+    .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+    .close:hover { color: black; }
+    .help-title { color: #4285f4; font-size: 24px; margin-bottom: 20px; text-align: center; }
+    .block-help { margin: 15px 0; padding: 15px; border-radius: 8px; border-left: 4px solid; }
+    .block-help h3 { margin-top: 0; font-size: 18px; }
+    .block-help p { margin: 8px 0; line-height: 1.4; }
+    .example { background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0; font-style: italic; }
+    
+    /* Block-specific colors */
+    .start-block { border-left-color: #5ba55b; background: #f0f8f0; }
+    .move-left-block { border-left-color: #db4437; background: #fdf2f2; }
+    .move-right-block { border-left-color: #0f9d58; background: #f0f8f0; }
+    .move-up-block { border-left-color: #4285f4; background: #f2f6fd; }
+    .move-down-block { border-left-color: #ab47bc; background: #f8f2fd; }
+    .logic-block { border-left-color: #ff9800; background: #fff8f0; }
+    .loop-block { border-left-color: #607d8b; background: #f5f6f7; }
+    .math-block { border-left-color: #2196f3; background: #f2f6fd; }
+    
+    .fun-emoji { font-size: 20px; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <div id="topbar">
+    <button id="run">🚀 Run in Godot</button>
+    <button id="clear">🗑️ Clear</button>
+    <button id="help">❓ Help</button>
+    <span class="hint">Stack blocks under <b>start</b>, then click Run.</span>
+  </div>
+  <div id="blocklyDiv"></div>
+
+  <!-- Help Modal -->
+  <div id="helpModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 class="help-title">🎮 Block Help - Learn to Code!</h2>
+      
+      <div class="block-help start-block">
+        <h3><span class="fun-emoji">🏁</span>Start Block</h3>
+        <p>This is where your adventure begins! Every program needs a start block. Put all your other blocks underneath this one.</p>
+        <div class="example">Think of it like pressing "GO!" to start a race</div>
+      </div>
+      
+      <div class="block-help move-left-block">
+        <h3><span class="fun-emoji">⬅️</span>Move Left Block</h3>
+        <p>Makes your character move to the left side of the screen. You can choose how many steps to take!</p>
+        <div class="example">Like walking backwards or moving your toy car to the left</div>
+      </div>
+      
+      <div class="block-help move-right-block">
+        <h3><span class="fun-emoji">➡️</span>Move Right Block</h3>
+        <p>Makes your character move to the right side of the screen. Pick any number of steps you want!</p>
+        <div class="example">Like walking forward or driving your toy car to the right</div>
+      </div>
+      
+      <div class="block-help move-up-block">
+        <h3><span class="fun-emoji">⬆️</span>Move Up Block</h3>
+        <p>Makes your character jump up or fly higher on the screen. Choose how high to go!</p>
+        <div class="example">Like jumping on a trampoline or flying a kite higher</div>
+      </div>
+      
+      <div class="block-help move-down-block">
+        <h3><span class="fun-emoji">⬇️</span>Move Down Block</h3>
+        <p>Makes your character move down toward the bottom of the screen. Pick how far down!</p>
+        <div class="example">Like going down a slide or diving underwater</div>
+      </div>
+      
+      <div class="block-help logic-block">
+        <h3><span class="fun-emoji">🤔</span>Logic Blocks</h3>
+        <p>These help your character make smart decisions! They can check if something is true or false.</p>
+        <div class="example">Like deciding "IF it's raining, THEN take an umbrella"</div>
+      </div>
+      
+      <div class="block-help loop-block">
+        <h3><span class="fun-emoji">🔄</span>Loop Blocks</h3>
+        <p>These make your character do the same thing over and over again! Great for repeated actions.</p>
+        <div class="example">Like doing jumping jacks - "Repeat 10 times: jump up and down"</div>
+      </div>
+      
+      <div class="block-help math-block">
+        <h3><span class="fun-emoji">🔢</span>Math Blocks</h3>
+        <p>These help you work with numbers! You can add, subtract, and even pick random numbers.</p>
+        <div class="example">Like counting your toys or rolling a dice to get a random number</div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 30px; padding: 20px; background: #e8f5e8; border-radius: 10px;">
+        <h3><span class="fun-emoji">💡</span>Pro Tip for Young Coders!</h3>
+        <p>Start simple! Try connecting just 2-3 blocks together first. You can always add more blocks later to make cooler programs!</p>
+        <p><strong>Remember:</strong> Drag blocks from the left menu, snap them together like puzzle pieces, then click "Run in Godot" to see the magic happen! ✨</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Define custom blocks
+    Blockly.defineBlocksWithJsonArray([
+      {
+        "type": "start",
+        "message0": "start",
+        "nextStatement": null,
+        "colour": 210,
+        "hat": "cap",
+
+      },
+      {
+        "type": "move_left",
+        "message0": "move left %1 steps",
+        "args0": [
+          { "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 0
+      },
+      {
+        "type": "move_right",
+        "message0": "move right %1 steps",
+        "args0": [
+          { "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 120
+      },
+      {
+        "type": "move_up",
+        "message0": "move up %1 steps",
+        "args0": [
+          { "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 200
+      },
+      {
+        "type": "move_down",
+        "message0": "move down %1 steps",
+        "args0": [
+          { "type": "field_number", "name": "STEPS", "value": 1, "min": 1, "precision": 1 }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 260
+      }
+    ]);
+
+    // Toolbox with custom + core Blockly categories
+    const toolbox = {
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "Game",
+          "colour": "210",
+          "contents": [
+            { kind: 'block', type: 'start' },
+            { kind: 'block', type: 'move_left' },
+            { kind: 'block', type: 'move_right' },
+            { kind: 'block', type: 'move_up' },
+            { kind: 'block', type: 'move_down' }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Logic",
+          "categorystyle": "logic_category",
+          "contents": [
+            { "kind": "block", "type": "controls_if" },
+            { "kind": "block", "type": "logic_compare" },
+            { "kind": "block", "type": "logic_operation" },
+            { "kind": "block", "type": "logic_boolean" },
+            { "kind": "block", "type": "logic_null" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Loops",
+          "categorystyle": "loop_category",
+          "contents": [
+            { "kind": "block", "type": "controls_repeat_ext" },
+            { "kind": "block", "type": "controls_whileUntil" },
+            { "kind": "block", "type": "controls_for" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Math",
+          "categorystyle": "math_category",
+          "contents": [
+            { "kind": "block", "type": "math_number" },
+            { "kind": "block", "type": "math_arithmetic" },
+            { "kind": "block", "type": "math_random_int" }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Variables",
+          "categorystyle": "variable_category",
+          "custom": "VARIABLE"
+        },
+        {
+          "kind": "category",
+          "name": "Functions",
+          "categorystyle": "procedure_category",
+          "custom": "PROCEDURE"
+        }
+      ]
+    };
+
+    // Inject Blockly
+    const workspace = Blockly.inject('blocklyDiv', { toolbox, trashcan: true, media: 'media/' });
+
+    // Collect program commands
+    function buildProgram() {
+      const starts = workspace.getBlocksByType('start', false);
+      if (!starts.length) return [];
+      let block = starts[0].getNextBlock();
+      const commands = [];
+      while (block) {
+        if (["move_left","move_right","move_up","move_down"].includes(block.type)) {
+          const steps = Number(block.getFieldValue('STEPS') || 1);
+          commands.push({ cmd: block.type, steps });
+        }
+        block = block.getNextBlock();
+      }
+      return commands;
+    }
+
+    // Send to Godot (WRY bridge)
+    function sendToGodot(payload) {
+      if (window.ipc && typeof window.ipc.postMessage === 'function') {
+        window.ipc.postMessage(JSON.stringify(payload));
+      } else {
+        console.warn('Not inside Godot WebView; payload:', payload);
+        alert('This page is meant to run inside the Godot WebView.\nCheck console for payload.');
+      }
+    }
+
+    // Modal functionality
+    const modal = document.getElementById('helpModal');
+    const helpBtn = document.getElementById('help');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    helpBtn.onclick = function() {
+      modal.style.display = 'block';
+    }
+
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    // Buttons
+    document.getElementById('run').addEventListener('click', () => {
+      const program = buildProgram();
+      sendToGodot({ type: 'program', commands: program });
+    });
+
+    document.getElementById('clear').addEventListener('click', () => {
+      Blockly.getMainWorkspace().clear();
+      Blockly.Xml.clearWorkspaceAndLoadFromXml(Blockly.utils.xml.createElement('xml'), workspace);
+    });
+  </script>
+</body>
+</html>

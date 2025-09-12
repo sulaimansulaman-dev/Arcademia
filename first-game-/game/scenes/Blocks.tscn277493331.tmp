@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs0ny3qn13mth"]
+
+[ext_resource type="Script" uid="uid://bnmnkhmmsbdjn" path="res://game/scripts/Blocks.gd" id="1_gn6b5"]
+
+[node name="Blocks" type="Node2D"]
+script = ExtResource("1_gn6b5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WebView" type="WebView" parent="CanvasLayer/Control/HBoxContainer"]
+full_window_size = false
+url = "res://blockly/Level_1.html"
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+
+[node name="GameArea" type="SubViewportContainer" parent="CanvasLayer/Control/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+stretch = true
+
+[node name="GameViewport" type="SubViewport" parent="CanvasLayer/Control/HBoxContainer/GameArea"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+size = Vector2i(1273, 1080)
+render_target_update_mode = 4

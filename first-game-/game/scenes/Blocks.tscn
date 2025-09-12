@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs0ny3qn13mth"]
+
+[ext_resource type="Script" uid="uid://bnmnkhmmsbdjn" path="res://scripts/Blocks.gd" id="1_gn6b5"]
+
+[node name="Blocks" type="Node2D"]
+position = Vector2(0, 4)
+script = ExtResource("1_gn6b5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HSplitContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 2.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+dragging_enabled = false
+
+[node name="WebView" type="WebView" parent="CanvasLayer/Control/HBoxContainer"]
+full_window_size = false
+url = "res://blockly/Level_1.html"
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+dragging_enabled = false
+
+[node name="GameAreaTop" type="SubViewportContainer" parent="CanvasLayer/Control/HBoxContainer/VSplitContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="GameViewportTop" type="SubViewport" parent="CanvasLayer/Control/HBoxContainer/VSplitContainer/GameAreaTop"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+size = Vector2i(740, 210)
+render_target_update_mode = 4
+
+[node name="GameAreaBottom" type="SubViewportContainer" parent="CanvasLayer/Control/HBoxContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+stretch = true
+
+[node name="GameViewportBottom" type="SubViewport" parent="CanvasLayer/Control/HBoxContainer/VSplitContainer/GameAreaBottom"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+size = Vector2i(740, 426)
+render_target_update_mode = 4
