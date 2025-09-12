@@ -1,17 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5641p4t8fe36"]
+[gd_scene load_steps=14 format=3 uid="uid://cbvfja4ca4xtf"]
 
-[ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_xugrg"]
-[ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_oh4uu"]
-[ext_resource type="FontFile" uid="uid://bwmqerqegia36" path="res://game/assets/fonts/PixelOperator8-Bold.ttf" id="3_107dg"]
-[ext_resource type="Texture2D" uid="uid://cykyqn08smnit" path="res://game/assets/sprites/world_tileset.png" id="4_fqnib"]
-[ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_2cqtt"]
-[ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_4anvg"]
-[ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_04lll"]
-[ext_resource type="FontFile" uid="uid://dtc3qjvecpmmx" path="res://game/assets/fonts/PixelOperator8.ttf" id="8_lavcq"]
-[ext_resource type="Script" uid="uid://cngxl3608pkwy" path="res://game/scripts/flag.gd" id="9_eb1qx"]
+[ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_tly25"]
+[ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_3j53k"]
+[ext_resource type="FontFile" uid="uid://bwmqerqegia36" path="res://game/assets/fonts/PixelOperator8-Bold.ttf" id="3_2t5to"]
+[ext_resource type="Texture2D" uid="uid://cykyqn08smnit" path="res://game/assets/sprites/world_tileset.png" id="4_1ottd"]
+[ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_vv5ki"]
+[ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_flfgj"]
+[ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_8r3nl"]
+[ext_resource type="FontFile" uid="uid://dtc3qjvecpmmx" path="res://game/assets/fonts/PixelOperator8.ttf" id="8_ndyhl"]
+[ext_resource type="Script" uid="uid://cngxl3608pkwy" path="res://game/scripts/flag.gd" id="9_4e84o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
-texture = ExtResource("4_fqnib")
+texture = ExtResource("4_1ottd")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -184,21 +184,21 @@ distance = -11.0
 radius = 6.0
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_xugrg")
+script = ExtResource("1_tly25")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("2_oh4uu")
+script = ExtResource("2_3j53k")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 224.0
-offset_top = -90.0
-offset_right = 366.0
-offset_bottom = -67.0
+offset_left = 235.0
+offset_top = -106.0
+offset_right = 377.0
+offset_bottom = -83.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_107dg")
+theme_override_fonts/font = ExtResource("3_2t5to")
 theme_override_font_sizes/font_size = 8
-text = "Level 1"
+text = "Final Level"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -211,7 +211,7 @@ layer_0/tile_data = PackedInt32Array(196648, 0, 13, 262184, 0, 13, 262183, 0, 13
 layer_1/name = "Mid"
 layer_1/tile_data = PackedInt32Array(131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 0, 0, 131097, 0, 0, 131098, 0, 0, 131101, 0, 0, 131102, 0, 0, 131103, 0, 0, 131106, 0, 0, 131107, 0, 0, 131108, 0, 0, 131109, 0, 0, 131110, 0, 0, 131111, 0, 0, 131112, 0, 0, 131113, 0, 1, 65577, 0, 1, 41, 0, 1, -65495, 0, 1, 196607, 0, 1, 131071, 0, 1, 65535, 0, 1, -1, 0, 1, 11, 0, 0, 12, 0, 0, -65522, 0, 0, -65521, 0, 0, -131055, 0, 0, -131054, 0, 0, -65516, 0, 0, -65515, 0, 0, 23, 0, 0, 24, 0, 0)
 
-[node name="Player" parent="." instance=ExtResource("5_2cqtt")]
+[node name="Player" parent="." instance=ExtResource("5_vv5ki")]
 position = Vector2(9, 32)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -221,7 +221,7 @@ limit_bottom = 140
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Killzone" parent="." instance=ExtResource("6_4anvg")]
+[node name="Killzone" parent="." instance=ExtResource("6_flfgj")]
 position = Vector2(131, 41)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -230,7 +230,7 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 
 [node name="Coins" type="Node" parent="."]
 
-[node name="Coin9" parent="Coins" instance=ExtResource("7_04lll")]
+[node name="Coin9" parent="Coins" instance=ExtResource("7_8r3nl")]
 position = Vector2(639, 24)
 
 [node name="Platforms" type="Node" parent="."]
@@ -242,14 +242,14 @@ offset_left = 603.0
 offset_top = -3.0
 offset_right = 775.0
 offset_bottom = 20.0
-theme_override_fonts/font = ExtResource("8_lavcq")
+theme_override_fonts/font = ExtResource("8_ndyhl")
 theme_override_font_sizes/font_size = 8
 text = "Go Up!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag" type="Area2D" parent="."]
 position = Vector2(625, 25)
-script = ExtResource("9_eb1qx")
+script = ExtResource("9_4e84o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
 position = Vector2(-4, -1)
