@@ -11,19 +11,18 @@ config_version=5
 [application]
 
 config/name="Arcademia Space Game Blockly"
-run/main_scene="uid://c6c3ll4og48xw"
+run/main_scene="uid://bm3tmbs13bdom"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Music="*res://scenes/music.tscn"
-Globals="*res://scripts/Globals.gd"
+Music="*res://game/scenes/music.tscn"
+Globals="*res://game/scripts/Globals.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/mode=2
 window/vsync/vsync_mode=0
 
 [dotnet]

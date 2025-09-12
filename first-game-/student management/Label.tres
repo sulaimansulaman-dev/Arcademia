@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cpx54ymdy4wme"]
+
+[ext_resource type="FontFile" uid="uid://b5eliacvbvspn" path="res://student management/Fonts/PressStart2P.ttf" id="1_2j6r6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txl3f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j6r6"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[resource]
+default_font = ExtResource("1_2j6r6")
+Button/styles/normal = SubResource("StyleBoxFlat_txl3f")
+Label/colors/font_color = Color(1, 0.866667, 0.537255, 1)
+Label/fonts/font = ExtResource("1_2j6r6")
+Label/styles/normal = null
+LineEdit/styles/normal = SubResource("StyleBoxFlat_2j6r6")
