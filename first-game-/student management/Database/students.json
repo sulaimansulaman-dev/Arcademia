@@ -1,0 +1,34 @@
+{
+  "1": {
+    "age": 9,
+    "grade": "3rd",
+    "highest level": 1,
+    "id": 1,
+    "name": "Alice",
+    "score": 3
+  },
+  "2": {
+    "age": 9,
+    "grade": "3rd",
+    "highest level": 2,
+    "id": 2,
+    "name": "Bob",
+    "score": 2
+  },
+  "3": {
+    "age": 10,
+    "grade": "4th",
+    "highest level": 1,
+    "id": 3,
+    "name": "Charlie",
+    "score": 2
+  },
+  "4": {
+    "age": 8,
+    "grade": "2nd",
+    "highest level": 2,
+    "id": 4,
+    "name": "SomeoneSomewhere",
+    "score": 1
+  }
+}

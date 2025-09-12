@@ -17,13 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Music="*res://scenes/music.tscn"
-Globals="*res://scripts/Globals.gd"
+Music="*res://game/scenes/music.tscn"
+Globals="*res://game/scripts/Globals.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/mode=2
 window/vsync/vsync_mode=0
 
 [dotnet]
