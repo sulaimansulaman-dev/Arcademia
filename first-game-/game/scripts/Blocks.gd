@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var webview: Control = $CanvasLayer/Control/HBoxContainer/WebView
-@onready var game_area: Control = $CanvasLayer/Control/HBoxContainer/VSplitContainer/GameAreaBottom
-@onready var game_viewport: Viewport = $CanvasLayer/Control/HBoxContainer/VSplitContainer/GameAreaBottom/GameViewportBottom
+@onready var webview: Control = $CanvasLayer/Control/HSplitContainer/WebView
+@onready var game_area: Control = $CanvasLayer/Control/HSplitContainer/VSplitContainer/GameAreaBottom
+@onready var game_viewport: Viewport = $CanvasLayer/Control/HSplitContainer/VSplitContainer/GameAreaBottom/GameViewportBottom
 
 var game_instance: Node = null
 var player_node: Node2D = null
