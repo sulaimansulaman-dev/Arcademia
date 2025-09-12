@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var webview: Control = $CanvasLayer/Control/HSplitContainer/WebView
+@onready var webview: WebView = $CanvasLayer/Control/HSplitContainer/WebView
 @onready var game_area: Control = $CanvasLayer/Control/HSplitContainer/VSplitContainer/GameAreaBottom
 @onready var game_viewport: Viewport = $CanvasLayer/Control/HSplitContainer/VSplitContainer/GameAreaBottom/GameViewportBottom
 
