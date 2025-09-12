@@ -29,6 +29,10 @@ window/vsync/vsync_mode=0
 
 project/assembly_name="Arcademia Space Game Blockly"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/keyboard/plugin.cfg")
+
 [input]
 
 jump={
