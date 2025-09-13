@@ -1,0 +1,257 @@
+[gd_scene load_steps=19 format=3 uid="uid://bhnyjl3vmwvoe"]
+
+[ext_resource type="Script" uid="uid://cft088tajruai" path="res://student management/Scripts/Main.gd" id="1_1g403"]
+[ext_resource type="Texture2D" uid="uid://deaapqekt8ir4" path="res://student management/Heading/Heading 1 (1).png" id="1_tbhi7"]
+[ext_resource type="Texture2D" uid="uid://bpmoh7kknamce" path="res://student management/Background/Student Management backgournd.png" id="2_tjwwt"]
+[ext_resource type="Texture2D" uid="uid://pb334hv63si7" path="res://student management/Heading/Heading 1.png" id="2_txl3f"]
+[ext_resource type="FontFile" uid="uid://b5eliacvbvspn" path="res://student management/Fonts/PressStart2P.ttf" id="3_rlkrk"]
+[ext_resource type="Theme" uid="uid://cpx54ymdy4wme" path="res://student management/Label.tres" id="4_x5pdj"]
+[ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_1g403"]
+[ext_resource type="FontFile" uid="uid://db1iaxiyrov21" path="res://student management/Fonts/Montserrat-Black.ttf" id="7_1g403"]
+[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="8_f13yu"]
+
+[sub_resource type="Theme" id="Theme_f13yu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkrk"]
+bg_color = Color(0.986752, 0.986752, 0.986752, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_x5pdj"]
+Button/styles/normal = ExtResource("6_1g403")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
+LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_rlkrk")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyllx"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqheb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_1g403"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f13yu"]
+bg_color = Color(0.129701, 0.723884, 0.618996, 1)
+border_width_bottom = 4
+border_color = Color(0.0989878, 0.55884, 0.476621, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhqpv"]
+bg_color = Color(0.843137, 0.247059, 0.811765, 1)
+border_width_bottom = 4
+border_color = Color(0.641769, 0.0921522, 0.618566, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2w6f"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+border_width_bottom = 4
+border_color = Color(0.639356, 0.0705533, 7.21961e-07, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 3
+
+[node name="Display" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_1g403")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_f13yu")
+color = Color(0.129412, 0.027451, 0.215686, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1150.0
+offset_bottom = 649.0
+texture = ExtResource("2_tjwwt")
+expand_mode = 1
+
+[node name="studentManagementTop" type="TextureRect" parent="ColorRect"]
+layout_mode = 2
+offset_left = 292.0
+offset_top = 64.0
+offset_right = 854.0
+offset_bottom = 114.0
+texture = ExtResource("1_tbhi7")
+expand_mode = 1
+
+[node name="studentManagemenBottom" type="TextureRect" parent="ColorRect"]
+layout_mode = 2
+offset_left = 264.0
+offset_top = 42.0
+offset_right = 883.0
+offset_bottom = 142.0
+texture = ExtResource("2_txl3f")
+expand_mode = 1
+
+[node name="ItemList" type="ItemList" parent="ColorRect"]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 207.0
+offset_right = 1035.0
+offset_bottom = 525.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -137.5
+offset_right = 120.0
+offset_bottom = 137.5
+grow_vertical = 2
+
+[node name="nameLabel" type="Label" parent="."]
+layout_direction = 4
+layout_mode = 2
+offset_left = 55.0
+offset_top = 210.0
+offset_right = 175.0
+offset_bottom = 230.0
+theme = ExtResource("4_x5pdj")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rlkrk")
+theme_override_font_sizes/font_size = 20
+text = "Name: "
+
+[node name="nameEdit" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 55.0
+offset_top = 234.0
+offset_right = 325.0
+offset_bottom = 265.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_x5pdj")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ageLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 55.0
+offset_top = 269.0
+offset_right = 175.0
+offset_bottom = 289.0
+theme = ExtResource("4_x5pdj")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rlkrk")
+theme_override_font_sizes/font_size = 20
+text = "Age:"
+
+[node name="ageEdit" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 55.0
+offset_top = 293.0
+offset_right = 324.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vyllx")
+
+[node name="levelLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 55.0
+offset_top = 328.0
+offset_right = 175.0
+offset_bottom = 348.0
+theme = ExtResource("4_x5pdj")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rlkrk")
+theme_override_font_sizes/font_size = 20
+text = "Level:"
+
+[node name="levelEdit" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 55.0
+offset_top = 352.0
+offset_right = 325.0
+offset_bottom = 383.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqheb")
+
+[node name="Insert" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 109.0
+offset_top = 408.0
+offset_right = 263.0
+offset_bottom = 438.0
+theme = SubResource("Theme_1g403")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_1g403")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_f13yu")
+text = "Insert"
+
+[node name="Update" type="Button" parent="."]
+layout_mode = 2
+offset_left = 111.0
+offset_top = 413.0
+offset_right = 265.0
+offset_bottom = 443.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_1g403")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_yhqpv")
+text = "Update"
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 2
+offset_left = 111.0
+offset_top = 452.0
+offset_right = 265.0
+offset_bottom = 482.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_1g403")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_e2w6f")
+text = "Delete"
+
+[node name="StudentManager" type="Node" parent="."]
+script = ExtResource("8_f13yu")
