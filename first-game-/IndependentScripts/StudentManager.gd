@@ -12,20 +12,20 @@ func _ready():
 # -----------------------------
 # CRUD
 # -----------------------------
-func add_student(name: String, age: int, badge: String) -> void:
+func add_student(name: String, age: int, level: int) -> void:
 	var id = next_id
-	var student = {"id": id, "name": name, "age": age, "badge": badge}
+	var student = {"id": id, "name": name, "age": age, "level": level}
 	students[str(id)] = student   
 	next_id += 1
 	save_students()
 	print("Current Students:", students)
 
-func update_student(id: int, name: String, age: int, badge: String) -> bool:
+func update_student(id: int, name: String, age: int, level: int) -> bool:
 	var key = str(id)
 	if students.has(key):
 		students[key]["name"] = name
 		students[key]["age"] = age
-		students[key]["badge"] = badge
+		students[key]["level"] = level
 		save_students()
 		return true
 	return false

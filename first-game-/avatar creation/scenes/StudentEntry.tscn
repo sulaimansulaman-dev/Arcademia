@@ -1,12 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxk4u4xdg13pr"]
+[gd_scene load_steps=11 format=3 uid="uid://bxk4u4xdg13pr"]
 
-[ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="1_2kbhe"]
-[ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="2_r3lnk"]
-[ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="3_6i81e"]
-[ext_resource type="Texture2D" uid="uid://cdqnsbghf7ehv" path="res://avatar creation/ui/title_avatar_creation.png" id="4_ot424"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avtws"]
-bg_color = Color(1, 1, 1, 1)
+[ext_resource type="Script" uid="uid://pqx54ub7rneo" path="res://avatar creation/scripts/StudentEntry.gd" id="1_3aihd"]
+[ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_db2e0"]
+[ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="3_jul7y"]
+[ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_60st5"]
+[ext_resource type="Texture2D" uid="uid://dabohhf6bg4me" path="res://avatar creation/Heading/StudentEntryHeading.png" id="5_1vbel"]
+[ext_resource type="StyleBox" uid="uid://b7k6diqwfv2f4" path="res://avatar creation/assets/LineEditTemplate.tres" id="6_10tha"]
+[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="7_ley3r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6wx"]
 bg_color = Color(0.843137, 0.247059, 0.811765, 1)
@@ -16,7 +16,16 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 corner_detail = 5
 
+[sub_resource type="Theme" id="Theme_6i81e"]
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/styles/normal = ExtResource("6_10tha")
+
+[sub_resource type="Theme" id="Theme_ot424"]
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/styles/normal = ExtResource("6_10tha")
+
 [node name="AvatarCreation" type="Node2D"]
+script = ExtResource("1_3aihd")
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -38,46 +47,31 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2kbhe")
+texture = ExtResource("2_db2e0")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="OutfitLabel" type="RichTextLabel" parent="."]
+[node name="NameLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(125, 22)
-offset_left = 280.0
+offset_left = 688.0
 offset_top = 294.0
-offset_right = 430.0
+offset_right = 838.0
 offset_bottom = 324.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
-theme_override_fonts/normal_font = ExtResource("2_r3lnk")
+theme_override_fonts/normal_font = ExtResource("3_jul7y")
 theme_override_font_sizes/normal_font_size = 24
 text = "Age:"
 
-[node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(400, 60)
-offset_left = 401.0
-offset_top = 188.0
-offset_right = 801.0
-offset_bottom = 248.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_avtws")
-
-[node name="LineEdit" type="LineEdit" parent="Panel"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 15.0
-offset_right = 381.0
-offset_bottom = 46.0
-
-[node name="SkinLabel" type="RichTextLabel" parent="."]
+[node name="AgeLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
-offset_left = 279.0
-offset_top = 205.0
-offset_right = 599.0
-offset_bottom = 293.0
+offset_left = 687.0
+offset_top = 211.0
+offset_right = 824.0
+offset_bottom = 233.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
-theme_override_fonts/normal_font = ExtResource("2_r3lnk")
+theme_override_fonts/normal_font = ExtResource("3_jul7y")
 theme_override_font_sizes/normal_font_size = 24
 text = "Name:"
 
@@ -88,14 +82,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 680.0
-offset_top = 966.0
-offset_right = 1239.16
-offset_bottom = 1026.0
+offset_left = 668.0
+offset_top = 818.0
+offset_right = 1227.16
+offset_bottom = 878.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_6i81e")
+theme_override_fonts/font = ExtResource("4_60st5")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxFlat_6a6wx")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_6a6wx")
@@ -111,10 +105,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6a6wx")
 text = "Save"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 282.0
-offset_top = 390.0
-offset_right = 1589.0
-offset_bottom = 910.0
+offset_left = 462.0
+offset_top = 430.0
+offset_right = 1521.0
+offset_bottom = 707.0
 
 [node name="TitleImage" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(903, 190)
@@ -127,19 +121,21 @@ offset_right = 2478.75
 offset_bottom = 392.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_ot424")
+texture = ExtResource("5_1vbel")
 
-[node name="Panel2" type="Panel" parent="."]
-custom_minimum_size = Vector2(400, 60)
-offset_left = 401.0
-offset_top = 277.0
-offset_right = 801.0
-offset_bottom = 337.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_avtws")
+[node name="NameEdit" type="LineEdit" parent="."]
+offset_left = 856.0
+offset_top = 208.0
+offset_right = 1234.0
+offset_bottom = 239.0
+theme = SubResource("Theme_6i81e")
 
-[node name="LineEdit" type="LineEdit" parent="Panel2"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 15.0
-offset_right = 381.0
-offset_bottom = 46.0
+[node name="AgeEdit" type="LineEdit" parent="."]
+offset_left = 856.0
+offset_top = 288.0
+offset_right = 1234.0
+offset_bottom = 319.0
+theme = SubResource("Theme_ot424")
+
+[node name="StudentManager" type="Node2D" parent="."]
+script = ExtResource("7_ley3r")

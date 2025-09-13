@@ -8,7 +8,7 @@
 [ext_resource type="Theme" uid="uid://cpx54ymdy4wme" path="res://student management/Label.tres" id="4_x5pdj"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_1g403"]
 [ext_resource type="FontFile" uid="uid://db1iaxiyrov21" path="res://student management/Fonts/Montserrat-Black.ttf" id="7_1g403"]
-[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://student management/Scripts/StudentManager.gd" id="8_f13yu"]
+[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="8_f13yu"]
 
 [sub_resource type="Theme" id="Theme_f13yu"]
 
@@ -192,7 +192,7 @@ offset_bottom = 324.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_vyllx")
 
-[node name="badgeLabel" type="Label" parent="."]
+[node name="levelLabel" type="Label" parent="."]
 layout_mode = 2
 offset_left = 55.0
 offset_top = 328.0
@@ -202,9 +202,9 @@ theme = ExtResource("4_x5pdj")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_rlkrk")
 theme_override_font_sizes/font_size = 20
-text = "Badge:"
+text = "Level:"
 
-[node name="badgeEdit" type="LineEdit" parent="."]
+[node name="levelEdit" type="LineEdit" parent="."]
 layout_mode = 2
 offset_left = 55.0
 offset_top = 352.0
@@ -214,6 +214,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqheb")
 
 [node name="Insert" type="Button" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 109.0
 offset_top = 408.0
@@ -231,9 +232,9 @@ text = "Insert"
 [node name="Update" type="Button" parent="."]
 layout_mode = 2
 offset_left = 111.0
-offset_top = 450.0
+offset_top = 413.0
 offset_right = 265.0
-offset_bottom = 480.0
+offset_bottom = 443.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_1g403")
 theme_override_font_sizes/font_size = 20
@@ -243,9 +244,9 @@ text = "Update"
 [node name="Delete" type="Button" parent="."]
 layout_mode = 2
 offset_left = 111.0
-offset_top = 492.0
+offset_top = 452.0
 offset_right = 265.0
-offset_bottom = 522.0
+offset_bottom = 482.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_1g403")
 theme_override_font_sizes/font_size = 20
