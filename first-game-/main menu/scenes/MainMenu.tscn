@@ -113,7 +113,7 @@ text = "ASTRONAUT ADVENTURES"
 
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level3" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level4" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="VBoxContainer/Avatar" to="." method="_on_avatar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
