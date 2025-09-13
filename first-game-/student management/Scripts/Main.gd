@@ -2,13 +2,13 @@ extends Control
 
 var display_keys := []
 
-@onready var name_input: LineEdit = $VBoxContainer/nameEdit
-@onready var age_input: LineEdit = $VBoxContainer/ageEdit
-@onready var grade_input: LineEdit = $VBoxContainer/badgeEdit
+@onready var name_input: LineEdit = $nameEdit
+@onready var age_input: LineEdit = $ageEdit
+@onready var grade_input: LineEdit = $badgeEdit
 
-@onready var insert_button: Button = $VBoxContainer/Insert
-@onready var update_button: Button = $VBoxContainer/Update
-@onready var delete_button: Button = $VBoxContainer/Delete
+@onready var insert_button: Button = $Insert
+@onready var update_button: Button = $Update
+@onready var delete_button: Button = $Delete
 @onready var student_list: ItemList = $ColorRect/ItemList
 
 @onready var student_manager: Node = $StudentManager
