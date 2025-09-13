@@ -1,59 +1,74 @@
 extends Node
 
-var students := {}   # Dictionary of students
-var next_id := 1     # Auto-increment ID
+# -----------------------------
+# Data
+# -----------------------------
+var students := {}
+var next_id := 1
+
+func _ready():
+	load_students()
 
 # -----------------------------
-# CRUD FUNCTIONS
+# CRUD
 # -----------------------------
-func add_student(name: String, age: int, badge: String):
-	var student = {
-		"id": next_id,
-		"name": name,
-		"age": age,
-		"badge": badge,
-	}
-	students[next_id] = student
+func add_student(name: String, age: int, badge: String) -> void:
+	var id = next_id
+	var student = {"id": id, "name": name, "age": age, "badge": badge}
+	students[str(id)] = student   
 	next_id += 1
 	save_students()
+	print("Current Students:", students)
 
-func update_student(id: int, name: String, age: int, grade: String):
-	if students.has(id):
-		students[id]["name"] = name
-		students[id]["age"] = age
-		students[id]["grade"] = grade
+func update_student(id: int, name: String, age: int, badge: String) -> bool:
+	var key = str(id)
+	if students.has(key):
+		students[key]["name"] = name
+		students[key]["age"] = age
+		students[key]["badge"] = badge
 		save_students()
+		return true
+	return false
 
-func delete_student(id: int):
-	if students.has(id):
-		students.erase(id)
+func delete_student(id: int) -> bool:
+	var key = str(id)
+	if students.has(key):
+		students.erase(key)
 		save_students()
+		return true
+	return false
 
 # -----------------------------
-# SAVE / LOAD TO FILE
+# Save / Load
 # -----------------------------
-func save_students():
-	var file = FileAccess.open("user://students.json", FileAccess.WRITE)
-	if file:
-		file.store_string(JSON.stringify(students, "  ", true))
-		file.close()
+func save_students() -> void:
+	var f = FileAccess.open("user://students.json", FileAccess.WRITE)
+	if f:
+		f.store_string(JSON.stringify(students, "  ", true))
+		f.close()
+	else:
+		push_error("Failed to open user://students.json for writing")
 
-func load_students():
-	if FileAccess.file_exists("user://students.json"):
-		var file = FileAccess.open("user://students.json", FileAccess.READ)
-		if file:
-			var content = file.get_as_text()
-			var data = JSON.parse_string(content)
-			if typeof(data) == TYPE_DICTIONARY:
-				students = data
-				if students.size() > 0:
-					next_id = int(students.keys().max()) + 1
-			file.close()
-	print(OS.get_user_data_dir())
-	#else:
-		# Dummy students for test
-		#add_student("Alice", 14, "9th", 1)
-	#	add_student("Bob", 15, "10th", 2)
-	#	add_student("Charlie", 16, "11th", 3)
+func load_students() -> void:
+	if not FileAccess.file_exists("user://students.json"):
+		return
+	var f = FileAccess.open("user://students.json", FileAccess.READ)
+	if f:
+		var content = f.get_as_text()
+		f.close()
+		var parsed = JSON.parse_string(content)
 		
-		
+		if typeof(parsed) == TYPE_DICTIONARY:
+			students = parsed
+
+			var max_id = 0
+			for k in students.keys():
+				var id_int = int(k)
+				students[k]["id"] = id_int
+				if id_int > max_id:
+					max_id = id_int
+			next_id = max_id + 1
+		else:
+			push_warning("Loaded JSON is not a Dictionary or invalid.")
+	else:
+		push_error("Failed to open user://students.json for reading")
