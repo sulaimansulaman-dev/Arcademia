@@ -186,6 +186,7 @@ offset_bottom = 633.0
 [node name="nameLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
+layout_mode = 0
 offset_left = 120.0
 offset_top = 221.0
 offset_right = 257.0
@@ -208,6 +209,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 [node name="ageLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
+layout_mode = 0
 offset_left = 119.0
 offset_top = 343.0
 offset_right = 256.0
@@ -218,6 +220,7 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Age:"
 
 [node name="ageEdit" type="LineEdit" parent="."]
+layout_mode = 0
 offset_left = 117.0
 offset_top = 389.0
 offset_right = 516.0

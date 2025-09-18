@@ -52,6 +52,7 @@ expand_mode = 3
 
 [node name="PrevSkin" type="TextureButton" parent="ColorRect"]
 custom_minimum_size = Vector2(61, 61)
+layout_mode = 0
 offset_left = 62.0
 offset_top = 314.0
 offset_right = 123.0
