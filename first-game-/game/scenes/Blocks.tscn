@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://jhrt3bmhtry"]
+[gd_scene load_steps=2 format=3 uid="uid://cext8vnb4truy"]
 
-[ext_resource type="Script" uid="uid://bnmnkhmmsbdjn" path="res://game/scripts/blocks.gd" id="1_32vjm"]
+[ext_resource type="Script" uid="uid://sl1bapbk3s18" path="res://game/scripts/Blocks.gd" id="1_32vjm"]
 
 [node name="blocks" type="Node2D"]
 script = ExtResource("1_32vjm")
@@ -27,11 +27,63 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="WebView" type="WebView" parent="CanvasLayer/Control/HSplitContainer"]
+[node name="WebViewOverlay" type="Control" parent="CanvasLayer/Control/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.89
+
+[node name="Lvl1_Blockly" type="WebView" parent="CanvasLayer/Control/HSplitContainer/WebViewOverlay"]
+full_window_size = false
+url = "res://game/blockly/Level_1.html"
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="Lvl2_Blockly" type="WebView" parent="CanvasLayer/Control/HSplitContainer/WebViewOverlay"]
 full_window_size = false
 url = "res://game/blockly/Level_2.html"
 custom_minimum_size = Vector2(400, 300)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="Lvl3_Blockly" type="WebView" parent="CanvasLayer/Control/HSplitContainer/WebViewOverlay"]
+full_window_size = false
+url = "res://game/blockly/Level_3.html"
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="Lvl4_Blockly" type="WebView" parent="CanvasLayer/Control/HSplitContainer/WebViewOverlay"]
+full_window_size = false
+url = "res://game/blockly/Level_4.html"
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 9.0

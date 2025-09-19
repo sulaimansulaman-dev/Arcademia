@@ -18,6 +18,7 @@
     <button id="run">🚀 Run in Godot</button>
     <button id="clear">🗑️ Clear</button>
     <button id="reset">🔄 Reset Level</button>
+    <button id="back">⬅️ Back</button>
     <span class="hint">Stack blocks under <b>start</b>, then click Run.</span>
   </div>
   <div id="blocklyDiv"></div>
@@ -117,6 +118,10 @@
 
     document.getElementById('reset').addEventListener('click', () => {
       sendToGodot({ type: 'reset_level' });
+    });
+    
+    document.getElementById('back').addEventListener('click', () => {
+    sendToGodot({ type: 'back' });
     });
   </script>
 </body>
