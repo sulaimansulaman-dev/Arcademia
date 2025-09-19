@@ -61,8 +61,7 @@ func _on_update_pressed():
 	var id = display_keys[idx]
 	name = name_input.text.strip_edges()
 	var age = int(age_input.text) if age_input.text != "" else 0
-	var level = int(level_input.text) if level_input.text != "" else 0
-	if student_manager.update_student(id, name, age, level):
+	if student_manager.update_student(id, name, age):
 		refresh_student_list()
 	else:
 		push_warning("Failed to update student ID %d" % id)
@@ -86,4 +85,3 @@ func _on_item_selected(index: int) -> void:
 	var s = student_manager.students[str(id)]
 	name_input.text = str(s["name"])
 	age_input.text = str(s["age"])
-	level_input.text = str(s["level"])

@@ -20,12 +20,11 @@ func add_student(name: String, age: int, level: int) -> void:
 	save_students()
 	print("Current Students:", students)
 
-func update_student(id: int, name: String, age: int, level: int) -> bool:
+func update_student(id: int, name: String, age: int) -> bool:
 	var key = str(id)
 	if students.has(key):
 		students[key]["name"] = name
 		students[key]["age"] = age
-		students[key]["level"] = level
 		save_students()
 		return true
 	return false
