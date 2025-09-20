@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dsfe31pim6wrl"]
+[gd_scene load_steps=14 format=3 uid="uid://ua6esvpp7w63"]
 
-[ext_resource type="Script" uid="uid://pqx54ub7rneo" path="res://avatar creation/scripts/StudentEntry.gd" id="1_pnet4"]
+[ext_resource type="Script" uid="uid://bluhyu4uh5lrm" path="res://avatar creation/scenes/sign_up.gd" id="1_yq2ht"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_yq2ht"]
 [ext_resource type="Texture2D" uid="uid://d0jgidtpnuodn" path="res://avatar creation/ui/SignUp_title.png" id="3_yq2ht"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_ljn24"]
@@ -60,7 +60,7 @@ LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
 LineEdit/styles/normal = SubResource("StyleBoxFlat_h7b4o")
 
 [node name="AvatarCreation" type="Node2D"]
-script = ExtResource("1_pnet4")
+script = ExtResource("1_yq2ht")
 metadata/_edit_vertical_guides_ = [835.0, 872.0]
 
 [node name="ColorRect3" type="ColorRect" parent="."]
@@ -118,6 +118,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="TextureButton" parent="ColorRect"]
 custom_minimum_size = Vector2(61, 61)
+layout_mode = 0
 offset_left = 57.0
 offset_top = 59.0
 offset_right = 118.0
@@ -127,6 +128,7 @@ texture_normal = ExtResource("4_yydbn")
 [node name="NameLabel" type="RichTextLabel" parent="ColorRect"]
 clip_contents = false
 custom_minimum_size = Vector2(125, 22)
+layout_mode = 0
 offset_left = 449.0
 offset_top = 378.0
 offset_right = 862.0
@@ -139,6 +141,7 @@ text = "Confirm Password:"
 [node name="AgeLabel" type="RichTextLabel" parent="ColorRect"]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
+layout_mode = 0
 offset_left = 643.0
 offset_top = 298.0
 offset_right = 860.0
@@ -148,7 +151,8 @@ theme_override_fonts/normal_font = ExtResource("4_ljn24")
 theme_override_font_sizes/normal_font_size = 24
 text = "Password:"
 
-[node name="PassConfirmEdit" type="LineEdit" parent="ColorRect"]
+[node name="passwordCon" type="LineEdit" parent="ColorRect"]
+layout_mode = 0
 offset_left = 900.0
 offset_top = 371.0
 offset_right = 1287.0
@@ -198,7 +202,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6a6wx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6a6wx")
 text = "Sign Up"
 
-[node name="UsernameEdit" type="LineEdit" parent="."]
+[node name="Username" type="LineEdit" parent="."]
 offset_left = 904.0
 offset_top = 208.0
 offset_right = 1291.0
@@ -207,7 +211,8 @@ size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[node name="UsernameEdit" type="LineEdit" parent="UsernameEdit"]
+[node name="password" type="LineEdit" parent="Username"]
+layout_mode = 0
 offset_top = 81.0
 offset_right = 387.0
 offset_bottom = 116.0
@@ -217,3 +222,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="StudentManager" type="Node2D" parent="."]
 script = ExtResource("7_1tgxs")
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]

@@ -102,6 +102,10 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
 text = "Exit"
 
+[node name="SignUp" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sign Up"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 300.0
@@ -117,3 +121,4 @@ text = "ASTRONAUT ADVENTURES"
 [connection signal="pressed" from="VBoxContainer/Level4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="VBoxContainer/Avatar" to="." method="_on_avatar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/SignUp" to="." method="_on_sign_up_pressed"]
