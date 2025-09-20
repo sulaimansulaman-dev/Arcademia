@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://btp6lrlbtb8yj"]
 
-[ext_resource type="Script" path="res://avatar creation/scripts/StudentEntry.gd" id="1_3aihd"]
+[ext_resource type="Script" uid="uid://pqx54ub7rneo" path="res://avatar creation/scripts/StudentEntry.gd" id="1_3aihd"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_db2e0"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="3_jul7y"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_60st5"]
