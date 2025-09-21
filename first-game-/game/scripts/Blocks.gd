@@ -13,6 +13,11 @@ var player_node: Node2D = null
 var last_program: Array = []
 var program_running: bool = false
 
+# --- New variables for idle detection
+var last_player_pos: Vector2
+var idle_time: float = 0.0
+var idle_threshold: float = 1.0 # seconds before reload
+
 
 func _ready() -> void:
 	# Hide all WebViews initially
@@ -25,6 +30,20 @@ func _ready() -> void:
 
 	# Load current level
 	load_level_and_blocks()
+
+
+func _process(delta: float) -> void:
+	# Only check while Blockly program is running
+	if program_running and player_node:
+		if player_node.position == last_player_pos:
+			idle_time += delta
+			if idle_time >= idle_threshold:
+				print("⚠️ Player stuck during program! Reloading level...")
+				reload_level()
+		else:
+			idle_time = 0.0
+			last_player_pos = player_node.position
+
 
 # -----------------------
 # 🔹 Go back to main menu
@@ -91,6 +110,8 @@ func reload_level() -> void:
 	Engine.time_scale = 1
 	last_program.clear()
 	program_running = false
+	idle_time = 0.0
+	last_player_pos = Vector2.ZERO
 	load_level_and_blocks()
 
 
@@ -111,12 +132,14 @@ func _on_web_view_ipc_message(message: String) -> void:
 		"back":
 			go_back()
 			
-		
-
 
 # 🔹 Run Blockly program
 func _run_program(commands: Array) -> void:
 	program_running = true
+	idle_time = 0.0
+	if player_node:
+		last_player_pos = player_node.position
+
 	for cmd_data in commands:
 		if not program_running:
 			break
@@ -124,6 +147,7 @@ func _run_program(commands: Array) -> void:
 		var steps: int = int(cmd_data.get("steps", 1))
 		await _move_player(cmd, steps)
 		await get_tree().create_timer(0.65).timeout
+
 	program_running = false
 
 

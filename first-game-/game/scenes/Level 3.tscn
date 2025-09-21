@@ -204,10 +204,10 @@ script = ExtResource("2_5b2t4")
 [node name="ScoreLabel" type="Label" parent="GameManager"]
 anchors_preset = -1
 anchor_top = 0.016666668
-offset_left = 1023.0
-offset_top = 496.0
-offset_right = 1165.0
-offset_bottom = 519.0
+offset_left = 972.0
+offset_top = 290.0
+offset_right = 1114.0
+offset_bottom = 313.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_tx2jw")
 theme_override_font_sizes/font_size = 8
@@ -245,10 +245,10 @@ scale = Vector2(1.4, 1.4)
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label3" type="Label" parent="Labels"]
-offset_left = 1076.0
-offset_top = 492.0
-offset_right = 1248.0
-offset_bottom = 515.0
+offset_left = 1021.0
+offset_top = 320.0
+offset_right = 1193.0
+offset_bottom = 343.0
 theme_override_fonts/font = ExtResource("8_f3mg3")
 theme_override_font_sizes/font_size = 8
 text = "Go Up!"

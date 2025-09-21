@@ -246,10 +246,10 @@ scale = Vector2(1.4, 1.4)
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label3" type="Label" parent="Labels"]
-offset_left = 1212.0
-offset_top = 368.0
-offset_right = 1384.0
-offset_bottom = 391.0
+offset_left = 1210.0
+offset_top = 345.0
+offset_right = 1382.0
+offset_bottom = 368.0
 theme_override_fonts/font = ExtResource("8_lavcq")
 theme_override_font_sizes/font_size = 8
 text = "Go Up!"
