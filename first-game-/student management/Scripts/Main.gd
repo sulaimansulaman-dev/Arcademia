@@ -14,6 +14,8 @@ var display_keys := []
 @onready var student_manager: Node = $StudentManager
 
 func _ready():
+	
+#	$KeyboardLayout.show()
 	print("Test")
 	#insert_button.connect("pressed", Callable(self, "_on_add_pressed"))
 	update_button.connect("pressed", Callable(self, "_on_update_pressed"))
@@ -24,6 +26,9 @@ func _ready():
 	refresh_student_list()
 	name_input.grab_focus()
 	print("Student manager exists:", student_manager)
+	
+	$nameEdit.connect("focus_entered", Callable(self, "_on_username_focus"))
+	
 
 func refresh_student_list():
 	student_list.clear()
@@ -85,3 +90,6 @@ func _on_item_selected(index: int) -> void:
 	var s = student_manager.students[str(id)]
 	name_input.text = str(s["name"])
 	age_input.text = str(s["age"])
+	
+func	_on_user_name_focus	()	: 
+	KeyboardManager.show_for($nameEdit)
