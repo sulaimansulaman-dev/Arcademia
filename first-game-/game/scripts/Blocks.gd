@@ -1,6 +1,9 @@
 extends Node2D
 
-@onready var webview: Control = $CanvasLayer/Control/HSplitContainer/WebView
+@onready var lvl1_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl1_Blockly
+@onready var lvl2_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl2_Blockly
+@onready var lvl3_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl3_Blockly
+@onready var lvl4_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl4_Blockly
 @onready var game_area: Control = $CanvasLayer/Control/HSplitContainer/VSplitContainer/GameAreaBottom
 @onready var game_viewport: Viewport = $CanvasLayer/Control/HSplitContainer/VSplitContainer/GameAreaBottom/GameViewportBottom
 
@@ -12,26 +15,45 @@ var program_running: bool = false
 
 
 func _ready() -> void:
+	# Hide all WebViews initially
+	for wv in [lvl1_webview, lvl2_webview, lvl3_webview, lvl4_webview]:
+		if wv:
+			wv.visible = false
+			# Connect safely using Callable
+			if wv.has_signal("ipc_message"):
+				wv.connect("ipc_message", Callable(self, "_on_web_view_ipc_message"))
+
+	# Load current level
 	load_level_and_blocks()
-	if webview.has_signal("ipc_message"):
-		webview.ipc_message.connect(_on_web_view_ipc_message)
-	print("GameArea size = ", game_area.size)
+
+# -----------------------
+# 🔹 Go back to main menu
+func go_back() -> void:
+	var menu_path = "res://main menu/scenes/MainMenu.tscn"
+	if ResourceLoader.exists(menu_path):
+		get_tree().change_scene_to_file(menu_path)
+	else:
+		push_error("❌ MainMenu scene not found at: " + menu_path)
 
 
-# 🔹 Loads correct HTML + correct Level scene
 func load_level_and_blocks() -> void:
+	# Hide all first
+	for wv in [lvl1_webview, lvl2_webview, lvl3_webview, lvl4_webview]:
+		wv.visible = false
+
 	match Globals.level_to_load:
 		1:
-			webview.url = "res://game/blockly/Level_1.html"
 			load_game("res://game/scenes/Level 1.tscn", true)
+			lvl1_webview.visible = true
+			
 		2:
-			webview.url = "res://game/blockly/Level_2.html"
+			lvl2_webview.visible = true
 			load_game("res://game/scenes/Level 2.tscn", true)
 		3:
-			webview.url = "res://game/blockly/Level_3.html"
+			lvl3_webview.visible = true
 			load_game("res://game/scenes/Level 3.tscn", true)
 		4:
-			webview.url = "res://game/blockly/Level_4.html"
+			lvl4_webview.visible = true
 			load_game("res://game/scenes/Level 4.tscn", true)
 
 
@@ -87,6 +109,10 @@ func _on_web_view_ipc_message(message: String) -> void:
 				await _run_program(commands)
 		"reset_level":
 			reload_level()
+		"back":
+			go_back()
+			
+		
 
 
 # 🔹 Run Blockly program
