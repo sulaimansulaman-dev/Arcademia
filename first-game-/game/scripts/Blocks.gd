@@ -4,8 +4,8 @@ extends Node2D
 @onready var lvl2_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl2_Blockly
 @onready var lvl3_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl3_Blockly
 @onready var lvl4_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl4_Blockly
-@onready var game_area: Control = $CanvasLayer/Control/HSplitContainer/VSplitContainer/GameAreaBottom
-@onready var game_viewport: Viewport = $CanvasLayer/Control/HSplitContainer/VSplitContainer/GameAreaBottom/GameViewportBottom
+@onready var game_area: Control = $CanvasLayer/Control/HSplitContainer/GameAreaBottom
+@onready var game_viewport: Viewport = $CanvasLayer/Control/HSplitContainer/GameAreaBottom/GameViewportBottom
 
 var game_instance: Node = null
 var player_node: Node2D = null
@@ -45,7 +45,6 @@ func load_level_and_blocks() -> void:
 		1:
 			load_game("res://game/scenes/Level 1.tscn", true)
 			lvl1_webview.visible = true
-			
 		2:
 			lvl2_webview.visible = true
 			load_game("res://game/scenes/Level 2.tscn", true)
@@ -124,7 +123,7 @@ func _run_program(commands: Array) -> void:
 		var cmd: String = str(cmd_data.get("cmd", ""))
 		var steps: int = int(cmd_data.get("steps", 1))
 		await _move_player(cmd, steps)
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.65).timeout
 	program_running = false
 
 

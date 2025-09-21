@@ -12,7 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 		# reset time scale immediately before reload
 		Engine.time_scale = 1
 
-		var blocks_scene = get_tree().get_root().get_node("Blocks") # adjust path
+		var blocks_scene = get_tree().get_root().get_node("blocks") # adjust path
 		if blocks_scene:
 			blocks_scene.program_running = false
 
