@@ -183,7 +183,7 @@ distance = 2.0
 [node name="Game" type="Node2D"]
 position = Vector2(0, -2)
 script = ExtResource("1_xugrg")
-metadata/_edit_horizontal_guides_ = [1206.0, -502.0]
+metadata/_edit_horizontal_guides_ = [304.0, -360.0]
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -222,23 +222,23 @@ scale = Vector2(1.4, 1.4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Mid"
-layer_0/tile_data = PackedInt32Array(1376324, 0, 1, 1245210, 0, 1, 1310746, 0, 1, 1376282, 0, 1, 1441818, 0, 1, 1441819, 0, 0, 1441820, 0, 0, 1441821, 0, 0, 1441822, 0, 0, 1441823, 0, 0, 1441828, 0, 0, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1441836, 0, 0, 1441837, 0, 0, 1441838, 0, 0, 1441839, 0, 0, 1441840, 0, 0, 1441845, 0, 0, 1441846, 0, 0, 1441847, 0, 0, 1441848, 0, 0, 1441849, 0, 0, 1441850, 0, 0, 1441855, 0, 0, 1441856, 0, 0, 1441857, 0, 0, 1441858, 0, 0, 1441859, 0, 0, 1245252, 0, 1, 1310788, 0, 1, 1441860, 0, 1)
+layer_0/tile_data = PackedInt32Array(1441818, 0, 1, 1507354, 0, 1, 1572890, 0, 1, 1638426, 0, 1, 1638427, 0, 0, 1638428, 0, 0, 1638429, 0, 0, 1638430, 0, 0, 1638431, 0, 0, 1638436, 0, 0, 1638437, 0, 0, 1638438, 0, 0, 1638439, 0, 0, 1638444, 0, 0, 1638445, 0, 0, 1638446, 0, 0, 1638447, 0, 0, 1638448, 0, 0, 1638453, 0, 0, 1638454, 0, 0, 1638455, 0, 0, 1638456, 0, 0, 1638457, 0, 0, 1638458, 0, 0, 1638463, 0, 0, 1638464, 0, 0, 1638465, 0, 0, 1638466, 0, 1, 1572930, 0, 1, 1507394, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("5_2cqtt")]
-position = Vector2(618.00006, 493)
+position = Vector2(617.00006, 560)
 scale = Vector2(1.4, 1.4)
 
 [node name="Killzone" parent="." instance=ExtResource("6_4anvg")]
-position = Vector2(1287, 516)
+position = Vector2(985, 610)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-1, -3)
+position = Vector2(0, -1)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
 
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_04lll")]
-position = Vector2(1511, 482)
+position = Vector2(1465.9999, 549)
 scale = Vector2(1.4, 1.4)
 
 [node name="Platforms" type="Node" parent="."]
@@ -246,10 +246,10 @@ scale = Vector2(1.4, 1.4)
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label3" type="Label" parent="Labels"]
-offset_left = 1210.0
-offset_top = 345.0
-offset_right = 1382.0
-offset_bottom = 368.0
+offset_left = 1212.0
+offset_top = 368.0
+offset_right = 1384.0
+offset_bottom = 391.0
 theme_override_fonts/font = ExtResource("8_lavcq")
 theme_override_font_sizes/font_size = 8
 text = "Go Up!"
