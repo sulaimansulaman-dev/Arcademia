@@ -1,12 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmhlnsno3adbk"]
+[gd_scene load_steps=22 format=3 uid="uid://dtn1j44bwfbxq"]
 
-[ext_resource type="Script" path="res://avatar creation/scenes/login.gd" id="1_kv00c"]
+[ext_resource type="Script" uid="uid://pqx54ub7rneo" path="res://avatar creation/scripts/StudentEntry.gd" id="1_pnet4"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_yq2ht"]
-[ext_resource type="Texture2D" path="res://avatar creation/ui/Login_title.png" id="3_yydbn"]
+[ext_resource type="Texture2D" uid="uid://cgi41rtsdqwla" path="res://avatar creation/ui/Login_title.png" id="3_yydbn"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_ljn24"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="5_h7b4o"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_wldpv"]
-[ext_resource type="Script" path="res://IndependentScripts/StudentManager.gd" id="7_1tgxs"]
+[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="7_1tgxs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6wx"]
 bg_color = Color(0.843137, 0.247059, 0.811765, 1)
@@ -115,7 +115,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [node name="AvatarCreation" type="Node2D"]
-script = ExtResource("1_kv00c")
+script = ExtResource("1_pnet4")
 metadata/_edit_vertical_guides_ = [835.0]
 
 [node name="ColorRect3" type="ColorRect" parent="."]
@@ -273,6 +273,3 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j0fik")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_q8yx2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b8e5g")
 text = "Login"
-
-[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="SaveButton2" to="." method="_on_save_button_2_pressed"]

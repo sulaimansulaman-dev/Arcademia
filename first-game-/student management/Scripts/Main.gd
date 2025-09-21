@@ -2,20 +2,22 @@ extends Control
 
 var display_keys := []
 
-@onready var name_input: LineEdit = $VBoxContainer/nameEdit
-@onready var age_input: LineEdit = $VBoxContainer/ageEdit
-@onready var grade_input: LineEdit = $VBoxContainer/badgeEdit
+@onready var name_input: LineEdit = $nameEdit
+@onready var age_input: LineEdit = $ageEdit
+@onready var level_input: LineEdit = $levelEdit
 
-@onready var insert_button: Button = $VBoxContainer/Insert
-@onready var update_button: Button = $VBoxContainer/Update
-@onready var delete_button: Button = $VBoxContainer/Delete
+@onready var insert_button: Button = $Insert
+@onready var update_button: Button = $Update
+@onready var delete_button: Button = $Delete
 @onready var student_list: ItemList = $ColorRect/ItemList
 
 @onready var student_manager: Node = $StudentManager
 
 func _ready():
+	
+#	$KeyboardLayout.show()
 	print("Test")
-	insert_button.connect("pressed", Callable(self, "_on_add_pressed"))
+	#insert_button.connect("pressed", Callable(self, "_on_add_pressed"))
 	update_button.connect("pressed", Callable(self, "_on_update_pressed"))
 	delete_button.connect("pressed", Callable(self, "_on_delete_pressed"))
 	student_list.connect("item_selected", Callable(self, "_on_item_selected"))
@@ -24,6 +26,9 @@ func _ready():
 	refresh_student_list()
 	name_input.grab_focus()
 	print("Student manager exists:", student_manager)
+	
+	$nameEdit.connect("focus_entered", Callable(self, "_on_username_focus"))
+	
 
 func refresh_student_list():
 	student_list.clear()
@@ -35,23 +40,22 @@ func refresh_student_list():
 	for id_int in key_list:
 		display_keys.append(id_int)
 		var s = student_manager.students[str(id_int)]
-		student_list.add_item("%d - %s (Age: %d, Badge: %s)" % [
-			id_int, s["name"], s["age"], s["badge"]
-		])
+		print(s)
+		student_list.add_item("%d - %s [Age: %d, Level: %d]" % [id_int, s["name"], s["age"], s["level"]])
 
-func _on_add_pressed():
-	name = name_input.text.strip_edges()
-	var age = int(age_input.text) if age_input.text != "" else 0
-	var grade = grade_input.text.strip_edges()
-
-	if name == "":
-		push_warning("Please enter a name")
-		return
-	student_manager.add_student(name, age, grade)
-	refresh_student_list()
-	name_input.text = ""
-	age_input.text = ""
-	grade_input.text = ""
+#func _on_add_pressed():
+	#name = name_input.text.strip_edges()
+	#var age = int(age_input.text) if age_input.text != "" else 0
+	#var grade = grade_input.text.strip_edges()
+#
+	#if name == "":
+		#push_warning("Please enter a name")
+		#return
+	#student_manager.add_student(name, age, grade)
+	#refresh_student_list()
+	#name_input.text = ""
+	#age_input.text = ""
+	#grade_input.text = ""
 
 func _on_update_pressed():
 	var sel = student_list.get_selected_items()
@@ -62,8 +66,7 @@ func _on_update_pressed():
 	var id = display_keys[idx]
 	name = name_input.text.strip_edges()
 	var age = int(age_input.text) if age_input.text != "" else 0
-	var grade = grade_input.text.strip_edges()
-	if student_manager.update_student(id, name, age, grade):
+	if student_manager.update_student(id, name, age):
 		refresh_student_list()
 	else:
 		push_warning("Failed to update student ID %d" % id)
@@ -87,4 +90,6 @@ func _on_item_selected(index: int) -> void:
 	var s = student_manager.students[str(id)]
 	name_input.text = str(s["name"])
 	age_input.text = str(s["age"])
-	grade_input.text = str(s["badge"])
+	
+func	_on_user_name_focus	()	: 
+	KeyboardManager.show_for($nameEdit)

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Music="*res://game/scenes/music.tscn"
 Globals="*res://game/scripts/Globals.gd"
+KeyboardManager="*res://IndependentScripts/KeyboardManager.gd"
 
 [display]
 
@@ -31,7 +32,7 @@ project/assembly_name="Arcademia Space Game Blockly"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/keyboard/plugin.cfg")
+enabled=PackedStringArray("res://addons/keyboard/plugin.cfg", "res://addons/onscreenkeyboard/plugin.cfg")
 
 [input]
 
@@ -55,5 +56,6 @@ move_right={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

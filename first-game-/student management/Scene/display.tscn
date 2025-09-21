@@ -1,17 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhnyjl3vmwvoe"]
+[gd_scene load_steps=26 format=3 uid="uid://bhnyjl3vmwvoe"]
 
 [ext_resource type="Script" uid="uid://cft088tajruai" path="res://student management/Scripts/Main.gd" id="1_1g403"]
-[ext_resource type="Texture2D" uid="uid://deaapqekt8ir4" path="res://student management/Heading/Heading 1 (1).png" id="1_tbhi7"]
-[ext_resource type="Texture2D" uid="uid://pb334hv63si7" path="res://student management/Heading/Heading 1.png" id="2_txl3f"]
-[ext_resource type="FontFile" uid="uid://b5eliacvbvspn" path="res://student management/Fonts/PressStart2P.ttf" id="3_rlkrk"]
-[ext_resource type="Theme" uid="uid://cpx54ymdy4wme" path="res://student management/Label.tres" id="4_x5pdj"]
+[ext_resource type="Script" uid="uid://bkw3dcqmshnqa" path="res://addons/onscreenkeyboard/keyboard_layout.gd" id="2_cuj4c"]
+[ext_resource type="Texture2D" uid="uid://bpmoh7kknamce" path="res://student management/Background/Student Management backgournd.png" id="2_tjwwt"]
+[ext_resource type="Texture2D" uid="uid://cif2jrmbat8a4" path="res://student management/Heading/title.png" id="3_244n2"]
+[ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_tjwwt"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_1g403"]
-[ext_resource type="FontFile" uid="uid://db1iaxiyrov21" path="res://student management/Fonts/Montserrat-Black.ttf" id="7_1g403"]
-[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://student management/Scripts/StudentManager.gd" id="8_f13yu"]
+[ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="6_cuj4c"]
+[ext_resource type="Texture2D" uid="uid://cx5k8gvq27mpg" path="res://student management/Heading/X.png" id="7_q5di3"]
+[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="8_f13yu"]
+[ext_resource type="Script" uid="uid://n2f4syy1sp2d" path="res://addons/onscreenkeyboard/onscreen_keyboard.gd" id="10_cuj4c"]
 
 [sub_resource type="Theme" id="Theme_f13yu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkrk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_244n2"]
 bg_color = Color(0.986752, 0.986752, 0.986752, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -30,66 +32,105 @@ LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
 LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
 LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
 LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
-LineEdit/styles/normal = SubResource("StyleBoxFlat_rlkrk")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_244n2")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyllx"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqheb"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="Theme" id="Theme_1g403"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f13yu"]
-bg_color = Color(0.129701, 0.723884, 0.618996, 1)
-border_width_bottom = 4
-border_color = Color(0.0989878, 0.55884, 0.476621, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-shadow_size = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhqpv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0dbh"]
 bg_color = Color(0.843137, 0.247059, 0.811765, 1)
-border_width_bottom = 4
-border_color = Color(0.641769, 0.0921522, 0.618566, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-shadow_size = 3
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2w6f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql6so"]
 bg_color = Color(1, 0.278431, 0.184314, 1)
-border_width_bottom = 4
-border_color = Color(0.639356, 0.0705533, 7.21961e-07, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-shadow_size = 3
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kviw4"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8nuv"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gufw7"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp5ds"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf36n"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo30b"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0pi5"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpx0p"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo3bf"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk4py"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="Display" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_1g403")
+metadata/_edit_vertical_guides_ = [505.0, 517.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -102,110 +143,173 @@ mouse_filter = 2
 theme = SubResource("Theme_f13yu")
 color = Color(0.129412, 0.027451, 0.215686, 1)
 
-[node name="studentManagementTop" type="TextureRect" parent="ColorRect"]
-layout_mode = 2
-offset_left = 292.0
-offset_top = 64.0
-offset_right = 854.0
-offset_bottom = 114.0
-texture = ExtResource("1_tbhi7")
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1922.0
+offset_bottom = 1082.0
+texture = ExtResource("2_tjwwt")
 expand_mode = 1
 
-[node name="studentManagemenBottom" type="TextureRect" parent="ColorRect"]
-layout_mode = 2
-offset_left = 264.0
-offset_top = 42.0
-offset_right = 883.0
-offset_bottom = 142.0
-texture = ExtResource("2_txl3f")
-expand_mode = 1
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -620.0
+offset_top = -419.0
+offset_right = 680.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TitleImage" type="TextureRect" parent="ColorRect"]
+custom_minimum_size = Vector2(903, 190)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.004
+anchor_bottom = 0.004
+offset_left = 453.75
+offset_top = -0.32
+offset_right = 2478.75
+offset_bottom = 387.68
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_244n2")
 
 [node name="ItemList" type="ItemList" parent="ColorRect"]
 layout_mode = 0
-offset_left = 386.0
-offset_top = 188.0
-offset_right = 1111.0
-offset_bottom = 602.0
+offset_left = 728.0
+offset_top = 214.0
+offset_right = 1766.0
+offset_bottom = 633.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -137.5
-offset_right = 120.0
-offset_bottom = 137.5
-grow_vertical = 2
+[node name="nameLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(109, 22)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 221.0
+offset_right = 257.0
+offset_bottom = 250.0
+theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("4_tjwwt")
+theme_override_font_sizes/normal_font_size = 24
+text = "Name:"
 
-[node name="nameLabel" type="Label" parent="VBoxContainer"]
-layout_direction = 4
+[node name="nameEdit" type="LineEdit" parent="."]
 layout_mode = 2
-theme = ExtResource("4_x5pdj")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_rlkrk")
-theme_override_font_sizes/font_size = 20
-text = "Name: "
-
-[node name="nameEdit" type="LineEdit" parent="VBoxContainer"]
-layout_mode = 2
+offset_left = 117.0
+offset_top = 268.0
+offset_right = 516.0
+offset_bottom = 303.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_x5pdj")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[node name="ageLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_x5pdj")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_rlkrk")
-theme_override_font_sizes/font_size = 20
+[node name="ageLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(109, 22)
+layout_mode = 0
+offset_left = 119.0
+offset_top = 343.0
+offset_right = 256.0
+offset_bottom = 372.0
+theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("4_tjwwt")
+theme_override_font_sizes/normal_font_size = 24
 text = "Age:"
 
-[node name="ageEdit" type="LineEdit" parent="VBoxContainer"]
-layout_mode = 2
+[node name="ageEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 389.0
+offset_right = 516.0
+offset_bottom = 424.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_x5pdj")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_vyllx")
 
-[node name="badgeLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_x5pdj")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_rlkrk")
-theme_override_font_sizes/font_size = 20
-text = "Badge:"
-
-[node name="badgeEdit" type="LineEdit" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_yqheb")
-
-[node name="Insert" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_1g403")
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_1g403")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_f13yu")
-text = "Insert"
-
-[node name="Update" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_1g403")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_yhqpv")
+[node name="Update" type="Button" parent="."]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 117.0
+offset_top = 476.0
+offset_right = 517.0
+offset_bottom = 536.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_cuj4c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a0dbh")
 text = "Update"
 
-[node name="Delete" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_1g403")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_e2w6f")
+[node name="Delete" type="Button" parent="."]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 116.0
+offset_top = 567.0
+offset_right = 516.0
+offset_bottom = 627.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_cuj4c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_ql6so")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_kviw4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_y8nuv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_gufw7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qp5ds")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_lf36n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wo30b")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_j0pi5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpx0p")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_wo3bf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qk4py")
 text = "Delete"
+
+[node name="Close" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1822.0
+offset_top = 58.0
+offset_right = 1870.0
+offset_bottom = 123.0
+texture_normal = ExtResource("7_q5di3")
 
 [node name="StudentManager" type="Node" parent="."]
 script = ExtResource("8_f13yu")
+
+[node name="KeyboardLayout" type="Node" parent="."]
+script = ExtResource("2_cuj4c")
+metadata/_custom_type_script = "uid://bkw3dcqmshnqa"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OnscreenKeyboard" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 341.0
+offset_top = 745.0
+offset_right = 1643.0
+offset_bottom = 1069.0
+script = ExtResource("10_cuj4c")
+metadata/_custom_type_script = "uid://n2f4syy1sp2d"
