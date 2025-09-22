@@ -1,8 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctntwxg2p85g0"]
+[gd_scene load_steps=17 format=3 uid="uid://dy2l75l7t56nr"]
 
-[ext_resource type="Texture2D" uid="uid://dphjp03wbhlof" path="res://avatar creation/ui/Background Start.png" id="1_b5lnp"]
-[ext_resource type="Texture2D" uid="uid://dnc4hjiq8uwx4" path="res://avatar creation/ui/Start_title.png" id="2_k6nfd"]
-[ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_g5ukf"]
+[ext_resource type="Script" uid="uid://pqx54ub7rneo" path="res://avatar creation/scripts/StudentEntry.gd" id="1_hn7tl"]
+[ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_koo36"]
+[ext_resource type="Texture2D" uid="uid://bdfag33k3iapw" path="res://avatar creation/ui/ST-Title.png" id="3_w6iua"]
+[ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_x7aud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hotob"]
+bg_color = Color(0.843137, 0.247059, 0.811765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxeog"]
 bg_color = Color(0.172549, 0.905882, 0.776471, 1)
@@ -81,8 +90,9 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[node name="Start" type="Node2D"]
-metadata/_edit_vertical_guides_ = [835.0, 564.0, 1413.0, 1000.0]
+[node name="StudentTeacher" type="Node2D"]
+script = ExtResource("1_hn7tl")
+metadata/_edit_vertical_guides_ = [835.0, 564.0, 1413.0]
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -105,7 +115,7 @@ offset_right = 1922.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_b5lnp")
+texture = ExtResource("2_koo36")
 expand_mode = 2
 stretch_mode = 5
 
@@ -114,29 +124,59 @@ custom_minimum_size = Vector2(903, 190)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 96.0
-offset_right = 3512.0
-offset_bottom = 458.0
+offset_left = 453.75
+offset_top = 4.0
+offset_right = 2478.75
+offset_bottom = 392.0
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_k6nfd")
+texture = ExtResource("3_w6iua")
 
-[node name="StartButton" type="Button" parent="."]
+[node name="TeacherButton" type="Button" parent="."]
 custom_minimum_size = Vector2(559.16, 60)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 433.0
-offset_top = 409.0
-offset_right = 1466.0
-offset_bottom = 544.0
+offset_left = 549.0
+offset_top = 536.0
+offset_right = 1396.0
+offset_bottom = 626.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_x7aud")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hotob")
+text = "Teacher"
+
+[node name="StudentButton" type="Button" parent="."]
+custom_minimum_size = Vector2(559.16, 60)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 548.0
+offset_top = 350.0
+offset_right = 1396.0
+offset_bottom = 441.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_g5ukf")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("4_x7aud")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxFlat_fxeog")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_87di6")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_lu23f")
@@ -148,4 +188,4 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_eox6m")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_e6cqt")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_g636n")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3kg0i")
-text = "Start"
+text = "Student"
