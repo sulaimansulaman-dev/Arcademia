@@ -21,20 +21,12 @@ func _on_save_button_pressed() -> void:
 		"username": username,
 		"password": pwd
 	}
-
-	# Load existing students
 	var students = load_students()
-
-	# Add the new one
 	students.append(new_student)
-
-	# Save them back
 	save_students(students)
-
 	print("Saved new student:", new_student)
+	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentEntry.tscn")
 
-
-# --- Helper functions ---
 
 func load_students() -> Array:
 	if FileAccess.file_exists(db_file_path):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://btp6lrlbtb8yj"]
 
-[ext_resource type="Script" uid="uid://pqx54ub7rneo" path="res://avatar creation/scripts/StudentEntry.gd" id="1_3aihd"]
+[ext_resource type="Script" uid="uid://bnreeubiqqrw8" path="res://avatar creation/scenes/student_Avatar_entry.gd" id="1_3aihd"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_db2e0"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="3_jul7y"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_60st5"]
@@ -97,10 +97,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 680.0
-offset_top = 966.0
-offset_right = 1239.16
-offset_bottom = 1026.0
+offset_left = 677.0
+offset_top = 888.0
+offset_right = 1236.16
+offset_bottom = 948.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -120,10 +120,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6a6wx")
 text = "Save"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 286.0
-offset_top = 501.0
-offset_right = 1644.0
-offset_bottom = 902.0
+offset_left = 283.0
+offset_top = 435.0
+offset_right = 1641.0
+offset_bottom = 836.0
 
 [node name="TitleImage" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(903, 190)
@@ -158,3 +158,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="StudentManager" type="Node2D" parent="."]
 script = ExtResource("7_ley3r")
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
