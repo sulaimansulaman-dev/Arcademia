@@ -1,4 +1,5 @@
-extends Node2D
+# blocks.gd
+extends Node2D 
 
 @onready var lvl1_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl1_Blockly
 @onready var lvl2_webview: WebView = $CanvasLayer/Control/HSplitContainer/WebViewOverlay/Lvl2_Blockly
@@ -24,7 +25,6 @@ func _ready() -> void:
 	for wv in [lvl1_webview, lvl2_webview, lvl3_webview, lvl4_webview]:
 		if wv:
 			wv.visible = false
-			# Connect safely using Callable
 			if wv.has_signal("ipc_message"):
 				wv.connect("ipc_message", Callable(self, "_on_web_view_ipc_message"))
 
@@ -33,7 +33,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	# Only check while Blockly program is running
 	if program_running and player_node:
 		if player_node.position == last_player_pos:
 			idle_time += delta
@@ -56,7 +55,6 @@ func go_back() -> void:
 
 
 func load_level_and_blocks() -> void:
-	# Hide all first
 	for wv in [lvl1_webview, lvl2_webview, lvl3_webview, lvl4_webview]:
 		wv.visible = false
 
@@ -131,7 +129,7 @@ func _on_web_view_ipc_message(message: String) -> void:
 			reload_level()
 		"back":
 			go_back()
-			
+
 
 # 🔹 Run Blockly program
 func _run_program(commands: Array) -> void:
@@ -144,11 +142,46 @@ func _run_program(commands: Array) -> void:
 		if not program_running:
 			break
 		var cmd: String = str(cmd_data.get("cmd", ""))
-		var steps: int = int(cmd_data.get("steps", 1))
-		await _move_player(cmd, steps)
-		await get_tree().create_timer(0.65).timeout
+
+		if cmd == "if":
+			var cond: String = str(cmd_data.get("cond", ""))
+			var do_cmds: Array = cmd_data.get("do", [])
+			if _evaluate_condition(cond):
+				for inner_cmd in do_cmds:
+					await _execute_command(inner_cmd)
+		elif cmd == "if_else":
+			var cond: String = str(cmd_data.get("cond", ""))
+			var do_cmds: Array = cmd_data.get("do", [])
+			var else_cmds: Array = cmd_data.get("else", [])
+			if _evaluate_condition(cond):
+				for inner_cmd in do_cmds:
+					await _execute_command(inner_cmd)
+			else:
+				for inner_cmd in else_cmds:
+					await _execute_command(inner_cmd)
+		else:
+			await _execute_command(cmd_data)
 
 	program_running = false
+
+
+# 🔹 Helper to execute a single command dict
+func _execute_command(cmd_data: Dictionary) -> void:
+	var cmd: String = str(cmd_data.get("cmd", ""))
+	var steps: int = int(cmd_data.get("steps", 1))
+	await _move_player(cmd, steps)
+	await get_tree().create_timer(0.65).timeout
+
+
+# 🔹 Evaluate Blockly conditions
+func _evaluate_condition(cond: String) -> bool:
+	match cond:
+		"gap_ahead":
+			return not player_node.is_ground_ahead()
+		"ground_ahead":
+			return player_node.is_ground_ahead()
+		_:
+			return false
 
 
 # 🔹 Move player

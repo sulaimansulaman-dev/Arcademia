@@ -185,7 +185,7 @@ script = ExtResource("1_tly25")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1075, 458)
+position = Vector2(1075, 455)
 texture = ExtResource("2_tly25")
 
 [node name="GameManager" type="Node" parent="."]
@@ -193,10 +193,10 @@ unique_name_in_owner = true
 script = ExtResource("2_3j53k")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 933.0
-offset_top = 416.0
-offset_right = 1075.0
-offset_bottom = 439.0
+offset_left = 758.0
+offset_top = 478.0
+offset_right = 900.0
+offset_bottom = 501.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2t5to")
 theme_override_font_sizes/font_size = 8
@@ -211,24 +211,24 @@ scale = Vector2(1.4, 1.4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Mid"
-layer_0/tile_data = PackedInt32Array(1572892, 0, 0, 1572893, 0, 0, 1572894, 0, 0, 1572895, 0, 0, 1572896, 0, 0, 1572897, 0, 0, 1572902, 0, 0, 1572903, 0, 0, 1572904, 0, 0, 1572905, 0, 0, 1572906, 0, 0, 1572907, 0, 0, 1572908, 0, 0, 1572909, 0, 0, 1572910, 0, 0, 1572911, 0, 0, 1572912, 0, 0, 1572913, 0, 0, 1572914, 0, 0, 1572915, 0, 0, 1572916, 0, 0, 1572917, 0, 0, 1572922, 0, 0, 1572927, 0, 0, 1572928, 0, 0, 1572929, 0, 0, 1572930, 0, 0, 1572931, 0, 0, 1572932, 0, 1, 1376282, 0, 1, 1441818, 0, 1, 1507354, 0, 1, 1572890, 0, 1, 1572891, 0, 0, 1572900, 0, 0, 1572901, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1376297, 0, 0, 1376298, 0, 0, 1310764, 0, 0, 1310765, 0, 0, 1376303, 0, 0, 1376304, 0, 0, 1441842, 0, 0, 1441843, 0, 0, 1572920, 0, 0, 1572921, 0, 0, 1572925, 0, 0, 1572926, 0, 0, 1376324, 0, 1, 1441860, 0, 1, 1507396, 0, 1)
+layer_0/tile_data = PackedInt32Array(1769541, 0, 1, 1966113, 0, 0, 1966114, 0, 0, 1966119, 0, 0, 1966120, 0, 0, 1966121, 0, 0, 1966122, 0, 0, 1966123, 0, 0, 1966124, 0, 0, 1966125, 0, 0, 1966126, 0, 0, 1966127, 0, 0, 1966128, 0, 0, 1966129, 0, 0, 1966130, 0, 0, 1966134, 0, 0, 1966137, 0, 0, 1966138, 0, 0, 1966139, 0, 0, 1966143, 0, 0, 1966144, 0, 0, 1966145, 0, 0, 1966146, 0, 0, 1966147, 0, 0, 1966148, 0, 0, 1835077, 0, 1, 1900613, 0, 1, 1966149, 0, 1, 1966115, 0, 0, 1966112, 0, 1, 1900576, 0, 1, 1835040, 0, 1, 1769504, 0, 1, 1966135, 0, 0, 1966136, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_vv5ki")]
-position = Vector2(666, 540)
+position = Vector2(751.00006, 669)
 scale = Vector2(1.4, 1.4)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(276, -67)
-limit_left = 536
-limit_top = 173
-limit_right = 1596
-limit_bottom = 1073
+limit_left = 540
+limit_top = -5
+limit_right = 1600
+limit_bottom = 895
 limit_smoothed = true
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="Killzone" parent="." instance=ExtResource("6_flfgj")]
-position = Vector2(918, 559)
+position = Vector2(921, 694)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 1)
@@ -237,7 +237,7 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_8r3nl")]
-position = Vector2(1518, 534)
+position = Vector2(1534, 659.00006)
 scale = Vector2(1.4, 1.4)
 
 [node name="Platforms" type="Node" parent="."]
@@ -245,10 +245,10 @@ scale = Vector2(1.4, 1.4)
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label3" type="Label" parent="Labels"]
-offset_left = 1301.0
-offset_top = 519.0
-offset_right = 1473.0
-offset_bottom = 542.0
+offset_left = 815.0
+offset_top = 508.0
+offset_right = 987.0
+offset_bottom = 531.0
 theme_override_fonts/font = ExtResource("8_ndyhl")
 theme_override_font_sizes/font_size = 8
 text = "Go Up!"

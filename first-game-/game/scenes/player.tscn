@@ -184,5 +184,10 @@ autoplay = "Idle"
 frame_progress = 0.342309
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_fjrip")
+
+[node name="GapRay" type="RayCast2D" parent="."]
+position = Vector2(0, -15)
+target_position = Vector2(16, 16)
+collide_with_areas = true

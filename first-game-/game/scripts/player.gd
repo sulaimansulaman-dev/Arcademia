@@ -84,3 +84,10 @@ func _update_animation() -> void:
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("Idle")
+		
+func is_ground_ahead() -> bool:
+	if $GapRay.is_colliding():
+		print("Colliding")
+		return true
+	print("Not Colliding")
+	return false
