@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_4anvg"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_04lll"]
 [ext_resource type="FontFile" uid="uid://dtc3qjvecpmmx" path="res://game/assets/fonts/PixelOperator8.ttf" id="8_lavcq"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://cngxl3608pkwy" path="res://game/scripts/flag.gd" id="9_eb1qx"]
+=======
+[ext_resource type="PackedScene" uid="uid://cl4t8a4ej30r4" path="res://game/scenes/steering_wheel.tscn" id="10_d1o22"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("4_fqnib")
@@ -247,6 +251,7 @@ theme_override_font_sizes/font_size = 8
 text = "Go Up!"
 metadata/_edit_use_anchors_ = true
 
+<<<<<<< Updated upstream
 [node name="Flag" type="Area2D" parent="."]
 position = Vector2(625, 25)
 script = ExtResource("9_eb1qx")
@@ -257,3 +262,7 @@ shape = SubResource("CircleShape2D_wfl0k")
 
 [connection signal="area_entered" from="Flag" to="Player" method="_on_flag_area_entered"]
 [connection signal="body_entered" from="Flag" to="GameManager" method="_on_flag_body_entered"]
+=======
+[node name="Steering Wheel" parent="." instance=ExtResource("10_d1o22")]
+position = Vector2(682, 550)
+>>>>>>> Stashed changes
