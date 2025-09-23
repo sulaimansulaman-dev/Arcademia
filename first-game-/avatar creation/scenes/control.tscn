@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c6c3ll4og48xw"]
 
-[ext_resource type="Script" uid="uid://cddowja15s12v" path="res://avatar creation/scripts/Avatar_Creation.gd" id="1_rmawd"]
+[ext_resource type="Script" uid="uid://cthmhqnlukt35" path="res://avatar creation/scenes/control.gd" id="1_rmawd"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_ovnri"]
 [ext_resource type="Texture2D" uid="uid://cdqnsbghf7ehv" path="res://avatar creation/ui/title_avatar_creation.png" id="3_objka"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_vtikq"]
@@ -517,10 +517,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 680.0
-offset_top = 966.0
-offset_right = 1239.16
-offset_bottom = 1026.0
+offset_left = 675.0
+offset_top = 916.0
+offset_right = 1234.16
+offset_bottom = 976.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -538,3 +538,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_6a6wx")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6a6wx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6a6wx")
 text = "Save"
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
