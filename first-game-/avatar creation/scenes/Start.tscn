@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dy2l75l7t56nr"]
 
-[ext_resource type="Script" uid="uid://pqx54ub7rneo" path="res://avatar creation/scripts/StudentEntry.gd" id="1_hn7tl"]
+[ext_resource type="Script" uid="uid://d1phlt1x4nb8h" path="res://avatar creation/scenes/start.gd" id="1_hn7tl"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_koo36"]
 [ext_resource type="Texture2D" uid="uid://bdfag33k3iapw" path="res://avatar creation/ui/ST-Title.png" id="3_w6iua"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_x7aud"]
@@ -189,3 +189,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_e6cqt")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_g636n")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3kg0i")
 text = "Student"
+
+[connection signal="pressed" from="TeacherButton" to="." method="_on_teacher_button_pressed"]
+[connection signal="pressed" from="StudentButton" to="." method="_on_student_button_pressed"]

@@ -1,9 +1,5 @@
 extends Node2D
 
 
-func _on_teacher_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://avatar creation/scenes/Login.tscn")
-
-
-func _on_student_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")
+func _on_start_button_1_pressed() -> void:
+	get_tree().change_scene_to_file("res://avatar creation/scenes/Start.tscn")
