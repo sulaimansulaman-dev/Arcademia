@@ -51,7 +51,7 @@ grow_vertical = 2
 texture = ExtResource("2_ovnri")
 expand_mode = 3
 
-[node name="PrevSkin" type="TextureButton" parent="ColorRect"]
+[node name="BackButton" type="TextureButton" parent="ColorRect"]
 custom_minimum_size = Vector2(61, 61)
 layout_mode = 0
 offset_left = 60.0

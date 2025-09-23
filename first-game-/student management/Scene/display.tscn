@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://cft088tajruai" path="res://student management/Scripts/Main.gd" id="1_1g403"]
 [ext_resource type="Texture2D" uid="uid://bpmoh7kknamce" path="res://student management/Background/Student Management backgournd.png" id="2_tjwwt"]
 [ext_resource type="Texture2D" uid="uid://cif2jrmbat8a4" path="res://student management/Heading/title.png" id="3_244n2"]
+[ext_resource type="Texture2D" uid="uid://bmflsiucwt33i" path="res://avatar creation/ui/left_button.png" id="3_tjwwt"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_tjwwt"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_1g403"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="6_cuj4c"]
-[ext_resource type="Texture2D" uid="uid://cx5k8gvq27mpg" path="res://student management/Heading/X.png" id="7_q5di3"]
 [ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="8_f13yu"]
 
 [sub_resource type="Theme" id="Theme_f13yu"]
@@ -163,6 +163,14 @@ offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="BackButton" type="TextureButton" parent="ColorRect/TextureRect"]
+custom_minimum_size = Vector2(61, 61)
+offset_left = 60.0
+offset_top = 50.0
+offset_right = 121.0
+offset_bottom = 111.0
+texture_normal = ExtResource("3_tjwwt")
+
 [node name="TitleImage" type="TextureRect" parent="ColorRect"]
 custom_minimum_size = Vector2(903, 190)
 layout_mode = 1
@@ -280,14 +288,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_tpx0p")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_wo3bf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qk4py")
 text = "Delete"
-
-[node name="Close" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 1822.0
-offset_top = 58.0
-offset_right = 1870.0
-offset_bottom = 123.0
-texture_normal = ExtResource("7_q5di3")
 
 [node name="StudentManager" type="Node" parent="."]
 script = ExtResource("8_f13yu")
