@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5641p4t8fe36"]
+[gd_scene load_steps=12 format=3 uid="uid://c5641p4t8fe36"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_xugrg"]
 [ext_resource type="Texture2D" uid="uid://bl6okxq3eynmi" path="res://game/space assets/sprites/Level1/BackgroundLevel1.png" id="2_dhku5"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_2cqtt"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_4anvg"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_04lll"]
-[ext_resource type="FontFile" uid="uid://dtc3qjvecpmmx" path="res://game/assets/fonts/PixelOperator8.ttf" id="8_lavcq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("4_fqnib")
@@ -222,7 +221,7 @@ scale = Vector2(1.4, 1.4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Mid"
-layer_0/tile_data = PackedInt32Array(1441818, 0, 1, 1507354, 0, 1, 1572890, 0, 1, 1638426, 0, 1, 1638427, 0, 0, 1638428, 0, 0, 1638429, 0, 0, 1638430, 0, 0, 1638431, 0, 0, 1638436, 0, 0, 1638437, 0, 0, 1638438, 0, 0, 1638439, 0, 0, 1638444, 0, 0, 1638445, 0, 0, 1638446, 0, 0, 1638447, 0, 0, 1638448, 0, 0, 1638453, 0, 0, 1638454, 0, 0, 1638455, 0, 0, 1638456, 0, 0, 1638457, 0, 0, 1638458, 0, 0, 1638463, 0, 0, 1638464, 0, 0, 1638465, 0, 0, 1638466, 0, 1, 1572930, 0, 1, 1507394, 0, 1)
+layer_0/tile_data = PackedInt32Array(1441818, 0, 1, 1507354, 0, 1, 1572890, 0, 1, 1638426, 0, 1, 1638427, 0, 0, 1638428, 0, 0, 1638429, 0, 0, 1638430, 0, 0, 1638431, 0, 0, 1638436, 0, 0, 1638437, 0, 0, 1638438, 0, 0, 1638439, 0, 0, 1638445, 0, 0, 1638446, 0, 0, 1638447, 0, 0, 1638448, 0, 0, 1638454, 0, 0, 1638455, 0, 0, 1638456, 0, 0, 1638457, 0, 0, 1638458, 0, 0, 1638463, 0, 0, 1638464, 0, 0, 1638465, 0, 0, 1638440, 0, 0, 1638449, 0, 0, 1638466, 0, 0, 1638467, 0, 0, 1638468, 0, 1, 1572932, 0, 1, 1507396, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("5_2cqtt")]
 position = Vector2(619, 561)
@@ -238,19 +237,9 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_04lll")]
-position = Vector2(1465.9999, 549)
+position = Vector2(1512.0001, 550.00006)
 scale = Vector2(1.4, 1.4)
 
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Labels" type="Node" parent="."]
-
-[node name="Label3" type="Label" parent="Labels"]
-offset_left = 1212.0
-offset_top = 368.0
-offset_right = 1384.0
-offset_bottom = 391.0
-theme_override_fonts/font = ExtResource("8_lavcq")
-theme_override_font_sizes/font_size = 8
-text = "Go Up!"
-metadata/_edit_use_anchors_ = true

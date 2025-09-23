@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0rhywh1qg215"]
+[gd_scene load_steps=12 format=3 uid="uid://c0rhywh1qg215"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_vk645"]
 [ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_5b2t4"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_pvmfu"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_ejmty"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_87dsr"]
-[ext_resource type="FontFile" uid="uid://dtc3qjvecpmmx" path="res://game/assets/fonts/PixelOperator8.ttf" id="8_f3mg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("4_4ogpd")
@@ -223,7 +222,7 @@ scale = Vector2(1.4, 1.4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Mid"
-layer_0/tile_data = PackedInt32Array(1507355, 0, 1, 1572891, 0, 1, 1638427, 0, 1, 1703963, 0, 1, 1703964, 0, 0, 1703965, 0, 0, 1703966, 0, 0, 1703967, 0, 0, 1703968, 0, 0, 1703969, 0, 0, 1703970, 0, 0, 1703973, 0, 0, 1703974, 0, 0, 1703975, 0, 0, 1703976, 0, 0, 1703977, 0, 0, 1703978, 0, 0, 1703979, 0, 0, 1703980, 0, 0, 1703981, 0, 0, 1703982, 0, 0, 1703983, 0, 0, 1703984, 0, 0, 1703985, 0, 0, 1703986, 0, 0, 1703987, 0, 0, 1703988, 0, 0, 1703989, 0, 0, 1703990, 0, 0, 1703993, 0, 0, 1703994, 0, 0, 1703995, 0, 0, 1703998, 0, 0, 1703999, 0, 0, 1704000, 0, 0, 1704001, 0, 0, 1704002, 0, 0, 1704003, 0, 0, 1704004, 0, 0, 1507397, 0, 1, 1572933, 0, 1, 1638469, 0, 1, 1704005, 0, 1)
+layer_0/tile_data = PackedInt32Array(1507355, 0, 1, 1572891, 0, 1, 1638427, 0, 1, 1703963, 0, 1, 1703964, 0, 0, 1703965, 0, 0, 1703966, 0, 0, 1703967, 0, 0, 1703968, 0, 0, 1703969, 0, 0, 1703970, 0, 0, 1703973, 0, 0, 1703974, 0, 0, 1703975, 0, 0, 1703976, 0, 0, 1703977, 0, 0, 1703978, 0, 0, 1703981, 0, 0, 1703982, 0, 0, 1703983, 0, 0, 1703984, 0, 0, 1703985, 0, 0, 1703986, 0, 0, 1703987, 0, 0, 1703988, 0, 0, 1703989, 0, 0, 1703990, 0, 0, 1703994, 0, 0, 1703995, 0, 0, 1703998, 0, 0, 1703999, 0, 0, 1704000, 0, 0, 1704001, 0, 0, 1704002, 0, 0, 1704003, 0, 0, 1704004, 0, 0, 1507397, 0, 1, 1572933, 0, 1, 1638469, 0, 1, 1704005, 0, 1, 1703991, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_pvmfu")]
 position = Vector2(641.00006, 584)
@@ -245,13 +244,3 @@ scale = Vector2(1.4, 1.4)
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Labels" type="Node" parent="."]
-
-[node name="Label3" type="Label" parent="Labels"]
-offset_left = 1083.0
-offset_top = 472.0
-offset_right = 1255.0
-offset_bottom = 495.0
-theme_override_fonts/font = ExtResource("8_f3mg3")
-theme_override_font_sizes/font_size = 8
-text = "Go Up!"
-metadata/_edit_use_anchors_ = true

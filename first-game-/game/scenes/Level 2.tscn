@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://baiqkyadkrklt"]
+[gd_scene load_steps=12 format=3 uid="uid://baiqkyadkrklt"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_ja51w"]
 [ext_resource type="Texture2D" uid="uid://bljd7dv1041ue" path="res://game/space assets/sprites/Level2/BackgroundLevel2.png" id="2_ja51w"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_1h588"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_elrge"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_42y6m"]
-[ext_resource type="FontFile" uid="uid://dtc3qjvecpmmx" path="res://game/assets/fonts/PixelOperator8.ttf" id="10_t61ac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("4_ym8yb")
@@ -247,16 +246,3 @@ scale = Vector2(1.4, 1.4)
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Labels" type="Node" parent="."]
-
-[node name="Label3" type="Label" parent="Labels"]
-anchors_preset = -1
-anchor_left = -0.0775
-anchor_right = -0.0775
-offset_left = 798.0
-offset_top = 394.0
-offset_right = 970.0
-offset_bottom = 417.0
-theme_override_fonts/font = ExtResource("10_t61ac")
-theme_override_font_sizes/font_size = 8
-text = "Go Up!"
-metadata/_edit_use_anchors_ = true
