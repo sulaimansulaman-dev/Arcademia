@@ -129,6 +129,14 @@ func _run_program(commands: Array) -> void:
 			else:
 				for inner_cmd in else_cmds:
 					await _execute_command(inner_cmd)
+		elif cmd == "repeat":
+			var times: int = int(cmd_data.get("times", 1))
+			var do_cmds: Array = cmd_data.get("do", [])
+			for i in range(times):
+				for inner_cmd in do_cmds:
+					await _execute_command(inner_cmd)
+				await get_tree().create_timer(0.5).timeout
+
 		elif cmd == "while":
 			var cond: String = str(cmd_data.get("cond", ""))
 			var do_cmds: Array = cmd_data.get("do", [])
@@ -176,6 +184,17 @@ func _execute_command(cmd_data: Dictionary) -> void:
 			for inner_cmd in do_cmds:
 				await _execute_command(inner_cmd)
 			await get_tree().create_timer(1).timeout
+	elif cmd == "repeat":
+		var times: int = int(cmd_data.get("times", 1))
+		var do_cmds: Array = cmd_data.get("do", [])
+		for i in range(times):
+			if program_running:
+				return
+			for inner_cmd in do_cmds:
+				if program_running:
+					return
+				await _execute_command(inner_cmd)
+			await get_tree().create_timer(0.5).timeout
 
 
 func _evaluate_condition(cond: String) -> bool:
