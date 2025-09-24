@@ -198,6 +198,7 @@ expand_mode = 3
 
 [node name="Level 1" type="Button" parent="."]
 custom_minimum_size = Vector2(559.16, 60)
+layout_mode = 0
 offset_left = 701.0
 offset_top = 262.0
 offset_right = 1260.16
@@ -216,7 +217,8 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sp287")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ofd6k")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2e0cj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_q7l6f")
-text = "Level 2"
+text = "Level 1
+"
 
 [node name="Level 2" type="Button" parent="."]
 custom_minimum_size = Vector2(559.16, 60)
@@ -292,9 +294,10 @@ text = "Final Level"
 custom_minimum_size = Vector2(903, 190)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0876302
-anchor_right = -0.226432
-anchor_bottom = -0.037037
+anchor_left = 0.0136719
+anchor_top = 0.0648148
+anchor_right = 0.0136719
+anchor_bottom = 0.0648148
 offset_left = 453.75
 offset_top = 4.0
 offset_right = 2478.75
@@ -307,6 +310,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="."]
 custom_minimum_size = Vector2(559.16, 60)
+layout_mode = 0
 offset_left = 701.0
 offset_top = 742.0
 offset_right = 1260.16
