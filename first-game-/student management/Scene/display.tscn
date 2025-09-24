@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bhnyjl3vmwvoe"]
 
-[ext_resource type="Script" uid="uid://cft088tajruai" path="res://student management/Scripts/Main.gd" id="1_1g403"]
+[ext_resource type="Script" uid="uid://cssq8xc3l1ijq" path="res://student management/Scene/displayDB.gd" id="1_244n2"]
 [ext_resource type="Texture2D" uid="uid://bpmoh7kknamce" path="res://student management/Background/Student Management backgournd.png" id="2_tjwwt"]
 [ext_resource type="Texture2D" uid="uid://cif2jrmbat8a4" path="res://student management/Heading/title.png" id="3_244n2"]
 [ext_resource type="Texture2D" uid="uid://bmflsiucwt33i" path="res://avatar creation/ui/left_button.png" id="3_tjwwt"]
@@ -127,7 +127,7 @@ offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-script = ExtResource("1_1g403")
+script = ExtResource("1_244n2")
 metadata/_edit_vertical_guides_ = [505.0, 517.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -165,6 +165,7 @@ grow_vertical = 0
 
 [node name="BackButton" type="TextureButton" parent="ColorRect/TextureRect"]
 custom_minimum_size = Vector2(61, 61)
+layout_mode = 0
 offset_left = 60.0
 offset_top = 50.0
 offset_right = 121.0

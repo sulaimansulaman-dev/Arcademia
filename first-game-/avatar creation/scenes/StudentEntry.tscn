@@ -69,22 +69,22 @@ stretch_mode = 5
 [node name="NameLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(125, 22)
-offset_left = 670.0
+offset_left = 630.0
 offset_top = 353.0
-offset_right = 820.0
+offset_right = 872.0
 offset_bottom = 383.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("3_jul7y")
 theme_override_font_sizes/normal_font_size = 24
-text = "Age:"
+text = "Password:"
 
 [node name="AgeLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
-offset_left = 669.0
-offset_top = 274.0
-offset_right = 806.0
-offset_bottom = 303.0
+offset_left = 636.0
+offset_top = 286.0
+offset_right = 773.0
+offset_bottom = 315.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("3_jul7y")
 theme_override_font_sizes/normal_font_size = 24
@@ -139,18 +139,18 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_3aihd")
 
 [node name="NameEdit" type="LineEdit" parent="."]
-offset_left = 837.0
-offset_top = 263.0
-offset_right = 1224.0
-offset_bottom = 298.0
+offset_left = 908.0
+offset_top = 272.0
+offset_right = 1295.0
+offset_bottom = 307.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="AgeEdit" type="LineEdit" parent="."]
-offset_left = 837.0
+offset_left = 905.0
 offset_top = 346.0
-offset_right = 1224.0
+offset_right = 1292.0
 offset_bottom = 381.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
