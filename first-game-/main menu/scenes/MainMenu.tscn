@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://bm3tmbs13bdom"]
 
-[ext_resource type="Script" uid="uid://cn2rsx3ioh5d4" path="res://main menu/scripts/main_menu.gd" id="1_0ykhv"]
+[ext_resource type="Script" uid="uid://cph5gm577f0lr" path="res://main menu/scenes/main_menu.gd" id="1_pabi3"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_pabi3"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="2_tn1jw"]
 [ext_resource type="Texture2D" uid="uid://b2gpw1t2voh0u" path="res://main menu/png/Menu_title.png" id="4_2tc35"]
@@ -178,7 +178,7 @@ offset_right = 770.0
 offset_bottom = 433.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0ykhv")
+script = ExtResource("1_pabi3")
 metadata/_edit_vertical_guides_ = [705.0]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -331,3 +331,9 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_gjv2s")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ka0fo")
 text = "Exit
 "
+
+[connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level 3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Final Level" to="." method="_on_final_level_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
