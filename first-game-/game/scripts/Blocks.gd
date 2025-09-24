@@ -104,98 +104,98 @@ func _on_web_view_ipc_message(message: String) -> void:
 		"back":
 			go_back()
 
+# --- Run program: delegate each command to _execute_command (keeps behavior consistent) ---
 func _run_program(commands: Array) -> void:
 	program_running = true
 	idle_time = 0.0
 	if player_node:
 		last_player_pos = player_node.position
+	# Execute every top-level command through the common executor (handles nesting)
 	for cmd_data in commands:
 		if not program_running:
 			break
-		var cmd: String = str(cmd_data.get("cmd", ""))
-		if cmd == "if":
-			var cond: String = str(cmd_data.get("cond", ""))
-			var do_cmds: Array = cmd_data.get("do", [])
-			if _evaluate_condition(cond):
-				for inner_cmd in do_cmds:
-					await _execute_command(inner_cmd)
-		elif cmd == "if_else":
-			var cond: String = str(cmd_data.get("cond", ""))
-			var do_cmds: Array = cmd_data.get("do", [])
-			var else_cmds: Array = cmd_data.get("else", [])
-			if _evaluate_condition(cond):
-				for inner_cmd in do_cmds:
-					await _execute_command(inner_cmd)
-			else:
-				for inner_cmd in else_cmds:
-					await _execute_command(inner_cmd)
-		elif cmd == "repeat":
-			var times: int = int(cmd_data.get("times", 1))
-			var do_cmds: Array = cmd_data.get("do", [])
-			for i in range(times):
-				for inner_cmd in do_cmds:
-					await _execute_command(inner_cmd)
-				await get_tree().create_timer(0.5).timeout
-
-		elif cmd == "while":
-			var cond: String = str(cmd_data.get("cond", ""))
-			var do_cmds: Array = cmd_data.get("do", [])
-			# Guard: if do_cmds is empty, just break to avoid tight infinite loop
-			if do_cmds.is_empty():
-				print("⚠️ While loop with empty body - skipping to avoid spin.")
-				continue
-			# Loop until condition becomes false or program is stopped
-			while _evaluate_condition(cond) and program_running:
-				for inner_cmd in do_cmds:
-					await _execute_command(inner_cmd)
-				if not _evaluate_condition(cond):
-					break
-				# small yield so the engine can breathe and condition changes can be seen
-				await get_tree().create_timer(1).timeout
-		else:
-			await _execute_command(cmd_data)
+		await _execute_command(cmd_data)
 	program_running = false
 
+# --- Command executor (recursive, supports nested repeat/if/while) ---
 func _execute_command(cmd_data: Dictionary) -> void:
+	# Global guard: if program was stopped, bail out early.
+	if not program_running:
+		return
+
 	var cmd: String = str(cmd_data.get("cmd", ""))
+	# Movement commands
 	if cmd in ["move_left","move_right","move_up","move_right_and_jump","move_down"]:
 		var steps: int = int(cmd_data.get("steps", 1))
 		await _move_player(cmd, steps)
-	elif cmd == "if":
+		return
+
+	# If / If-Else (they can contain statement lists)
+	if cmd == "if":
 		var cond: String = str(cmd_data.get("cond", ""))
 		var do_cmds: Array = cmd_data.get("do", [])
 		if _evaluate_condition(cond):
 			for inner_cmd in do_cmds:
+				if not program_running:
+					return
 				await _execute_command(inner_cmd)
-	elif cmd == "if_else":
+		return
+
+	if cmd == "if_else":
 		var cond: String = str(cmd_data.get("cond", ""))
 		var do_cmds: Array = cmd_data.get("do", [])
 		var else_cmds: Array = cmd_data.get("else", [])
 		if _evaluate_condition(cond):
 			for inner_cmd in do_cmds:
+				if not program_running:
+					return
 				await _execute_command(inner_cmd)
 		else:
 			for inner_cmd in else_cmds:
-				await _execute_command(inner_cmd)
-	elif cmd == "while":
-		var cond: String = str(cmd_data.get("cond", ""))
-		var do_cmds: Array = cmd_data.get("do", [])
-		while _evaluate_condition(cond) and program_running:
-			for inner_cmd in do_cmds:
-				await _execute_command(inner_cmd)
-			await get_tree().create_timer(1).timeout
-	elif cmd == "repeat":
-		var times: int = int(cmd_data.get("times", 1))
-		var do_cmds: Array = cmd_data.get("do", [])
-		for i in range(times):
-			if program_running:
-				return
-			for inner_cmd in do_cmds:
-				if program_running:
+				if not program_running:
 					return
 				await _execute_command(inner_cmd)
-			await get_tree().create_timer(0.5).timeout
+		return
 
+	# While loop
+	if cmd == "while":
+		var cond: String = str(cmd_data.get("cond", ""))
+		var do_cmds: Array = cmd_data.get("do", [])
+		if do_cmds.is_empty():
+			print("⚠️ While loop with empty body - skipping to avoid spin.")
+			return
+		while _evaluate_condition(cond) and program_running:
+			for inner_cmd in do_cmds:
+				if not program_running:
+					return
+				await _execute_command(inner_cmd)
+			# small yield so changes can occur in the world
+			await get_tree().create_timer(1).timeout
+		return
+
+	# Repeat loop (fixed logic for nested repeats)
+	if cmd == "repeat":
+		var times: int = int(cmd_data.get("times", 1))
+		var do_cmds: Array = cmd_data.get("do", [])
+		if do_cmds.is_empty():
+			# nothing to do
+			return
+		print("➡️ Enter repeat: times=", times, " body_len=", do_cmds.size())
+		for i in range(times):
+			if not program_running:
+				return
+			# run the body (which can contain nested repeats/ifs/etc)
+			for inner_cmd in do_cmds:
+				if not program_running:
+					return
+				await _execute_command(inner_cmd)
+			# small delay between repeat iterations to let animations/physics run
+			await get_tree().create_timer(1.0).timeout
+		print("⬅️ Exit repeat")
+		return
+
+	# Unknown command
+	print("⚠️ Unknown command in _execute_command -> ", cmd)
 
 func _evaluate_condition(cond: String) -> bool:
 	match cond:
