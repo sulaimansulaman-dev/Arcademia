@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://cisowwf64s63a"]
+[gd_scene load_steps=23 format=3 uid="uid://cisowwf64s63a"]
 
 [ext_resource type="Script" uid="uid://bo2xk6g7u4ly8" path="res://avatar creation/scenes/login_student.gd" id="1_t7otd"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_vms52"]
 [ext_resource type="Texture2D" uid="uid://cgi41rtsdqwla" path="res://avatar creation/ui/Login_title.png" id="3_lb5xe"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_f6ggw"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="5_5r5it"]
+[ext_resource type="PackedScene" uid="uid://dgdykjx4l6djc" path="res://avatar creation/scenes/OnScreenKeyboard.tscn" id="5_vms52"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_rf5vj"]
 [ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="7_7b014"]
 
@@ -234,13 +235,19 @@ theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Password" type="LineEdit" parent="."]
-offset_left = 1282.0
-offset_top = 234.0
-offset_right = 1669.0
-offset_bottom = 269.0
+offset_left = 1289.0
+offset_top = 238.0
+offset_right = 1676.0
+offset_bottom = 273.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="OnScreenKeyboard" parent="." instance=ExtResource("5_vms52")]
+offset_left = 935.0
+offset_top = 1008.0
+offset_right = 935.0
+offset_bottom = 1008.0
 
 [node name="StudentManager" type="Node2D" parent="."]
 script = ExtResource("7_7b014")

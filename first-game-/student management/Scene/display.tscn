@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bhnyjl3vmwvoe"]
+[gd_scene load_steps=25 format=3 uid="uid://bhnyjl3vmwvoe"]
 
 [ext_resource type="Script" uid="uid://cssq8xc3l1ijq" path="res://student management/Scene/displayDB.gd" id="1_244n2"]
 [ext_resource type="Texture2D" uid="uid://bpmoh7kknamce" path="res://student management/Background/Student Management backgournd.png" id="2_tjwwt"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_tjwwt"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_1g403"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="6_cuj4c"]
+[ext_resource type="PackedScene" path="res://student management/Scene/OnScreenKeyboard.tscn" id="7_tjwwt"]
 [ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="8_f13yu"]
 
 [sub_resource type="Theme" id="Theme_f13yu"]
@@ -237,6 +238,13 @@ offset_bottom = 424.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_x5pdj")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="OnScreenKeyboard" parent="." instance=ExtResource("7_tjwwt")]
+layout_mode = 1
+offset_left = 253.0
+offset_top = 651.0
+offset_right = -287.0
+offset_bottom = -11.0
 
 [node name="Update" type="Button" parent="."]
 custom_minimum_size = Vector2(400, 60)

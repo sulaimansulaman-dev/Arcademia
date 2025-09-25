@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://btp6lrlbtb8yj"]
+[gd_scene load_steps=12 format=3 uid="uid://btp6lrlbtb8yj"]
 
 [ext_resource type="Script" uid="uid://bnreeubiqqrw8" path="res://avatar creation/scenes/student_Avatar_entry.gd" id="1_3aihd"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_db2e0"]
 [ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="3_jul7y"]
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_60st5"]
 [ext_resource type="Texture2D" uid="uid://cdqnsbghf7ehv" path="res://avatar creation/ui/title_avatar_creation.png" id="5_3aihd"]
+[ext_resource type="PackedScene" uid="uid://dgdykjx4l6djc" path="res://avatar creation/scenes/OnScreenKeyboard.tscn" id="5_db2e0"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_3aihd"]
 [ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="7_ley3r"]
 
@@ -155,6 +156,12 @@ offset_bottom = 381.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="OnScreenKeyboard" parent="." instance=ExtResource("5_db2e0")]
+offset_left = 952.0
+offset_top = 839.0
+offset_right = 952.0
+offset_bottom = 839.0
 
 [node name="StudentManager" type="Node2D" parent="."]
 script = ExtResource("7_ley3r")

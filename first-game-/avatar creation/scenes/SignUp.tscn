@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ua6esvpp7w63"]
+[gd_scene load_steps=15 format=3 uid="uid://ua6esvpp7w63"]
 
 [ext_resource type="Script" uid="uid://bluhyu4uh5lrm" path="res://avatar creation/scenes/sign_up.gd" id="1_yq2ht"]
 [ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_yq2ht"]
@@ -8,27 +8,7 @@
 [ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="5_h7b4o"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_wldpv"]
 [ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="7_1tgxs"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkrk"]
-bg_color = Color(0.986752, 0.986752, 0.986752, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 2
-
-[sub_resource type="Theme" id="Theme_ljn24"]
-Button/styles/normal = ExtResource("6_wldpv")
-LineEdit/colors/caret_color = Color(1, 1, 1, 1)
-LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
-LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
-LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
-LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
-LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
-LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
-LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
-LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
-LineEdit/styles/normal = SubResource("StyleBoxFlat_rlkrk")
+[ext_resource type="PackedScene" uid="uid://dgdykjx4l6djc" path="res://avatar creation/scenes/OnScreenKeyboard.tscn" id="8_yydbn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6wx"]
 bg_color = Color(0.843137, 0.247059, 0.811765, 1)
@@ -58,6 +38,27 @@ LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
 LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
 LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
 LineEdit/styles/normal = SubResource("StyleBoxFlat_h7b4o")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkrk"]
+bg_color = Color(0.986752, 0.986752, 0.986752, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_ljn24"]
+Button/styles/normal = ExtResource("6_wldpv")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
+LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_rlkrk")
 
 [node name="AvatarCreation" type="Node2D"]
 script = ExtResource("1_yq2ht")
@@ -151,16 +152,6 @@ theme_override_fonts/normal_font = ExtResource("4_ljn24")
 theme_override_font_sizes/normal_font_size = 24
 text = "Password:"
 
-[node name="passwordCon" type="LineEdit" parent="ColorRect"]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 371.0
-offset_right = 1287.0
-offset_bottom = 406.0
-size_flags_stretch_ratio = 0.0
-theme = SubResource("Theme_ljn24")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
 [node name="AgeLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
@@ -202,6 +193,15 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6a6wx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6a6wx")
 text = "Sign Up"
 
+[node name="password" type="LineEdit" parent="."]
+offset_left = 904.0
+offset_top = 289.0
+offset_right = 1291.0
+offset_bottom = 324.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_db2e0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="Username" type="LineEdit" parent="."]
 offset_left = 904.0
 offset_top = 208.0
@@ -211,14 +211,20 @@ size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[node name="password" type="LineEdit" parent="Username"]
-layout_mode = 0
-offset_top = 81.0
-offset_right = 387.0
-offset_bottom = 116.0
+[node name="passwordCon" type="LineEdit" parent="."]
+offset_left = 903.0
+offset_top = 371.0
+offset_right = 1290.0
+offset_bottom = 406.0
 size_flags_stretch_ratio = 0.0
-theme = SubResource("Theme_db2e0")
+theme = SubResource("Theme_ljn24")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="OnScreenKeyboard" parent="." instance=ExtResource("8_yydbn")]
+offset_left = 939.0
+offset_top = 1003.0
+offset_right = 939.0
+offset_bottom = 1003.0
 
 [node name="StudentManager" type="Node2D" parent="."]
 script = ExtResource("7_1tgxs")
