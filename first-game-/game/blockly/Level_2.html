@@ -1,8 +1,8 @@
-<!doctype html>
+<!doctype html> 
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Blockly + Godot (Level 2 - Loops)</title>
+  <title>Blockly + Godot (Level 2 - Loops + MoveRight&Jump)</title>
   <script src="blockly.min.js"></script>
   <style>
     html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
@@ -11,6 +11,33 @@
     button { padding: 6px 12px; cursor: pointer; border: 1px solid #ccc; border-radius: 4px; background: white; }
     button:hover { background: #f0f0f0; }
     .hint { color: #666; font-size: 12px; }
+
+    /* Full-screen help overlay */
+    #helpOverlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9); color: white; overflow-y: auto; display: none; z-index: 9999; box-sizing: border-box;
+    }
+    #helpContent { max-width: 800px; margin: 0 auto; padding: 20px; box-sizing: border-box; }
+    #helpOverlay h2 { margin-top: 0; font-size: min(28px, 5vw); }
+    #helpOverlay h3 { margin-bottom: 5px; margin-top: 20px; font-size: min(20px, 4vw); }
+    #helpOverlay p { font-size: min(16px, 3.5vw); line-height: 1.5; }
+    #helpOverlay .example { background: #333; padding: 10px; border-radius: 6px; margin: 5px 0; font-family: monospace; font-size: min(14px, 3vw); }
+    #helpButtons { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+    #helpButtons button { font-size: min(16px, 4vw); padding: 10px 20px; }
+
+    /* Full-screen block warning overlay */
+    #blockWarningOverlay {
+      display: none;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9); color: white; z-index: 10000;
+      display: flex; justify-content: center; align-items: center; text-align: center; padding: 20px; box-sizing: border-box;
+    }
+    #blockWarningOverlay h2 { font-size: 32px; margin-bottom: 20px; }
+    #blockWarningOverlay p { font-size: 24px; margin-top: 10px; }
+    #blockWarningOverlay button {
+      margin-top: 20px; padding: 10px 20px; font-size: 20px; cursor: pointer;
+      border-radius: 6px; border: none; background: white; color: black;
+    }
   </style>
 </head>
 <body>
@@ -18,88 +45,169 @@
     <button id="run">🚀 Run in Godot</button>
     <button id="clear">🗑️ Clear</button>
     <button id="reset">🔄 Reset Level</button>
-    <span class="hint">Now try using <b>repeat</b> to make your moves shorter!</span>
+    <button id="back">⬅️ Back</button>
+    <button id="help">❓ Help</button>
+    <span class="hint">Use loops and jumps to reach the goal.</span>
   </div>
+
   <div id="blocklyDiv"></div>
 
-  <script>
-    // === Define Level 2 blocks ===
-    Blockly.defineBlocksWithJsonArray([
-      { "type": "start", "message0": "start", "nextStatement": null, "colour": 210, "hat": "cap" },
-      { "type": "move_right", "message0": "move right", "previousStatement": null, "nextStatement": null, "colour": 120 },
-      { "type": "jump", "message0": "jump", "previousStatement": null, "nextStatement": null, "colour": 200 },
-      {
-        "type": "controls_repeat",
-        "message0": "repeat %1 times %2 do %3",
-        "args0": [
-          { "type": "field_number", "name": "TIMES", "value": 2, "min": 1, "precision": 1 },
-          { "type": "input_dummy" },
-          { "type": "input_statement", "name": "DO" }
-        ],
-        "previousStatement": null,
-        "nextStatement": null,
-        "colour": 260
-      }
-    ]);
+  <!-- Full-screen Help Overlay -->
+  <div id="helpOverlay">
+    <div id="helpContent">
+      <h2>Level 2 – Help</h2>
+      <p>Use these blocks to guide your astronaut across the level.</p>
 
-    // Toolbox
-    const toolbox = {
-      "kind": "flyoutToolbox",
-      "contents": [
-        { "kind": "block", "type": "start" },
-        { "kind": "block", "type": "move_right" },
-        { "kind": "block", "type": "jump" },
-        { "kind": "block", "type": "controls_repeat" }
-      ]
-    };
+      <h3>Start</h3>
+      <p>Stack blocks under <b>start</b> to compose the program.</p>
+      <div class="example">Example: start → repeat 2 times { move right; move right and jump 1 }</div>
 
-    const workspace = Blockly.inject('blocklyDiv', { toolbox, trashcan: true });
+      <h3>Move Right</h3>
+      <p>Moves your astronaut forward a chosen number of blocks.</p>
+      <div class="example">move right (2)</div>
 
-    // Program builder
-    function buildProgram(block) {
-      const commands = [];
-      while (block) {
-        if (block.type === "move_right") {
-          commands.push({ cmd: "move_right", steps: 1 });
-        } else if (block.type === "jump") {
-          commands.push({ cmd: "move_up", steps: 1 });
-        } else if (block.type === "controls_repeat") {
-          const times = Number(block.getFieldValue('TIMES') || 1);
-          let innerBlock = block.getInputTargetBlock('DO');
-          for (let i = 0; i < times; i++) {
-            commands.push(...buildProgram(innerBlock));
-          }
+      <h3>Move Right and Jump</h3>
+      <p>Moves forward and jumps over obstacles (choose steps).</p>
+      <div class="example">move right and jump (1)</div>
+      <div class="example">move right and jump (5)</div>
+
+      <h3>Repeat</h3>
+      <p>Repeats the blocks inside a chosen number of times.</p>
+      <div class="example">repeat (2) times { ... }</div>
+
+      <div id="helpButtons">
+        <button id="closeHelp">Close Help</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-screen Block Warning Overlay -->
+  <div id="blockWarningOverlay">
+    <div>
+      <h2>Please use these blocks</h2>
+      <p id="missingBlocksText"></p>
+      <button id="closeBlockWarning">OK</button>
+    </div>
+  </div>
+
+<script>
+  // === Define Level 2 blocks with dropdowns ===
+  Blockly.defineBlocksWithJsonArray([
+    { "type": "start", "message0": "start", "nextStatement": null, "colour": 210, "hat": "cap" },
+    { 
+      "type": "move_right", 
+      "message0": "move right %1 blocks", 
+      "args0": [
+        { "type": "field_dropdown", "name": "STEPS", "options": [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"]] }
+      ], 
+      "previousStatement": null, "nextStatement": null, "colour": 120 
+    },
+    { 
+      "type": "move_right_and_jump", 
+      "message0": "move right and jump %1 blocks", 
+      "args0": [
+        { "type": "field_dropdown", "name": "STEPS", "options": [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"]] }
+      ], 
+      "previousStatement": null, "nextStatement": null, "colour": 180 
+    },
+    { 
+      "type": "controls_repeat", 
+      "message0": "repeat %1 times %2 do %3", 
+      "args0": [
+        { "type": "field_dropdown", "name": "TIMES", "options": [["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]] },
+        { "type": "input_dummy" },
+        { "type": "input_statement", "name": "DO" }
+      ], 
+      "previousStatement": null, "nextStatement": null, "colour": 260 
+    }
+  ]);
+
+  // === Toolbox ===
+  const toolbox = {
+    "kind": "flyoutToolbox",
+    "contents": [
+      { "kind": "block", "type": "start" },
+      { "kind": "block", "type": "move_right" },
+      { "kind": "block", "type": "move_right_and_jump" },
+      { "kind": "block", "type": "controls_repeat" }
+    ]
+  };
+
+  const workspace = Blockly.inject('blocklyDiv', { toolbox, trashcan: true, media: 'media/' });
+
+  // === Helpers & UI ===
+  function checkAllBlocksUsed() {
+    const requiredTypes = ["start","move_right","move_right_and_jump","controls_repeat"];
+    return requiredTypes.filter(type => workspace.getBlocksByType(type, false).length === 0);
+  }
+
+  function sendToGodot(payload) {
+    if (window.ipc?.postMessage) window.ipc.postMessage(JSON.stringify(payload));
+    else console.warn('Not inside Godot WebView; payload:', payload);
+  }
+
+  function showBlockWarning(missing) {
+    document.getElementById('missingBlocksText').innerText = missing.join(", ");
+    document.getElementById('blockWarningOverlay').style.display = 'flex';
+  }
+
+  // === JSON Program Builder (walks chain under start, supports nested repeats) ===
+  function buildProgram() {
+    const starts = workspace.getBlocksByType('start', false);
+    if (!starts.length) return [];
+    const start = starts[0];
+    const first = start.getNextBlock();
+    if (!first) return [];
+
+    function walkChain(block) {
+      const cmds = [];
+      let cur = block;
+      while (cur) {
+        if (cur.type === 'move_right') {
+          cmds.push({ cmd: 'move_right', steps: parseInt(cur.getFieldValue("STEPS")) });
+        } else if (cur.type === 'move_right_and_jump') {
+          cmds.push({ cmd: 'move_right_and_jump', steps: parseInt(cur.getFieldValue("STEPS")) });
+        } else if (cur.type === 'controls_repeat') {
+          const times = parseInt(cur.getFieldValue("TIMES"));
+          const innerStart = cur.getInputTargetBlock('DO');
+          const body = innerStart ? walkChain(innerStart) : [];
+          cmds.push({ cmd: 'repeat', times: times, do: body });
+        } else {
+          console.warn('Unknown block type:', cur.type);
         }
-        block = block.getNextBlock();
+        cur = cur.getNextBlock();
       }
-      return commands;
+      return cmds;
     }
 
-    function getProgram() {
-      const starts = workspace.getBlocksByType('start', false);
-      if (!starts.length) return [];
-      return buildProgram(starts[0].getNextBlock());
-    }
+    return walkChain(first);
+  }
 
-    // Send program to Godot
-    function sendToGodot(payload) {
-      if (window.ipc && typeof window.ipc.postMessage === 'function') {
-        window.ipc.postMessage(JSON.stringify(payload));
-      } else {
-        console.warn('Not inside Godot WebView; payload:', payload);
-      }
-    }
+  // === Buttons wiring ===
+  const helpOverlay = document.getElementById('helpOverlay');
 
-    // Buttons
-    document.getElementById('run').addEventListener('click', () => {
-      sendToGodot({ type: 'program', commands: getProgram() });
-    });
-    document.getElementById('clear').addEventListener('click', () => {
-      Blockly.getMainWorkspace().clear();
-    });
-    document.getElementById('reset').addEventListener('click', () => {
-      sendToGodot({ type: 'reset_level' });
-    });
-  </script>
+  document.getElementById('run').addEventListener('click', () => {
+    const missing = checkAllBlocksUsed();
+    if (missing.length > 0) { showBlockWarning(missing); return; }
+    const program = buildProgram();
+    sendToGodot({ type: 'program', commands: program });
+  });
+
+  document.getElementById('clear').addEventListener('click', () => Blockly.getMainWorkspace().clear());
+  document.getElementById('reset').addEventListener('click', () => sendToGodot({ type:'reset_level' }));
+  document.getElementById('back').addEventListener('click', () => sendToGodot({ type:'back' }));
+
+  document.getElementById('help').addEventListener('click', () => helpOverlay.style.display = 'block');
+  document.getElementById('closeHelp').addEventListener('click', () => helpOverlay.style.display = 'none');
+  document.getElementById('closeBlockWarning').addEventListener('click', () => {
+    document.getElementById('blockWarningOverlay').style.display = 'none';
+  });
+
+  // Show block-warning on first load
+  window.addEventListener('load', () => {
+    const missing = checkAllBlocksUsed();
+    if (missing.length > 0) showBlockWarning(missing);
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,230 @@
+[gd_scene load_steps=14 format=3 uid="uid://ua6esvpp7w63"]
+
+[ext_resource type="Script" uid="uid://bluhyu4uh5lrm" path="res://avatar creation/Natashas_Stuff/scenes/sign_up.gd" id="1_yq2ht"]
+[ext_resource type="Texture2D" uid="uid://0k4oto71u0lq" path="res://avatar creation/ui/Rectangle 130.png" id="2_yq2ht"]
+[ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_ljn24"]
+[ext_resource type="Texture2D" uid="uid://bmflsiucwt33i" path="res://avatar creation/ui/left_button.png" id="4_yydbn"]
+[ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="5_h7b4o"]
+[ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_wldpv"]
+[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://student management/Scripts/StudentManager.gd" id="7_1tgxs"]
+[ext_resource type="PackedScene" uid="uid://dgdykjx4l6djc" path="res://avatar creation/Natashas_Stuff/scenes/OnScreenKeyboard.tscn" id="8_yydbn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6wx"]
+bg_color = Color(0.843137, 0.247059, 0.811765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7b4o"]
+bg_color = Color(0.986752, 0.986752, 0.986752, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_db2e0"]
+Button/styles/normal = ExtResource("6_wldpv")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
+LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_h7b4o")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkrk"]
+bg_color = Color(0.986752, 0.986752, 0.986752, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_ljn24"]
+Button/styles/normal = ExtResource("6_wldpv")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
+LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_rlkrk")
+
+[node name="AvatarCreation" type="Node2D"]
+script = ExtResource("1_yq2ht")
+metadata/_edit_vertical_guides_ = [835.0, 872.0]
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.027451, 0.215686, 1)
+
+[node name="ColorRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 1923.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yq2ht")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TitleImage" type="TextureRect" parent="ColorRect"]
+custom_minimum_size = Vector2(903, 190)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.114714
+anchor_right = 0.114714
+offset_left = 453.75
+offset_top = 4.0
+offset_right = 2478.75
+offset_bottom = 392.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.009375
+anchor_top = 0.0962963
+anchor_right = -0.009375
+anchor_bottom = 0.0962963
+offset_left = 286.0
+offset_top = 501.0
+offset_right = 1644.0
+offset_bottom = 902.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="TextureButton" parent="ColorRect"]
+custom_minimum_size = Vector2(61, 61)
+layout_mode = 0
+offset_left = 57.0
+offset_top = 59.0
+offset_right = 118.0
+offset_bottom = 122.0
+texture_normal = ExtResource("4_yydbn")
+
+[node name="NameLabel" type="RichTextLabel" parent="ColorRect"]
+clip_contents = false
+custom_minimum_size = Vector2(125, 22)
+layout_mode = 0
+offset_left = 449.0
+offset_top = 378.0
+offset_right = 862.0
+offset_bottom = 408.0
+theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("4_ljn24")
+theme_override_font_sizes/normal_font_size = 24
+text = "Confirm Password:"
+
+[node name="AgeLabel" type="RichTextLabel" parent="ColorRect"]
+clip_contents = false
+custom_minimum_size = Vector2(109, 22)
+layout_mode = 0
+offset_left = 643.0
+offset_top = 298.0
+offset_right = 860.0
+offset_bottom = 327.0
+theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("4_ljn24")
+theme_override_font_sizes/normal_font_size = 24
+text = "Password:"
+
+[node name="AgeLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(109, 22)
+offset_left = 622.0
+offset_top = 214.0
+offset_right = 868.0
+offset_bottom = 243.0
+theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("4_ljn24")
+theme_override_font_sizes/normal_font_size = 24
+text = "User Name:"
+
+[node name="SaveButton" type="Button" parent="."]
+custom_minimum_size = Vector2(559.16, 60)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 680.0
+offset_top = 482.0
+offset_right = 1239.16
+offset_bottom = 542.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_h7b4o")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6a6wx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6a6wx")
+text = "Sign Up"
+
+[node name="password" type="LineEdit" parent="."]
+offset_left = 904.0
+offset_top = 289.0
+offset_right = 1291.0
+offset_bottom = 324.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_db2e0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Username" type="LineEdit" parent="."]
+offset_left = 904.0
+offset_top = 208.0
+offset_right = 1291.0
+offset_bottom = 243.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_db2e0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="passwordCon" type="LineEdit" parent="."]
+offset_left = 903.0
+offset_top = 371.0
+offset_right = 1290.0
+offset_bottom = 406.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_ljn24")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="OnScreenKeyboard" parent="." instance=ExtResource("8_yydbn")]
+offset_left = 939.0
+offset_top = 1003.0
+offset_right = 939.0
+offset_bottom = 1003.0
+
+[node name="StudentManager" type="Node2D" parent="."]
+script = ExtResource("7_1tgxs")
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]

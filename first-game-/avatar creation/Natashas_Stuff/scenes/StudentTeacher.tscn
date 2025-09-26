@@ -1,0 +1,151 @@
+[gd_scene load_steps=14 format=3 uid="uid://ctntwxg2p85g0"]
+
+[ext_resource type="Script" uid="uid://b4j15mnxo2a78" path="res://avatar creation/Natashas_Stuff/scenes/student_teacher.gd" id="1_k6nfd"]
+[ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_g5ukf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxeog"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87di6"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu23f"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewjsf"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5ukf"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klnml"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp1nj"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eox6m"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6cqt"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g636n"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kg0i"]
+bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_k6nfd")
+metadata/_edit_vertical_guides_ = [835.0, 564.0, 1413.0, 1000.0]
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.027451, 0.215686, 1)
+
+[node name="ColorRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 1922.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TitleImage" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(903, 190)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 96.0
+offset_right = 3512.0
+offset_bottom = 458.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="StartButton1" type="Button" parent="."]
+custom_minimum_size = Vector2(559.16, 60)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 433.0
+offset_top = 409.0
+offset_right = 1466.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_g5ukf")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxFlat_fxeog")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_87di6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lu23f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ewjsf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_g5ukf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_klnml")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cp1nj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_eox6m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e6cqt")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_g636n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3kg0i")
+text = "Start"
+
+[connection signal="pressed" from="StartButton1" to="." method="_on_start_button_1_pressed"]

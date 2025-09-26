@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
-const TILE_SIZE = 16   # <-- updated for your tiles
+const JUMP_VELOCITY = -400
+const TILE_SIZE = (16)* 1.4   # <-- updated for your tiles
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -84,3 +84,10 @@ func _update_animation() -> void:
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("Idle")
+		
+func is_ground_ahead() -> bool:
+	if $GapRay.is_colliding():
+		print("Colliding")
+		return true
+	print("Not Colliding")
+	return false
