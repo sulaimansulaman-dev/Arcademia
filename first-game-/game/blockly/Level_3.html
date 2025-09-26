@@ -90,12 +90,12 @@
       <div class="example">Example: start → move right</div>
 
       <h3>Move Right</h3>
-      <p>Moves your astronaut forward by <b>1 block</b>.</p>
-      <div class="example">Example: move right</div>
+      <p>Moves your astronaut forward by a chosen number of blocks.</p>
+      <div class="example">Example: move right 1 block</div>
 
       <h3>Move Right and Jump</h3>
-      <p>Moves forward <b>3 blocks</b> and jumps over obstacles.</p>
-      <div class="example">Example: move right and jump</div>
+      <p>Moves forward and jumps over obstacles by a chosen number of blocks.</p>
+      <div class="example">Example: move right and jump 3 blocks</div>
 
       <h3>If/Else</h3>
       <p>Checks conditions ahead (gap or ground) and does one thing or another.</p>
@@ -121,11 +121,49 @@
   </div>
 
   <script>
-    // === Define Level 3 blocks (fixed steps) ===
+    // === Define Level 3 blocks (dropdown for moves, fixed repeat) ===
     Blockly.defineBlocksWithJsonArray([
       { "type": "start", "message0": "start", "nextStatement": null, "colour": 210, "hat": "cap" },
-      { "type": "move_right", "message0": "move right", "previousStatement": null, "nextStatement": null, "colour": 120 },
-      { "type": "move_right_and_jump", "message0": "move right and jump 3 blocks", "previousStatement": null, "nextStatement": null, "colour": 180 },
+      {
+        "type": "move_right",
+        "message0": "move right %1 blocks",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "STEPS",
+            "options": [
+              ["1", "1"],
+              ["2", "2"],
+              ["3", "3"],
+              ["4", "4"],
+              ["5", "5"]
+            ]
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 120
+      },
+      {
+        "type": "move_right_and_jump",
+        "message0": "move right and jump %1 blocks",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "STEPS",
+            "options": [
+              ["1", "1"],
+              ["2", "2"],
+              ["3", "3"],
+              ["4", "4"],
+              ["5", "5"]
+            ]
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 180
+      },
       {
         "type": "if_else_block",
         "message0": "if %1 then %2 do %3 else %4 do %5",
@@ -172,9 +210,9 @@
       const commands = [];
       while (block) {
         if (block.type === "move_right") {
-          commands.push({ cmd: "move_right", steps: 1 });
+          commands.push({ cmd: "move_right", steps: parseInt(block.getFieldValue("STEPS")) });
         } else if (block.type === "move_right_and_jump") {
-          commands.push({ cmd: "move_right_and_jump", steps: 3 });
+          commands.push({ cmd: "move_right_and_jump", steps: parseInt(block.getFieldValue("STEPS")) });
         } else if (block.type === "if_else_block") {
           const cond = block.getFieldValue('COND');
           const doBlock = block.getInputTargetBlock('DO');

@@ -91,8 +91,8 @@
       <div class="example">Example: start → move right (4)</div>
 
       <h3>Move Right</h3>
-      <p>Moves your astronaut forward 4 blocks.</p>
-      <div class="example">Example: move right (4)</div>
+      <p>Moves your astronaut forward a chosen number of blocks.</p>
+      <div class="example">Example: move right (3)</div>
 
       <h3>Move Right and Jump</h3>
       <p>Moves forward and jumps over obstacles.</p>
@@ -114,13 +114,58 @@
   </div>
 
 <script>
-  // Level 1 blocks
+  // Define Level 1 blocks with dropdowns for steps
   Blockly.defineBlocksWithJsonArray([
-    { "type": "start", "message0": "start", "nextStatement": null, "colour": 210, "hat": "cap" },
-    { "type": "move_right", "message0": "move right 4 blocks", "previousStatement": null, "nextStatement": null, "colour": 120 },
-    { "type": "move_right_and_jump", "message0": "move right and jump 5 blocks", "previousStatement": null, "nextStatement": null, "colour": 180 }
+    {
+      "type": "start",
+      "message0": "start",
+      "nextStatement": null,
+      "colour": 210,
+      "hat": "cap"
+    },
+    {
+      "type": "move_right",
+      "message0": "move right %1 blocks",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "STEPS",
+          "options": [
+            ["1", "1"],
+            ["2", "2"],
+            ["3", "3"],
+            ["4", "4"],
+            ["5", "5"]
+          ]
+        }
+      ],
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 120
+    },
+    {
+      "type": "move_right_and_jump",
+      "message0": "move right and jump %1 blocks",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "STEPS",
+          "options": [
+            ["1", "1"],
+            ["2", "2"],
+            ["3", "3"],
+            ["4", "4"],
+            ["5", "5"]
+          ]
+        }
+      ],
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 180
+    }
   ]);
 
+  // Toolbox contents
   const toolbox = {
     "kind": "flyoutToolbox",
     "contents": [
@@ -130,37 +175,47 @@
     ]
   };
 
+  // Inject workspace
   const workspace = Blockly.inject('blocklyDiv', { toolbox, trashcan: true, media: 'media/' });
   workspace.options.readOnly = true;
 
+  // Build program from blocks
   function buildProgram() {
     const starts = workspace.getBlocksByType('start', false);
     if (!starts.length) return [];
     let block = starts[0].getNextBlock();
     const commands = [];
     while (block) {
-      if (block.type === "move_right") commands.push({ cmd: "move_right", steps: 4 });
-      if (block.type === "move_right_and_jump") commands.push({ cmd: "move_right_and_jump", steps: 5 });
+      if (block.type === "move_right") {
+        commands.push({ cmd: "move_right", steps: parseInt(block.getFieldValue("STEPS")) });
+      }
+      if (block.type === "move_right_and_jump") {
+        commands.push({ cmd: "move_right_and_jump", steps: parseInt(block.getFieldValue("STEPS")) });
+      }
       block = block.getNextBlock();
     }
     return commands;
   }
 
+  // Check if all blocks are used
   function checkAllBlocksUsed() {
     const requiredTypes = ["start", "move_right", "move_right_and_jump"];
     return requiredTypes.filter(type => workspace.getBlocksByType(type, false).length === 0);
   }
 
+  // Send payload to Godot
   function sendToGodot(payload) {
     if (window.ipc?.postMessage) window.ipc.postMessage(JSON.stringify(payload));
     else console.warn('Not inside Godot WebView; payload:', payload);
   }
 
+  // Show block warning
   function showBlockWarning(missing) {
     document.getElementById('missingBlocksText').innerText = missing.join(", ");
     document.getElementById('blockWarningOverlay').style.display = 'flex';
   }
 
+  // Event handlers
   document.getElementById('closeBlockWarning').addEventListener('click', () => {
     document.getElementById('blockWarningOverlay').style.display = 'none';
   });
