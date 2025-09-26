@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://baiqkyadkrklt"]
+[gd_scene load_steps=13 format=3 uid="uid://baiqkyadkrklt"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_ja51w"]
 [ext_resource type="Texture2D" uid="uid://bljd7dv1041ue" path="res://game/space assets/sprites/Level2/BackgroundLevel2.png" id="2_ja51w"]
 [ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_kt505"]
 [ext_resource type="FontFile" uid="uid://bwmqerqegia36" path="res://game/assets/fonts/PixelOperator8-Bold.ttf" id="3_iidr5"]
+[ext_resource type="Texture2D" uid="uid://fsb12k334f5k" path="res://game/assets/Reset level.png" id="4_ja51w"]
 [ext_resource type="Texture2D" uid="uid://cykyqn08smnit" path="res://game/assets/sprites/world_tileset.png" id="4_ym8yb"]
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_1h588"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_elrge"]
@@ -185,8 +186,43 @@ script = ExtResource("1_ja51w")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(831, 448)
+position = Vector2(836, 453)
 texture = ExtResource("2_ja51w")
+
+[node name="Please Press" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_bottom = 0.006666667
+offset_left = -229.0
+offset_top = -245.0
+offset_right = -87.0
+offset_bottom = -222.0
+theme_override_fonts/font = ExtResource("3_iidr5")
+theme_override_font_sizes/font_size = 11
+text = "Please press"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Reset Image" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+position = Vector2(-11, -230.00002)
+scale = Vector2(1.2760874, 1.1888889)
+texture = ExtResource("4_ja51w")
+
+[node name="Please Press2" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_right = 0.018867925
+anchor_bottom = 0.006666667
+offset_left = 62.0
+offset_top = -242.0
+offset_right = 204.0
+offset_bottom = -219.0
+theme_override_fonts/font = ExtResource("3_iidr5")
+theme_override_font_sizes/font_size = 11
+text = "If you are stuck"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(800, 450)

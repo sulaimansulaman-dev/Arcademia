@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5641p4t8fe36"]
+[gd_scene load_steps=13 format=3 uid="uid://c5641p4t8fe36"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_xugrg"]
 [ext_resource type="Texture2D" uid="uid://bl6okxq3eynmi" path="res://game/space assets/sprites/Level1/BackgroundLevel1.png" id="2_dhku5"]
 [ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_oh4uu"]
 [ext_resource type="FontFile" uid="uid://bwmqerqegia36" path="res://game/assets/fonts/PixelOperator8-Bold.ttf" id="3_107dg"]
+[ext_resource type="Texture2D" uid="uid://fsb12k334f5k" path="res://game/assets/Reset level.png" id="4_dhku5"]
 [ext_resource type="Texture2D" uid="uid://cykyqn08smnit" path="res://game/assets/sprites/world_tileset.png" id="4_fqnib"]
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_2cqtt"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_4anvg"]
@@ -186,28 +187,64 @@ metadata/_edit_horizontal_guides_ = [304.0, -360.0]
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1071, 451)
+position = Vector2(1079, 451)
 texture = ExtResource("2_dhku5")
 
+[node name="Please Press" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_bottom = 0.006666667
+offset_left = -309.0
+offset_top = -312.0
+offset_right = -167.0
+offset_bottom = -289.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_107dg")
+theme_override_font_sizes/font_size = 11
+text = "Please press"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Please Press2" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_right = 0.018867925
+anchor_bottom = 0.006666667
+offset_left = -4.0
+offset_top = -317.0
+offset_right = 138.0
+offset_bottom = -294.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_107dg")
+theme_override_font_sizes/font_size = 11
+text = "If you are stuck"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Reset Image" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(988.99994, 146)
+scale = Vector2(1.2760874, 1.1888889)
+texture = ExtResource("4_dhku5")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(800, 450)
+position = Vector2(1035, 419)
 limit_left = 534
 limit_top = -15
 limit_right = 1594
 limit_bottom = 885
 limit_smoothed = true
 position_smoothing_enabled = true
-metadata/_edit_lock_ = true
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_oh4uu")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 1158.0
-offset_top = 332.0
-offset_right = 1300.0
-offset_bottom = 355.0
+offset_left = 884.0
+offset_top = 394.0
+offset_right = 1026.0
+offset_bottom = 417.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_107dg")
 theme_override_font_sizes/font_size = 8

@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbvfja4ca4xtf"]
+[gd_scene load_steps=13 format=3 uid="uid://cbvfja4ca4xtf"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_tly25"]
 [ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_3j53k"]
 [ext_resource type="Texture2D" uid="uid://526q40n1yqqv" path="res://game/space assets/sprites/CrashSite/BackgroundCrashSite.png" id="2_tly25"]
 [ext_resource type="FontFile" uid="uid://bwmqerqegia36" path="res://game/assets/fonts/PixelOperator8-Bold.ttf" id="3_2t5to"]
 [ext_resource type="Texture2D" uid="uid://cykyqn08smnit" path="res://game/assets/sprites/world_tileset.png" id="4_1ottd"]
+[ext_resource type="Texture2D" uid="uid://fsb12k334f5k" path="res://game/assets/Reset level.png" id="4_tly25"]
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_vv5ki"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_flfgj"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_8r3nl"]
@@ -184,8 +185,52 @@ script = ExtResource("1_tly25")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1075, 455)
+position = Vector2(1077, 455)
 texture = ExtResource("2_tly25")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+position = Vector2(7.000004, -16.999985)
+scale = Vector2(1.4, 1.4)
+limit_left = 552
+limit_top = -1
+limit_right = 1612
+limit_bottom = 899
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Please Press" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_bottom = 0.006666667
+offset_left = -104.0
+offset_top = -243.0
+offset_right = 38.0
+offset_bottom = -220.0
+theme_override_fonts/font = ExtResource("3_2t5to")
+theme_override_font_sizes/font_size = 11
+text = "Please press"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Reset Image" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(103, -233.00002)
+scale = Vector2(1.2760874, 1.1888889)
+texture = ExtResource("4_tly25")
+
+[node name="Please Press2" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_right = 0.018867925
+anchor_bottom = 0.006666667
+offset_left = 188.0
+offset_top = -246.0
+offset_right = 330.0
+offset_bottom = -223.0
+theme_override_fonts/font = ExtResource("3_2t5to")
+theme_override_font_sizes/font_size = 11
+text = "If you are stuck"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -215,16 +260,6 @@ layer_0/tile_data = PackedInt32Array(1769541, 0, 1, 1966113, 0, 0, 1966114, 0, 0
 [node name="Player" parent="." instance=ExtResource("5_vv5ki")]
 position = Vector2(751.00006, 669)
 scale = Vector2(1.4, 1.4)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(276, -67)
-limit_left = 540
-limit_top = -5
-limit_right = 1600
-limit_bottom = 895
-limit_smoothed = true
-position_smoothing_enabled = true
-metadata/_edit_lock_ = true
 
 [node name="Killzone" parent="." instance=ExtResource("6_flfgj")]
 position = Vector2(921, 694)
