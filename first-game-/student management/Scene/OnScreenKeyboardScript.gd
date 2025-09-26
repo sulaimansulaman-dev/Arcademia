@@ -1,5 +1,5 @@
 extends Control
-class_name OnScreenKeyboard
+class_name CustomOnScreenKeyboard
 
 signal key_pressed(key: String)
 
