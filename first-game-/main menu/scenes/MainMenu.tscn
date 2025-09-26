@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm3tmbs13bdom"]
+[gd_scene load_steps=10 format=3 uid="uid://bm3tmbs13bdom"]
 
-[ext_resource type="Script" uid="uid://cn2rsx3ioh5d4" path="res://main menu/scripts/main_menu.gd" id="1_8b0xx"]
-[ext_resource type="Texture2D" uid="uid://8bgq0hh514tr" path="res://main menu/png/menu.png" id="2_3wceo"]
+[ext_resource type="Script" uid="uid://cn2rsx3ioh5d4" path="res://main menu/scripts/main_menu.gd" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://8bgq0hh514tr" path="res://main menu/png/menu.png" id="2_2wh52"]
+[ext_resource type="Script" uid="uid://btlgtjry3ntb2" path="res://main menu/scenes/level_1.gd" id="3_mj8ju"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
-texture = ExtResource("2_3wceo")
+texture = ExtResource("2_2wh52")
 modulate_color = Color(0.408329, 0.408329, 0.408329, 1)
 
 [sub_resource type="Theme" id="Theme_fu7sn"]
@@ -32,7 +33,7 @@ offset_right = 2.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8b0xx")
+script = ExtResource("1_0ykhv")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -70,6 +71,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
 text = "Level 1"
+script = ExtResource("3_mj8ju")
 
 [node name="Level2" type="Button" parent="VBoxContainer"]
 layout_mode = 2

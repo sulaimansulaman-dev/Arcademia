@@ -50,17 +50,17 @@ func load_level_and_blocks() -> void:
 		wv.visible = false
 	match Globals.level_to_load:
 		1:
-			load_game("res://game/scenes/level_1.tscn", true)
+			load_game("res://game/scenes/Level 1.tscn", true)
 			lvl1_webview.visible = true
 		2:
 			lvl2_webview.visible = true
-			load_game("res://game/scenes/level_2.tscn", true)
+			load_game("res://game/scenes/Level 2.tscn", true)
 		3:
 			lvl3_webview.visible = true
-			load_game("res://game/scenes/level_3.tscn", true)
+			load_game("res://game/scenes/Level 3.tscn", true)
 		4:
 			lvl4_webview.visible = true
-			load_game("res://game/scenes/level_4.tscn", true)
+			load_game("res://game/scenes/Level 4.tscn", true)
 
 func load_game(scene_path: String, run_last_program: bool = false) -> void:
 	if game_instance:
