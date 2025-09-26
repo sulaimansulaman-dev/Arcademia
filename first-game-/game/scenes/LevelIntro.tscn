@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnfiboiqjsal4"]
+
+[ext_resource type="Script" uid="uid://bvq2q4ygonhix" path="res://game/scenes/level_intro.gd" id="1_2j67s"]
+
+[node name="LevelIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2j67s")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_direction = 2
+layout_mode = 0
