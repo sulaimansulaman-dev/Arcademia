@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgwgsb2pmxd4d"
-valid=false
+uid="uid://bl6okxq3eynmi"
+path="res://.godot/imported/BackgroundLevel1.png-5ffdc27fb9fe85d020830783479fe084.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://game/assets/sprites/1.webp"
+source_file="res://game/space assets/sprites/Level1/BackgroundLevel1.png"
+dest_files=["res://.godot/imported/BackgroundLevel1.png-5ffdc27fb9fe85d020830783479fe084.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://37x2ck2lbgm1"
-path="res://.godot/imported/BackgroundLevel3.png-eb2fbdd56e1092a3652055cdb1c120a7.ctex"
+uid="uid://526q40n1yqqv"
+path="res://.godot/imported/BackgroundCrashSite.png-7babb58ae93feb739871ab9c7c260bad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/space assets/Level3/BackgroundLevel3.png"
-dest_files=["res://.godot/imported/BackgroundLevel3.png-eb2fbdd56e1092a3652055cdb1c120a7.ctex"]
+source_file="res://game/space assets/sprites/CrashSite/BackgroundCrashSite.png"
+dest_files=["res://.godot/imported/BackgroundCrashSite.png-7babb58ae93feb739871ab9c7c260bad.ctex"]
 
 [params]
 
