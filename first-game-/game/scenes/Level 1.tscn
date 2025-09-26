@@ -235,7 +235,7 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_04lll")]
-position = Vector2(19, 26)
+position = Vector2(639, 24)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -257,7 +257,7 @@ position = Vector2(625, 25)
 script = ExtResource("9_eb1qx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
-position = Vector2(-606, 1)
+position = Vector2(-4, -1)
 shape = SubResource("CircleShape2D_wfl0k")
 
 [connection signal="area_entered" from="Flag" to="Player" method="_on_flag_area_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://baiqkyadkrklt"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_ja51w"]
-[ext_resource type="Script" uid="uid://uygb164f5f8m" path="res://game/scripts/game_manager.gd" id="2_kt505"]
+[ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_kt505"]
 [ext_resource type="FontFile" uid="uid://bwmqerqegia36" path="res://game/assets/fonts/PixelOperator8-Bold.ttf" id="3_iidr5"]
 [ext_resource type="Texture2D" uid="uid://cykyqn08smnit" path="res://game/assets/sprites/world_tileset.png" id="4_ym8yb"]
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_1h588"]
@@ -232,7 +232,7 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_42y6m")]
-position = Vector2(13, 24)
+position = Vector2(639, 24)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -249,11 +249,11 @@ text = "Go Up!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag" type="Area2D" parent="."]
-position = Vector2(12, 25)
+position = Vector2(625, 25)
 script = ExtResource("9_tqme7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
-position = Vector2(-613, 1)
+position = Vector2(-4, -1)
 shape = SubResource("CircleShape2D_wfl0k")
 
 [connection signal="area_entered" from="Flag" to="Player" method="_on_flag_area_entered"]
