@@ -52,7 +52,7 @@ stretch = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
-size = Vector2i(2, 2)
+size = Vector2i(1319, 354)
 render_target_update_mode = 4
 
 [node name="GameAreaBottom" type="SubViewportContainer" parent="CanvasLayer/Control/HSplitContainer/VSplitContainer"]
@@ -65,5 +65,5 @@ stretch = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
-size = Vector2i(2, 2)
+size = Vector2i(1319, 714)
 render_target_update_mode = 4
