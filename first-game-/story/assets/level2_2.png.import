@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2jyhqpyc4t2c"
-path="res://.godot/imported/BackgroundLevel1.png-097f2516f37477db8fdeb3a330998c04.ctex"
+uid="uid://dxk05pag02wls"
+path="res://.godot/imported/level2_2.png-fb557e1d4da1faa506573459ff95e9c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/space assets/Level1/BackgroundLevel1.png"
-dest_files=["res://.godot/imported/BackgroundLevel1.png-097f2516f37477db8fdeb3a330998c04.ctex"]
+source_file="res://story/assets/level2_2.png"
+dest_files=["res://.godot/imported/level2_2.png-fb557e1d4da1faa506573459ff95e9c9.ctex"]
 
 [params]
 
