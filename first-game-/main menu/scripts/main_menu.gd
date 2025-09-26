@@ -2,20 +2,25 @@ extends Control  # or Node if MainMenu is not UI-based
 
 func _on_level_1_pressed() -> void:
 	Globals.level_to_load = 1
-	get_tree().change_scene_to_file("res://game/scenes/Blocks.tscn")
+<<<<<<< Updated upstream
+	get_tree().change_scene_to_file("res://story1/toets.tscn")
+	
+=======
+	get_tree().change_scene_to_file("res://game/scenes/LevelIntro.tscn")
+>>>>>>> Stashed changes
 
 func _on_level_2_pressed() -> void:
 	Globals.level_to_load = 2
-	get_tree().change_scene_to_file("res://game/scenes/Blocks.tscn")
+	get_tree().change_scene_to_file("res://game/scenes/LevelIntro.tscn")
 	
 func _on_level_3_pressed() -> void:
 	Globals.level_to_load = 3
-	get_tree().change_scene_to_file("res://game/scenes/Blocks.tscn")
+	get_tree().change_scene_to_file("res://game/scenes/LevelIntro.tscn")
 	
 func _on_level_4_pressed() -> void:
 	Globals.level_to_load = 4
-	get_tree().change_scene_to_file("res://game/scenes/Blocks.tscn")
-	
+	get_tree().change_scene_to_file("res://game/scenes/LevelIntro.tscn")
+
 
 	
 func _on_avatar_pressed() -> void:
