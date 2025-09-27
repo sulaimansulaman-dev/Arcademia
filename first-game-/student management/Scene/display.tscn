@@ -1,0 +1,302 @@
+[gd_scene load_steps=25 format=3 uid="uid://bhnyjl3vmwvoe"]
+
+[ext_resource type="Script" uid="uid://cssq8xc3l1ijq" path="res://student management/Scene/displayDB.gd" id="1_244n2"]
+[ext_resource type="Texture2D" uid="uid://bpmoh7kknamce" path="res://student management/Background/Student Management backgournd.png" id="2_tjwwt"]
+[ext_resource type="Texture2D" uid="uid://cif2jrmbat8a4" path="res://student management/Heading/title.png" id="3_244n2"]
+[ext_resource type="Texture2D" uid="uid://bmflsiucwt33i" path="res://avatar creation/ui/left_button.png" id="3_tjwwt"]
+[ext_resource type="FontFile" uid="uid://88ob4b1mwefq" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_tjwwt"]
+[ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_1g403"]
+[ext_resource type="FontFile" uid="uid://b7yk543ukmg2i" path="res://avatar creation/fonts/montserrat.regular.ttf" id="6_cuj4c"]
+[ext_resource type="PackedScene" uid="uid://bks2hr7p0f7fd" path="res://student management/Scene/OnScreenKeyboard.tscn" id="7_tjwwt"]
+[ext_resource type="Script" uid="uid://dv0kkcx33a32f" path="res://IndependentScripts/StudentManager.gd" id="8_f13yu"]
+
+[sub_resource type="Theme" id="Theme_f13yu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_244n2"]
+bg_color = Color(0.986752, 0.986752, 0.986752, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_x5pdj"]
+Button/styles/normal = ExtResource("6_1g403")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
+LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_244n2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0dbh"]
+bg_color = Color(0.843137, 0.247059, 0.811765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql6so"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kviw4"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8nuv"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gufw7"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp5ds"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf36n"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo30b"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0pi5"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpx0p"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo3bf"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk4py"]
+bg_color = Color(1, 0.278431, 0.184314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Display" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_244n2")
+metadata/_edit_vertical_guides_ = [505.0, 517.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_f13yu")
+color = Color(0.129412, 0.027451, 0.215686, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1922.0
+offset_bottom = 1082.0
+texture = ExtResource("2_tjwwt")
+expand_mode = 1
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -679.0
+offset_top = -415.0
+offset_right = 679.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" type="TextureButton" parent="ColorRect/TextureRect"]
+custom_minimum_size = Vector2(61, 61)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 50.0
+offset_right = 121.0
+offset_bottom = 111.0
+texture_normal = ExtResource("3_tjwwt")
+
+[node name="TitleImage" type="TextureRect" parent="ColorRect"]
+custom_minimum_size = Vector2(903, 190)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.004
+anchor_bottom = 0.004
+offset_left = 453.75
+offset_top = -0.32
+offset_right = 2478.75
+offset_bottom = 387.68
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_244n2")
+
+[node name="ItemList" type="ItemList" parent="ColorRect"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 214.0
+offset_right = 1766.0
+offset_bottom = 633.0
+
+[node name="nameLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(109, 22)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 221.0
+offset_right = 257.0
+offset_bottom = 250.0
+theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("4_tjwwt")
+theme_override_font_sizes/normal_font_size = 24
+text = "Name:"
+
+[node name="nameEdit" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 117.0
+offset_top = 268.0
+offset_right = 516.0
+offset_bottom = 303.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_x5pdj")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ageLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(109, 22)
+layout_mode = 0
+offset_left = 119.0
+offset_top = 343.0
+offset_right = 256.0
+offset_bottom = 372.0
+theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
+theme_override_fonts/normal_font = ExtResource("4_tjwwt")
+theme_override_font_sizes/normal_font_size = 24
+text = "Age:"
+
+[node name="ageEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 389.0
+offset_right = 516.0
+offset_bottom = 424.0
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_x5pdj")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="OnScreenKeyboard" parent="." instance=ExtResource("7_tjwwt")]
+layout_mode = 1
+offset_left = 253.0
+offset_top = 651.0
+offset_right = -287.0
+offset_bottom = -11.0
+
+[node name="Update" type="Button" parent="."]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 117.0
+offset_top = 476.0
+offset_right = 517.0
+offset_bottom = 536.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_cuj4c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_a0dbh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a0dbh")
+text = "Update"
+
+[node name="Delete" type="Button" parent="."]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 116.0
+offset_top = 567.0
+offset_right = 516.0
+offset_bottom = 627.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_cuj4c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_ql6so")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_kviw4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_y8nuv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_gufw7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qp5ds")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_lf36n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wo30b")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_j0pi5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpx0p")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_wo3bf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qk4py")
+text = "Delete"
+
+[node name="StudentManager" type="Node" parent="."]
+script = ExtResource("8_f13yu")
