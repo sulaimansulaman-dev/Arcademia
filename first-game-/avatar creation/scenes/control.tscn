@@ -534,4 +534,11 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_6a6wx")
 theme_override_styles/focus = SubResource("StyleBoxFlat_6a6wx")
 text = "Save"
 
+[node name="Back" type="Button" parent="."]
+offset_left = 71.0
+offset_top = 66.0
+offset_right = 116.0
+offset_bottom = 97.0
+
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

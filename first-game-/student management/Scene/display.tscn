@@ -301,3 +301,12 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ql6so")
 text = "Delete"
 
 [node name="StudentManager" type="Node" parent="."]
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 72.0
+offset_right = 127.0
+offset_bottom = 103.0
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -233,3 +233,7 @@ func _set_disabled_state_for_fullsuit(active: bool) -> void:
 	next_buttons["Outfit"].disabled = active
 	prev_buttons["Outfit"].tooltip_text = tooltip_text
 	next_buttons["Outfit"].tooltip_text = tooltip_text
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")
