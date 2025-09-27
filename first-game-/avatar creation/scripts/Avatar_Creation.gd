@@ -21,6 +21,7 @@ var current_fullsuit := 0
 # Backup previous choices
 var previous_hair := 0
 var previous_accessories := 0
+var previous_outfit := 0
 
 # Nodes
 @onready var avatar := $CenterContainer/Skeleton
@@ -132,28 +133,35 @@ func _update_avatar() -> void:
 	var fullsuit_texture = fullsuit_textures[current_fullsuit]
 
 	if fullsuit_texture != null:
-		# Save current hair and accessories before hiding
+		# Save current hair, accessories, and outfit before hiding
 		previous_hair = current_hair
 		previous_accessories = current_accessories
+		previous_outfit = current_outfit
 
 		avatar.get_node("Hair").texture = null
 		avatar.get_node("Accessories").texture = null
+		avatar.get_node("Outfit").texture = null
 		avatar.get_node("FullSuit").texture = fullsuit_texture
+		
+		# Disable UI controls for Hair, Accessories, Outfit
+		_set_disabled_state_for_fullsuit(true)
+		
 	else:
-		# Restore hair/accessories from previous selection
+		# Restore hair, accessories, and outfit from previous selection
 		avatar.get_node("Hair").texture = hair_textures[current_hair]
 		avatar.get_node("Accessories").texture = accessories_textures[current_accessories]
-		avatar.get_node("FullSuit").texture = null
 
-	# Outfit (optional)
-	if outfit_textures.size() > 0:
-		avatar.get_node("Outfit").texture = outfit_textures[current_outfit]
-	else:
-		avatar.get_node("Outfit").texture = null
+		if outfit_textures.size() > 0:
+			avatar.get_node("Outfit").texture = outfit_textures[current_outfit]
+		else:
+			avatar.get_node("Outfit").texture = null
+
+		avatar.get_node("FullSuit").texture = null
+		# Re-enable UI controls
+		_set_disabled_state_for_fullsuit(false)
 
 	_update_all_labels()
 	_center_avatar_and_scale()
-
 
 func cycle_texture(category: String, direction: int) -> void:
 	match category:
@@ -203,3 +211,24 @@ func _center_avatar_and_scale() -> void:
 
 			# Center avatar - adjust if needed
 			avatar.position = display_size * 0.5
+
+func _set_disabled_state_for_fullsuit(active: bool) -> void:
+	var tooltip_text := "Cannot be used with Full Suit" if active else ""
+
+	# Hair buttons
+	prev_buttons["Hair"].disabled = active
+	next_buttons["Hair"].disabled = active
+	prev_buttons["Hair"].tooltip_text = tooltip_text
+	next_buttons["Hair"].tooltip_text = tooltip_text
+
+	# Accessories buttons
+	prev_buttons["Accessories"].disabled = active
+	next_buttons["Accessories"].disabled = active
+	prev_buttons["Accessories"].tooltip_text = tooltip_text
+	next_buttons["Accessories"].tooltip_text = tooltip_text
+
+	# Outfit buttons
+	prev_buttons["Outfit"].disabled = active
+	next_buttons["Outfit"].disabled = active
+	prev_buttons["Outfit"].tooltip_text = tooltip_text
+	next_buttons["Outfit"].tooltip_text = tooltip_text
