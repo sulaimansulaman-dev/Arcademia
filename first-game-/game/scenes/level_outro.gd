@@ -43,5 +43,5 @@ func _ready():
 				image_display.texture = images[current_index]
 			else:
 				# when slideshow is done, head back to main menu
-				get_tree().change_scene_to_file("res://avatar creation/Natashas_Stuff/main menu/scenes/MainMenu.tscn")
+				get_tree().change_scene_to_file("res://main menu/scenes/MainMenu.tscn")
 	)
