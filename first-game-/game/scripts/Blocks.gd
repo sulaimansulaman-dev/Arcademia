@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			last_player_pos = player_node.position
 
 func go_back() -> void:
-	var menu_path = "res://avatar creation/Natashas_Stuff/main menu/scenes/MainMenu.tscn"
+	var menu_path = "res://main menu/scenes/MainMenu.tscn"
 	if ResourceLoader.exists(menu_path):
 		get_tree().change_scene_to_file(menu_path)
 	else:
