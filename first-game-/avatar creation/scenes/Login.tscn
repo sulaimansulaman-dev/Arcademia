@@ -111,12 +111,12 @@ script = ExtResource("1_kv00c")
 metadata/_edit_vertical_guides_ = [835.0]
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
+custom_minimum_size = Vector2(1600, 900)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1600.0
+offset_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.129412, 0.027451, 0.215686, 1)
@@ -127,8 +127,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 3.0
-offset_right = 1923.0
-offset_bottom = 1080.0
+offset_right = 1603.0
+offset_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_yq2ht")
@@ -139,8 +139,10 @@ stretch_mode = 5
 custom_minimum_size = Vector2(903, 190)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.143359
-anchor_right = 0.143359
+anchor_left = -0.00234375
+anchor_top = 0.0033333334
+anchor_right = -0.00234375
+anchor_bottom = 0.0033333334
 offset_left = 453.75
 offset_top = 4.0
 offset_right = 2478.75
@@ -153,10 +155,10 @@ metadata/_edit_use_anchors_ = true
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0130208
-anchor_top = 0.00740741
-anchor_right = -0.0130208
-anchor_bottom = 0.00740741
+anchor_left = -0.0925
+anchor_top = -0.046666667
+anchor_right = -0.0925
+anchor_bottom = -0.046666667
 offset_left = 286.0
 offset_top = 501.0
 offset_right = 1644.0
@@ -166,10 +168,10 @@ metadata/_edit_use_anchors_ = true
 [node name="NameLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(125, 22)
-offset_left = 998.0
-offset_top = 241.0
-offset_right = 1216.0
-offset_bottom = 271.0
+offset_left = 817.0
+offset_top = 247.0
+offset_right = 1035.0
+offset_bottom = 277.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_ljn24")
 theme_override_font_sizes/normal_font_size = 24
@@ -178,38 +180,38 @@ text = "Password:"
 [node name="AgeLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
-offset_left = 204.0
-offset_top = 242.0
-offset_right = 450.0
-offset_bottom = 271.0
+offset_left = 106.0
+offset_top = 235.0
+offset_right = 352.0
+offset_bottom = 264.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_ljn24")
 theme_override_font_sizes/normal_font_size = 24
 text = "User Name:"
 
 [node name="NameEdit" type="LineEdit" parent="."]
-offset_left = 482.0
-offset_top = 236.0
-offset_right = 869.0
-offset_bottom = 271.0
+offset_left = 380.0
+offset_top = 233.0
+offset_right = 767.0
+offset_bottom = 268.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="AgeEdit" type="LineEdit" parent="."]
-offset_left = 1282.0
+offset_left = 1062.0
 offset_top = 234.0
-offset_right = 1669.0
+offset_right = 1449.0
 offset_bottom = 269.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="OnScreenKeyboard" parent="." instance=ExtResource("6_fq0ol")]
-offset_left = 935.0
-offset_top = 914.0
-offset_right = 935.0
-offset_bottom = 914.0
+offset_left = 805.0
+offset_top = 859.0
+offset_right = 805.0
+offset_bottom = 859.0
 
 [node name="StudentManager" type="Node2D" parent="."]
 
@@ -220,10 +222,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 680.0
-offset_top = 363.0
-offset_right = 1239.16
-offset_bottom = 423.0
+offset_left = 485.0
+offset_top = 353.0
+offset_right = 1044.16
+offset_bottom = 413.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
