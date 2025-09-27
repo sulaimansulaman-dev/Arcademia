@@ -7,7 +7,7 @@ var db_file_path = "user://students.json"
 
 
 func _on_save_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://avatar creation/scenes/SignUp.tscn")
+	get_tree().change_scene_to_file("res://student management/Scene/display.tscn")
 	
 
 
@@ -22,7 +22,7 @@ func _on_save_button_2_pressed() -> void:
 			print("Tree:", get_tree())
 			print("Changing scene...")
 			
-			get_tree().change_scene_to_file("res://main menu/scenes/MainMenu.tscn")
+			get_tree().change_scene_to_file("res://student management/Scene/display.tscn")
 			return
 			
 		else: print("Wrong Password. Try again")

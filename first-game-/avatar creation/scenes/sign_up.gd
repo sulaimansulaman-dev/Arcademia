@@ -25,7 +25,7 @@ func _on_save_button_pressed() -> void:
 	students.append(new_student)
 	save_students(students)
 	print("Saved new student:", new_student)
-	get_tree().change_scene_to_file("res://avatar creation/scenes/control.tscn")
+	get_tree().change_scene_to_file("res://student management/Scene/display.tscn")
 
 
 func load_students() -> Array:
