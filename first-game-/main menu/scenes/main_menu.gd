@@ -20,6 +20,9 @@ func _on_final_level_pressed() -> void:
 	Globals.level_to_load = 4
 	get_tree().change_scene_to_file("res://game/scenes/LevelIntro.tscn")
 
-
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_sign_out_pressed() -> void:
+	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentTeacher.tscn")

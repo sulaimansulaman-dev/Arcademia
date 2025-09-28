@@ -270,10 +270,10 @@ text = "Level 3
 [node name="Final Level" type="Button" parent="."]
 custom_minimum_size = Vector2(559.16, 60)
 layout_mode = 0
-offset_left = 490.0
-offset_top = 613.0
-offset_right = 1049.16
-offset_bottom = 673.0
+offset_left = 493.0
+offset_top = 585.0
+offset_right = 1052.16
+offset_bottom = 645.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
@@ -311,10 +311,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Exit" type="Button" parent="."]
 custom_minimum_size = Vector2(559.16, 60)
 layout_mode = 0
-offset_left = 490.0
-offset_top = 728.0
-offset_right = 1049.16
-offset_bottom = 788.0
+offset_left = 488.0
+offset_top = 686.0
+offset_right = 1047.16
+offset_bottom = 746.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
@@ -332,8 +332,33 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_xjo21")
 text = "Exit
 "
 
+[node name="Sign Out" type="Button" parent="."]
+custom_minimum_size = Vector2(559.16, 60)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 790.0
+offset_right = 1049.16
+offset_bottom = 850.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_tn1jw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ka0fo")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_gjv2s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e1sr5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_xmumf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1q8gn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_4cq7u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_boliu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_q2beb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuov")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ydyjn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xjo21")
+text = "Sign Out
+"
+
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Final Level" to="." method="_on_final_level_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Sign Out" to="." method="_on_sign_out_pressed"]
