@@ -236,4 +236,4 @@ func _set_disabled_state_for_fullsuit(active: bool) -> void:
 
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://student management/Scene/display.tscn")
+	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")

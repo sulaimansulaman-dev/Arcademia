@@ -11,35 +11,6 @@
 
 [sub_resource type="Theme" id="Theme_f13yu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_244n2"]
-bg_color = Color(0.986752, 0.986752, 0.986752, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 2
-
-[sub_resource type="Theme" id="Theme_x5pdj"]
-Button/styles/normal = ExtResource("6_1g403")
-LineEdit/colors/caret_color = Color(1, 1, 1, 1)
-LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
-LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
-LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
-LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
-LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
-LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
-LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
-LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
-LineEdit/styles/normal = SubResource("StyleBoxFlat_244n2")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0dbh"]
-bg_color = Color(0.843137, 0.247059, 0.811765, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-corner_detail = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk4py"]
 bg_color = Color(1, 0.278431, 0.184314, 1)
 corner_radius_top_left = 12
@@ -117,6 +88,35 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_244n2"]
+bg_color = Color(0.986752, 0.986752, 0.986752, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_x5pdj"]
+Button/styles/normal = ExtResource("6_1g403")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
+LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_244n2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0dbh"]
+bg_color = Color(0.843137, 0.247059, 0.811765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
+
 [node name="Display" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -145,10 +145,10 @@ color = Color(0.129412, 0.027451, 0.215686, 1)
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 5.0
-offset_right = 1607.0
-offset_bottom = 905.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 1598.0
+offset_bottom = 899.0
 texture = ExtResource("2_tjwwt")
 expand_mode = 1
 
@@ -159,10 +159,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -679.0
-offset_top = -415.0
-offset_right = 679.0
-offset_bottom = -14.0
+offset_left = -683.0
+offset_top = -403.0
+offset_right = 675.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -174,6 +174,32 @@ offset_top = 50.0
 offset_right = 121.0
 offset_bottom = 111.0
 texture_normal = ExtResource("3_tjwwt")
+
+[node name="Delete" type="Button" parent="ColorRect/TextureRect"]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 60.0
+offset_top = 354.0
+offset_right = 460.0
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_cuj4c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qk4py")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_wo3bf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpx0p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_j0pi5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wo30b")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_lf36n")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qp5ds")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_gufw7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_y8nuv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_kviw4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ql6so")
+text = "Delete"
 
 [node name="TitleImage" type="TextureRect" parent="ColorRect"]
 custom_minimum_size = Vector2(903, 190)
@@ -199,10 +225,10 @@ offset_bottom = 470.0
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
 layout_mode = 0
-offset_left = 73.0
-offset_top = 132.0
-offset_right = 210.0
-offset_bottom = 161.0
+offset_left = 64.0
+offset_top = 104.0
+offset_right = 201.0
+offset_bottom = 133.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_tjwwt")
 theme_override_font_sizes/normal_font_size = 24
@@ -210,10 +236,10 @@ text = "Name:"
 
 [node name="nameEdit" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 79.0
-offset_top = 185.0
-offset_right = 478.0
-offset_bottom = 220.0
+offset_left = 60.0
+offset_top = 146.0
+offset_right = 459.0
+offset_bottom = 181.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_x5pdj")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -222,10 +248,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
 layout_mode = 0
-offset_left = 84.0
-offset_top = 238.0
-offset_right = 221.0
-offset_bottom = 267.0
+offset_left = 63.0
+offset_top = 199.0
+offset_right = 200.0
+offset_bottom = 228.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_tjwwt")
 theme_override_font_sizes/normal_font_size = 24
@@ -233,29 +259,29 @@ text = "Age:"
 
 [node name="ageEdit" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 78.0
-offset_top = 270.0
-offset_right = 477.0
-offset_bottom = 305.0
+offset_left = 57.0
+offset_top = 236.0
+offset_right = 456.0
+offset_bottom = 271.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_x5pdj")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="OnScreenKeyboard" parent="." instance=ExtResource("7_tjwwt")]
 layout_mode = 1
-offset_left = 151.0
-offset_top = 492.0
-offset_right = -908.0
-offset_bottom = -440.0
+offset_left = 119.0
+offset_top = 496.0
+offset_right = -940.0
+offset_bottom = -436.0
 
 [node name="Update" type="Button" parent="."]
 custom_minimum_size = Vector2(400, 60)
 layout_mode = 1
 anchors_preset = -1
-offset_left = 83.0
-offset_top = 318.0
-offset_right = 483.0
-offset_bottom = 378.0
+offset_left = 59.0
+offset_top = 282.0
+offset_right = 459.0
+offset_bottom = 342.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -274,14 +300,14 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_a0dbh")
 theme_override_styles/focus = SubResource("StyleBoxFlat_a0dbh")
 text = "Update"
 
-[node name="Delete" type="Button" parent="."]
+[node name="SignOut" type="Button" parent="."]
 custom_minimum_size = Vector2(400, 60)
 layout_mode = 1
 anchors_preset = -1
-offset_left = 86.0
-offset_top = 403.0
-offset_right = 486.0
-offset_bottom = 463.0
+offset_left = 60.0
+offset_top = 425.0
+offset_right = 460.0
+offset_bottom = 485.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -298,7 +324,7 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_gufw7")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_y8nuv")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_kviw4")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ql6so")
-text = "Delete"
+text = "Sign Out"
 
 [node name="StudentManager" type="Node" parent="."]
 
@@ -309,4 +335,5 @@ offset_top = 72.0
 offset_right = 127.0
 offset_bottom = 103.0
 
+[connection signal="pressed" from="SignOut" to="." method="_on_sign_out_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
