@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5641p4t8fe36"]
+[gd_scene load_steps=15 format=3 uid="uid://c5641p4t8fe36"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_xugrg"]
 [ext_resource type="Texture2D" uid="uid://bl6okxq3eynmi" path="res://game/space assets/sprites/Level1/BackgroundLevel1.png" id="2_dhku5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_2cqtt"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_4anvg"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_04lll"]
+[ext_resource type="Texture2D" uid="uid://ch41uky16j6kv" path="res://game/space assets/frame.png" id="7_d1o22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("4_fqnib")
@@ -173,9 +174,14 @@ texture = ExtResource("4_fqnib")
 2:4/size_in_atlas = Vector2i(3, 3)
 2:4/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40ski"]
+texture = ExtResource("7_d1o22")
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_lbhrr"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
+sources/1 = SubResource("TileSetAtlasSource_40ski")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = 2.0
@@ -189,6 +195,7 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1079, 451)
 texture = ExtResource("2_dhku5")
+metadata/_edit_lock_ = true
 
 [node name="Please Press" type="Label" parent="Sprite2D"]
 anchors_preset = -1
@@ -258,7 +265,7 @@ scale = Vector2(1.4, 1.4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Mid"
-layer_0/tile_data = PackedInt32Array(1638432, 131072, 1, 1638433, 131072, 0, 1638442, 131072, 0, 1441824, 131072, 1, 1507360, 131072, 1, 1572896, 131072, 1, 1638434, 131072, 0, 1638435, 131072, 0, 1638436, 131072, 0, 1638437, 131072, 0, 1638443, 131072, 0, 1638444, 131072, 0, 1638445, 131072, 0, 1638446, 131072, 0, 1638452, 131072, 0, 1638453, 131072, 0, 1638454, 131072, 0, 1638455, 131072, 0, 1638461, 131072, 0, 1638462, 131072, 0, 1638463, 131072, 0, 1638464, 131072, 0, 1638465, 131072, 1, 1638451, 131072, 0, 1638460, 131072, 0, 1507393, 131072, 1, 1572929, 131072, 1)
+layer_0/tile_data = PackedInt32Array(1638432, 131072, 1, 1638433, 131072, 0, 1638442, 131072, 0, 1441824, 131072, 1, 1507360, 131072, 1, 1572896, 131072, 1, 1638434, 131072, 0, 1638435, 131072, 0, 1638436, 131072, 0, 1638437, 131072, 0, 1638443, 131072, 0, 1638444, 131072, 0, 1638445, 131072, 0, 1638446, 131072, 0, 1638452, 131072, 0, 1638453, 131072, 0, 1638454, 131072, 0, 1638455, 131072, 0, 1638461, 131072, 0, 1638462, 131072, 0, 1638463, 131072, 0, 1638464, 131072, 0, 1638465, 131072, 1, 1638451, 131072, 0, 1638460, 131072, 0, 1507393, 131072, 1, 1572929, 131072, 1, 1638438, 1, 0, 1638439, 1, 0, 1638440, 1, 0, 1638441, 1, 0, 1638447, 1, 0, 1638448, 1, 0, 1638449, 1, 0, 1638450, 1, 0, 1638456, 1, 0, 1638457, 1, 0, 1638458, 1, 0, 1638459, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_2cqtt")]
 position = Vector2(751, 561)

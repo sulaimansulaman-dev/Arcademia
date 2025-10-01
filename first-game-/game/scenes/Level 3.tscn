@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0rhywh1qg215"]
+[gd_scene load_steps=15 format=3 uid="uid://c0rhywh1qg215"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_vk645"]
 [ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_5b2t4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://fsb12k334f5k" path="res://game/assets/Reset level.png" id="4_vk645"]
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_pvmfu"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_ejmty"]
+[ext_resource type="Texture2D" uid="uid://ch41uky16j6kv" path="res://game/space assets/frame.png" id="7_5b2t4"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_87dsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -173,9 +174,14 @@ texture = ExtResource("4_4ogpd")
 2:4/size_in_atlas = Vector2i(3, 3)
 2:4/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tx2jw"]
+texture = ExtResource("7_5b2t4")
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_lbhrr"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
+sources/1 = SubResource("TileSetAtlasSource_tx2jw")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 
@@ -260,7 +266,7 @@ scale = Vector2(1.4, 1.4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Mid"
-layer_0/tile_data = PackedInt32Array(1835038, 393216, 1, 1835039, 393216, 0, 1835040, 393216, 0, 1769507, 393216, 0, 1703974, 393216, 0, 1638441, 393216, 0, 1572908, 458752, 0, 1638447, 393216, 0, 1703986, 393216, 0, 1769525, 393216, 0, 1835064, 393216, 0, 1835065, 393216, 0, 1835066, 393216, 0, 1638430, 393216, 1, 1703966, 393216, 1, 1769502, 393216, 1, 1835041, 393216, 0, 1769508, 393216, 0, 1703975, 393216, 0, 1638442, 393216, 0, 1572909, 458752, 0, 1638448, 393216, 0, 1703987, 393216, 0, 1769526, 393216, 0, 1703995, 393216, 1, 1769531, 393216, 1, 1835067, 393216, 1)
+layer_0/tile_data = PackedInt32Array(1835038, 393216, 1, 1835039, 393216, 0, 1835040, 393216, 0, 1769507, 393216, 0, 1703974, 393216, 0, 1638441, 393216, 0, 1572908, 458752, 0, 1638447, 393216, 0, 1703986, 393216, 0, 1769525, 393216, 0, 1835064, 393216, 0, 1835065, 393216, 0, 1835066, 393216, 0, 1638430, 393216, 1, 1703966, 393216, 1, 1769502, 393216, 1, 1835041, 393216, 0, 1769508, 393216, 0, 1703975, 393216, 0, 1638442, 393216, 0, 1572909, 458752, 0, 1638448, 393216, 0, 1703987, 393216, 0, 1769526, 393216, 0, 1703995, 393216, 1, 1769531, 393216, 1, 1835067, 393216, 1, 1769506, 1, 0, 1703973, 1, 0, 1638440, 1, 0, 1572907, 1, 0, 1572910, 1, 0, 1638449, 1, 0, 1703988, 1, 0, 1769527, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_pvmfu")]
 position = Vector2(707, 629)
