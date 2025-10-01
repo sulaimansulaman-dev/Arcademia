@@ -18,6 +18,7 @@ var program_running: bool = false
 var last_player_pos: Vector2
 var idle_time: float = 0.0
 var idle_threshold: float = 2.0 # seconds before reload
+var game_speed: float = 0.6
 
 func _ready() -> void:
 	for wv in [lvl1_webview, lvl2_webview, lvl3_webview, lvl4_webview]:
@@ -175,7 +176,7 @@ func _execute_command(cmd_data: Dictionary) -> void:
 					return
 				await _execute_command(inner_cmd)
 			# small yield so changes can occur in the world
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(game_speed).timeout
 		return
 
 	# Repeat loop (fixed logic for nested repeats)
@@ -195,7 +196,7 @@ func _execute_command(cmd_data: Dictionary) -> void:
 					return
 				await _execute_command(inner_cmd)
 			# small delay between repeat iterations to let animations/physics run
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(game_speed).timeout
 		print("⬅️ Exit repeat")
 		return
 
@@ -237,7 +238,7 @@ func _move_player(cmd: String, steps: int) -> void:
 			await player_node.blockly_step_done
 		"move_up":
 			player_node.blockly_jump()
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(game_speed).timeout
 		"move_right_and_jump":
 			player_node.blockly_move_and_jump(steps)
 			await player_node.blockly_step_done
