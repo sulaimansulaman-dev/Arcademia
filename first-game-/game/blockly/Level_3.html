@@ -180,7 +180,7 @@
       },
       {
         "type": "repeat_block",
-        "message0": "repeat 32 times %1 do %2",
+        "message0": "repeat until the end %1 do %2",
         "args0": [
           { "type": "input_dummy" },
           { "type": "input_statement", "name": "DO" }
@@ -235,7 +235,7 @@
 
     // === Checks for required blocks ===
     function checkAllBlocksUsed() {
-      const requiredTypes = ["start", "move_right", "move_right_and_jump", "if_else_block", "repeat_block"];
+      const requiredTypes = ["start", "move_right", "move_right_and_jump", "if_else_block",];
       return requiredTypes.filter(type => workspace.getBlocksByType(type, false).length === 0);
     }
 

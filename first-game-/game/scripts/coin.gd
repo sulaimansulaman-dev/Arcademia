@@ -6,7 +6,7 @@ extends Area2D
 func _ready() -> void:
 	add_to_group("spaceship_part") 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(Body:Node2D) -> void:
 	game_manager.add_point()
 	
 	animation_player.play("pickup")
