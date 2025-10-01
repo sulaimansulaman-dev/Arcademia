@@ -212,11 +212,20 @@ func _evaluate_condition(cond: String) -> bool:
 			var r = player_node.is_ground_ahead()
 			print("Eval cond: ground_ahead -> ", r)
 			return r
+		"wall_ahead":
+			var r = player_node.is_wall_ahead()
+			print("Eval cond: wall_ahead -> ", r)
+			return r
+		"no_wall_ahead":
+			var r = not player_node.is_wall_ahead()
+			print("Eval cond: no_wall_ahead -> ", r)
+			return r
 		"spaceship_part":
 			return _spaceship_part_exists()
 		_:
 			print("Eval cond: unknown -> ", cond)
 			return false
+
 
 func _move_player(cmd: String, steps: int) -> void:
 	match cmd:

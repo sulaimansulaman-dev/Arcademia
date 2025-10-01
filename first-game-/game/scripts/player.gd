@@ -91,3 +91,9 @@ func is_ground_ahead() -> bool:
 		return true
 	print("Not Colliding")
 	return false
+func is_wall_ahead() -> bool:
+	if $WallRay.is_colliding():
+		print("Wall ahead: true (colliding with ", $WallRay.get_collider(), ")")
+		return true
+	print("Wall ahead: false")
+	return false

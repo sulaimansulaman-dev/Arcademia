@@ -193,8 +193,9 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1068, 437)
+position = Vector2(981, 441)
 texture = ExtResource("2_tx2jw")
+metadata/_edit_lock_ = true
 
 [node name="Please Press" type="Label" parent="Sprite2D"]
 anchors_preset = -1
@@ -259,14 +260,14 @@ scale = Vector2(1.4, 1.4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Mid"
-layer_0/tile_data = PackedInt32Array(1507355, 0, 1, 1572891, 0, 1, 1638427, 0, 1, 1703963, 0, 1, 1703964, 0, 0, 1703965, 0, 0, 1703966, 0, 0, 1703967, 0, 0, 1703968, 0, 0, 1703969, 0, 0, 1703970, 0, 0, 1703973, 0, 0, 1703974, 0, 0, 1703975, 0, 0, 1703976, 0, 0, 1703977, 0, 0, 1703978, 0, 0, 1703981, 0, 0, 1703982, 0, 0, 1703983, 0, 0, 1703984, 0, 0, 1703985, 0, 0, 1703986, 0, 0, 1703987, 0, 0, 1703988, 0, 0, 1703989, 0, 0, 1703990, 0, 0, 1703994, 0, 0, 1703995, 0, 0, 1703998, 0, 0, 1703999, 0, 0, 1704000, 0, 0, 1704001, 0, 0, 1704002, 0, 0, 1704003, 0, 0, 1704004, 0, 0, 1507397, 0, 1, 1572933, 0, 1, 1638469, 0, 1, 1704005, 0, 1, 1703991, 0, 0)
+layer_0/tile_data = PackedInt32Array(1835038, 393216, 1, 1835039, 393216, 0, 1835040, 393216, 0, 1769507, 393216, 0, 1703974, 393216, 0, 1638441, 393216, 0, 1572908, 458752, 0, 1638447, 393216, 0, 1703986, 393216, 0, 1769525, 393216, 0, 1835064, 393216, 0, 1835065, 393216, 0, 1835066, 393216, 0, 1638430, 393216, 1, 1703966, 393216, 1, 1769502, 393216, 1, 1835041, 393216, 0, 1769508, 393216, 0, 1703975, 393216, 0, 1638442, 393216, 0, 1572909, 458752, 0, 1638448, 393216, 0, 1703987, 393216, 0, 1769526, 393216, 0, 1703995, 393216, 1, 1769531, 393216, 1, 1835067, 393216, 1)
 
 [node name="Player" parent="." instance=ExtResource("5_pvmfu")]
-position = Vector2(641.00006, 584)
+position = Vector2(707, 629)
 scale = Vector2(1.4, 1.4)
 
 [node name="Killzone" parent="." instance=ExtResource("6_ejmty")]
-position = Vector2(902, 641)
+position = Vector2(1012, 661)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(-1, 0)
@@ -275,7 +276,7 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_87dsr")]
-position = Vector2(1535, 571)
+position = Vector2(1312.0001, 619)
 scale = Vector2(1.4, 1.4)
 
 [node name="Platforms" type="Node" parent="."]
