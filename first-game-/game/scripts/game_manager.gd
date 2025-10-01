@@ -1,8 +1,8 @@
 extends Node
 
 
-var score = 0 
+var final_score:int = 0 
 @onready var score_label: Label = $ScoreLabel
-func add_point(): 
-	score += 1 
-	score_label.text = "You collected " + str( score )  + " coins."
+func set_final_score(score: int) -> void:
+	final_score = score
+	print("Final Score set to: ", final_score)

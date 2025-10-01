@@ -25,6 +25,7 @@ func _ready() -> void:
 			wv.visible = false
 			if wv.has_signal("ipc_message"):
 				wv.connect("ipc_message", Callable(self, "_on_web_view_ipc_message"))
+	
 	load_level_and_blocks()
 
 func _process(delta: float) -> void:
@@ -110,6 +111,10 @@ func _run_program(commands: Array) -> void:
 	idle_time = 0.0
 	if player_node:
 		last_player_pos = player_node.position
+	
+	Globals.last_block_count = _count_blocks(commands)
+	
+	
 	# Execute every top-level command through the common executor (handles nesting)
 	for cmd_data in commands:
 		if not program_running:
@@ -247,3 +252,13 @@ func _find_spaceship_part(node: Node) -> bool:
 			if _find_spaceship_part(child):
 				return true
 	return false
+	
+func _count_blocks(commands: Array) -> int:
+	var total := 0
+	for cmd in commands:
+		total += 1
+		if cmd.has("do"):
+			total += _count_blocks(cmd["do"])
+		if cmd.has("else"):
+			total += _count_blocks(cmd["else"])
+	return total

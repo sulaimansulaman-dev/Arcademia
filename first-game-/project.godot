@@ -19,12 +19,13 @@ config/icon="res://icon.svg"
 
 Music="*res://game/scenes/music.tscn"
 Globals="*res://game/scripts/Globals.gd"
+GameManager="*res://game/scripts/game_manager.gd"
 
 [display]
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
-window/size/mode=3
+window/size/mode=2
 window/vsync/vsync_mode=0
 
 [dotnet]
