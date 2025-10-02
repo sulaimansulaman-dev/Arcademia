@@ -191,3 +191,7 @@ shape = SubResource("CircleShape2D_fjrip")
 position = Vector2(0, -15)
 target_position = Vector2(16, 16)
 collide_with_areas = true
+
+[node name="WallRay" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(15, 0)

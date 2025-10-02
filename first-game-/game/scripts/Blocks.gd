@@ -18,6 +18,7 @@ var program_running: bool = false
 var last_player_pos: Vector2
 var idle_time: float = 0.0
 var idle_threshold: float = 2.0 # seconds before reload
+var game_speed: float = 0.6
 
 func _ready() -> void:
 	for wv in [lvl1_webview, lvl2_webview, lvl3_webview, lvl4_webview]:
@@ -25,6 +26,7 @@ func _ready() -> void:
 			wv.visible = false
 			if wv.has_signal("ipc_message"):
 				wv.connect("ipc_message", Callable(self, "_on_web_view_ipc_message"))
+	
 	load_level_and_blocks()
 
 func _process(delta: float) -> void:
@@ -110,6 +112,10 @@ func _run_program(commands: Array) -> void:
 	idle_time = 0.0
 	if player_node:
 		last_player_pos = player_node.position
+	
+	Globals.last_block_count = _count_blocks(commands)
+	
+	
 	# Execute every top-level command through the common executor (handles nesting)
 	for cmd_data in commands:
 		if not program_running:
@@ -170,7 +176,7 @@ func _execute_command(cmd_data: Dictionary) -> void:
 					return
 				await _execute_command(inner_cmd)
 			# small yield so changes can occur in the world
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(game_speed).timeout
 		return
 
 	# Repeat loop (fixed logic for nested repeats)
@@ -190,7 +196,7 @@ func _execute_command(cmd_data: Dictionary) -> void:
 					return
 				await _execute_command(inner_cmd)
 			# small delay between repeat iterations to let animations/physics run
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(game_speed).timeout
 		print("⬅️ Exit repeat")
 		return
 
@@ -207,11 +213,20 @@ func _evaluate_condition(cond: String) -> bool:
 			var r = player_node.is_ground_ahead()
 			print("Eval cond: ground_ahead -> ", r)
 			return r
+		"wall_ahead":
+			var r = player_node.is_wall_ahead()
+			print("Eval cond: wall_ahead -> ", r)
+			return r
+		"no_wall_ahead":
+			var r = not player_node.is_wall_ahead()
+			print("Eval cond: no_wall_ahead -> ", r)
+			return r
 		"spaceship_part":
 			return _spaceship_part_exists()
 		_:
 			print("Eval cond: unknown -> ", cond)
 			return false
+
 
 func _move_player(cmd: String, steps: int) -> void:
 	match cmd:
@@ -223,7 +238,7 @@ func _move_player(cmd: String, steps: int) -> void:
 			await player_node.blockly_step_done
 		"move_up":
 			player_node.blockly_jump()
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(game_speed).timeout
 		"move_right_and_jump":
 			player_node.blockly_move_and_jump(steps)
 			await player_node.blockly_step_done
@@ -247,3 +262,13 @@ func _find_spaceship_part(node: Node) -> bool:
 			if _find_spaceship_part(child):
 				return true
 	return false
+	
+func _count_blocks(commands: Array) -> int:
+	var total := 0
+	for cmd in commands:
+		total += 1
+		if cmd.has("do"):
+			total += _count_blocks(cmd["do"])
+		if cmd.has("else"):
+			total += _count_blocks(cmd["else"])
+	return total
