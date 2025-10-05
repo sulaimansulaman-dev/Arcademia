@@ -25,7 +25,7 @@ GameManager="*res://game/scripts/game_manager.gd"
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
-window/size/mode=2
+window/size/mode=1
 window/vsync/vsync_mode=0
 
 [dotnet]

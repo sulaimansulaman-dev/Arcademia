@@ -281,7 +281,7 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("7_04lll")]
-position = Vector2(1377.0001, 546)
+position = Vector2(1376, 548)
 scale = Vector2(1.4, 1.4)
 
 [node name="Platforms" type="Node" parent="."]
