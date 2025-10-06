@@ -30,7 +30,7 @@ grow_vertical = 2
 [node name="WebViewOverlay" type="Control" parent="CanvasLayer/Control/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 15.0
+size_flags_stretch_ratio = 19.5
 
 [node name="Lvl1_Blockly" type="WebView" parent="CanvasLayer/Control/HSplitContainer/WebViewOverlay"]
 full_window_size = false
@@ -40,7 +40,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 29.0
+offset_right = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -55,6 +55,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -69,6 +70,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 41.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -83,6 +85,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -93,12 +96,12 @@ size_flags_stretch_ratio = 9.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 20.0
+size_flags_stretch_ratio = 21.0
 stretch = true
 
 [node name="GameViewportBottom" type="SubViewport" parent="CanvasLayer/Control/HSplitContainer/GameAreaBottom"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
-size = Vector2i(909, 900)
+size = Vector2i(824, 900)
 render_target_update_mode = 4
