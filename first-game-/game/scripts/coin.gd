@@ -19,5 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print("✅ Coin collected! Blocks used (Score): ", used_blocks)
 
 		animation_player.play("pickup")
+		
+		
 
 		get_tree().change_scene_to_file("res://game/scenes/LevelOutro.tscn")
