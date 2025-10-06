@@ -1,5 +1,16 @@
 extends Control
 
+@onready var level_1_button: Button = $"Level 1"
+@onready var level_2_button: Button = $"Level 2"
+@onready var level_3_button: Button = $"Level 3"
+@onready var final_level_button: Button = $"Final Level"
+
+func _ready():
+	# Disable buttons based on progress
+	level_1_button.disabled = false
+	level_2_button.disabled = Globals.unlocked_levels < 2
+	level_3_button.disabled = Globals.unlocked_levels < 3
+	final_level_button.disabled = Globals.unlocked_levels < 4
 
 func _on_level_1_pressed() -> void:
 	Globals.level_to_load = 1

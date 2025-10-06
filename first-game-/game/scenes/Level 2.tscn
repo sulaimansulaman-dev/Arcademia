@@ -184,7 +184,7 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 sources/1 = SubResource("TileSetAtlasSource_8ppap")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
-normal = Vector2(-0.017388675, -0.99984884)
+normal = Vector2(-0.023249527, -0.9997297)
 distance = -2.6604674
 
 [node name="Game" type="Node2D"]
@@ -274,16 +274,16 @@ position = Vector2(929, 605.00006)
 scale = Vector2(1.4, 1.4)
 
 [node name="Killzone" parent="." instance=ExtResource("6_elrge")]
-position = Vector2(806, 647)
+position = Vector2(1095, 658)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, -2)
+position = Vector2(-1, -1)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
 
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("7_42y6m")]
-position = Vector2(1311, 596)
+position = Vector2(1307.9999, 596)
 scale = Vector2(1.4, 1.4)
 
 [node name="Platforms" type="Node" parent="."]

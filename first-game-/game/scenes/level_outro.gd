@@ -1,13 +1,16 @@
 extends Control
 
 @onready var image_display: TextureRect = $TextureRect
+@onready var score_label = $TextureRect/Label
 var images: Array[Texture2D] = []
-var current_index := 0
+var current_index := 0 
 
 func _ready():
 	image_display.expand = true
 	image_display.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	image_display.size = get_viewport_rect().size
+	# Set the Score to the Score Value
+	score_label.text = "Your Score is : \n " + str(Globals.final_score) + " Blocks"
 
 	# Pick image set based on which level just finished
 	match Globals.level_to_load:
@@ -15,6 +18,7 @@ func _ready():
 			images = [
 				load("res://story/assets/level1_steering_wheel.jpg"),
 			]
+			
 		2:
 			images = [
 				load("res://story/assets/level2_fuel_tank.png"),
@@ -42,6 +46,9 @@ func _ready():
 			if current_index < images.size():
 				image_display.texture = images[current_index]
 			else:
-				# when slideshow is done, head back to main menu
+				# Unlock the next level before returning to menu
+				if Globals.level_to_load < 4:
+					Globals.unlocked_levels = max(Globals.unlocked_levels, Globals.level_to_load + 1)
+				
 				get_tree().change_scene_to_file("res://main menu/scenes/MainMenu.tscn")
 	)
