@@ -17,7 +17,7 @@ html, body {
 #topbar {
   padding: 10px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
   align-items: center;
   justify-content: flex-start;
@@ -31,7 +31,7 @@ html, body {
 }
 
 #switchbar {
-  margin-top: 80px;
+  margin-top: 70px;
   padding: 12px;
   display: flex;
   justify-content: flex-start;
@@ -40,7 +40,7 @@ html, body {
   position: fixed;
   width: 100%;
   z-index: 9;
-  top: 50px;
+  top: 20px;
   box-sizing: border-box;
 }
 
@@ -55,15 +55,15 @@ html, body {
 
 #blocklyDiv {
   position: absolute;
-  top: 200px;
+  top: 160px;
   left: 0;
-  width: 100%;
   bottom: 0;
+  right: 0;
   
 }
 
 button {
-  padding: 10px 22px;
+  padding: 12px 28px;
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 4px;
