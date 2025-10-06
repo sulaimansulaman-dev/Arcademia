@@ -1,9 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://bm3tmbs13bdom"]
+[gd_scene load_steps=30 format=3 uid="uid://bm3tmbs13bdom"]
 
 [ext_resource type="Script" uid="uid://cph5gm577f0lr" path="res://main menu/scenes/main_menu.gd" id="1_pabi3"]
 [ext_resource type="Texture2D" uid="uid://dht0iymgclsrx" path="res://avatar creation/ui/Rectangle 130.png" id="2_pabi3"]
 [ext_resource type="FontFile" uid="uid://c1wcxniugtqaa" path="res://avatar creation/fonts/montserrat.regular.ttf" id="2_tn1jw"]
 [ext_resource type="Texture2D" uid="uid://b2gpw1t2voh0u" path="res://main menu/png/Menu_title.png" id="4_2tc35"]
+[ext_resource type="AudioStream" uid="uid://cy3eyekklvtyn" path="res://music and sfx/sfx/menu_open.wav" id="5_2t4tr"]
+[ext_resource type="AudioStream" uid="uid://dh3r7kf36nhdo" path="res://music and sfx/sfx/menu_close.wav" id="6_3q48q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7l6f"]
 bg_color = Color(0.172549, 0.905882, 0.776471, 1)
@@ -361,6 +363,17 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ydyjn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_xjo21")
 text = "Sign Out
 "
+
+[node name="sfx_menuopen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2t4tr")
+autoplay = true
+bus = &"SFX"
+playback_type = 1
+
+[node name="sfx_menuclose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3q48q")
+autoplay = true
+bus = &"SFX"
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]

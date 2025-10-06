@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgf8rrc0mlsxc"
+path="res://.godot/imported/Moonriding.mp3-b53656bd759b3314a12d73699cb13ed9.mp3str"
+
+[deps]
+
+source_file="res://music and sfx/music/Moonriding.mp3"
+dest_files=["res://.godot/imported/Moonriding.mp3-b53656bd759b3314a12d73699cb13ed9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -185,6 +185,7 @@ func cycle_texture(category: String, direction: int) -> void:
 
 
 func _on_save_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_saved)
 	print("Save pressed:")
 	print("Skin:", current_skin)
 	print("Mouth:", current_mouth)
