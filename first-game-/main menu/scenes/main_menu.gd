@@ -8,6 +8,7 @@ extends Control
 
 
 func _ready():
+	#AudioManager.play_sound(AudioManager.bgm_mainmusic)
 	# Disable buttons based on progress
 	level_1_button.disabled = false
 	level_2_button.disabled = Globals.unlocked_levels < 2

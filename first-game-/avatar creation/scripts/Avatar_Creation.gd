@@ -58,7 +58,7 @@ var previous_outfit := 0
 }
 
 func _ready() -> void:
-	
+	AudioManager.play_music(AudioManager.bgm_mainmusic)
 	# Load textures (required folders must have at least 1 image)
 	skin_textures = load_textures("res://avatar creation/assets/avatars/skin/")
 	mouth_textures = load_textures("res://avatar creation/assets/avatars/mouth/")

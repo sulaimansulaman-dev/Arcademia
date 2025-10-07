@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctbqvnebjv2to"
+path="res://.godot/imported/error.wav-229b5e102e79b5ba5a9bec63435f0dee.sample"
+
+[deps]
+
+source_file="res://music and sfx/sfx/error.wav"
+dest_files=["res://.godot/imported/error.wav-229b5e102e79b5ba5a9bec63435f0dee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

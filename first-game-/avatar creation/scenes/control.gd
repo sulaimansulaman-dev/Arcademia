@@ -58,7 +58,7 @@ var previous_outfit := 0
 }
 
 func _ready() -> void:
-	
+	AudioManager.play_sound(AudioManager.bgm_mainmusic)
 	# Load textures (required folders must have at least 1 image)
 	skin_textures = load_textures("res://avatar creation/assets/avatars/skin/")
 	mouth_textures = load_textures("res://avatar creation/assets/avatars/mouth/")
@@ -185,6 +185,7 @@ func cycle_texture(category: String, direction: int) -> void:
 
 
 func _on_save_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_save)
 	print("Save pressed:")
 	print("Skin:", current_skin)
 	print("Mouth:", current_mouth)
@@ -236,4 +237,5 @@ func _set_disabled_state_for_fullsuit(active: bool) -> void:
 
 
 func _on_back_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")
