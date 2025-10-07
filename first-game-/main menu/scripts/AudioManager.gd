@@ -1,19 +1,19 @@
 extends Node
 
-# --- 🎚️ Sound Effects ---
+# sound effects variables
 @onready var sfx_menuopen = preload("res://music and sfx/sfx/menu_open.wav")
 @onready var sfx_menuclose = preload("res://music and sfx/sfx/menu_close.wav")
 @onready var sfx_save = preload("res://music and sfx/sfx/save.wav")
 @onready var sfx_nav = preload("res://music and sfx/sfx/nav.wav")
 
-# --- 🎶 Background Music ---
+# background music variables
 @onready var bgm_main = preload("res://music and sfx/music/Elys.mp3")
 @onready var bgm_level_1 = preload("res://music and sfx/music/Moonriding.mp3")
 @onready var bgm_level_2 = preload("res://music and sfx/music/dwm.mp3")
 @onready var bgm_level_3 = preload("res://music and sfx/music/lasthope.mp3")
 @onready var bgm_level_4 = preload("res://music and sfx/music/refreshed.mp3")
 
-# --- 🎛️ Players ---
+# music players
 var bgm_player: AudioStreamPlayer
 var current_music: AudioStream = null
 
@@ -33,7 +33,7 @@ func _ready():
 	# ✅ Play for the current scene when the game loads
 	_on_scene_changed()
 
-# --- 🔊 Sound Effects ---
+# playing the sound effects
 func play_sound(stream: AudioStream, volume_db: float = -8.0):
 	if not stream:
 		return
@@ -44,7 +44,7 @@ func play_sound(stream: AudioStream, volume_db: float = -8.0):
 	player.play()
 	get_tree().create_timer(stream.get_length()).timeout.connect(func(): player.queue_free())
 
-# --- 🎵 Background Music ---
+# play background music
 func play_music(stream: AudioStream, fade_time: float = 1.0):
 	if not stream:
 		return
@@ -62,13 +62,13 @@ func play_music(stream: AudioStream, fade_time: float = 1.0):
 	bgm_player.volume_db = -10
 	bgm_player.play()
 
-	# Loop properly
+	# loop music
 	if bgm_player.stream is AudioStreamWAV:
 		bgm_player.stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
 	elif bgm_player.stream is AudioStreamOggVorbis or bgm_player.stream is AudioStreamMP3:
 		bgm_player.stream.loop = true
 
-# --- ⏹️ Stop background music ---
+# stop background music
 func stop_music(fade_out_time: float = 0.0):
 	if fade_out_time > 0.0:
 		var tween = create_tween()
@@ -79,7 +79,7 @@ func stop_music(fade_out_time: float = 0.0):
 	else:
 		bgm_player.stop()
 
-# --- 🎬 Handle scene changes ---
+# handle scene changes
 func _on_scene_changed():
 	await get_tree().create_timer(0.05).timeout
 
