@@ -68,7 +68,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pabi3"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -81,8 +81,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ff4y"]
-bg_color = Color(0.09803922, 0.15294118, 0.77254903, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2e0cj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjo21"]
 
@@ -253,7 +252,7 @@ offset_bottom = 442.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ff4y")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2e0cj")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_xjo21")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sp287")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rn504")
