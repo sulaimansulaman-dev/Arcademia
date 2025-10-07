@@ -1,7 +1,34 @@
-[gd_scene load_steps=26 format=3 uid="uid://c2tix0t3kt66b"]
+[gd_scene load_steps=46 format=3 uid="uid://c2tix0t3kt66b"]
 
 [ext_resource type="Texture2D" uid="uid://errf5ckhrui5" path="res://game/assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dc71gq5mcmikb" path="res://game/scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://4sbf2dno5hsq" path="res://game/space assets/Astronaut/Astronaut_Idle.png" id="2_u5gyh"]
+[ext_resource type="Texture2D" uid="uid://bh3me6xn53hrb" path="res://game/space assets/Astronaut/Astronaut_Jump.png" id="4_uy5fi"]
+[ext_resource type="Texture2D" uid="uid://baffiva7i2sra" path="res://game/space assets/Astronaut/Astronaut_Run.png" id="5_lvpx6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy5fi"]
+atlas = ExtResource("2_u5gyh")
+region = Rect2(0, 0, 24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvpx6"]
+atlas = ExtResource("2_u5gyh")
+region = Rect2(24, 0, 24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nggnu"]
+atlas = ExtResource("2_u5gyh")
+region = Rect2(48, 0, 24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6cxe"]
+atlas = ExtResource("2_u5gyh")
+region = Rect2(72, 0, 24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5wgc"]
+atlas = ExtResource("2_u5gyh")
+region = Rect2(96, 0, 24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od4tg"]
+atlas = ExtResource("2_u5gyh")
+region = Rect2(120, 0, 24, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -19,9 +46,53 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_3vyb7")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_33hhw"]
+atlas = ExtResource("4_uy5fi")
+region = Rect2(1, 0, 23, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukil2"]
+atlas = ExtResource("4_uy5fi")
+region = Rect2(24, 0, 23, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v8o7"]
+atlas = ExtResource("4_uy5fi")
+region = Rect2(47, 0, 23, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyo43"]
+atlas = ExtResource("4_uy5fi")
+region = Rect2(70, 0, 23, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br0p3"]
+atlas = ExtResource("4_uy5fi")
+region = Rect2(93, 0, 23, 21)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1crr"]
+atlas = ExtResource("5_lvpx6")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpk1l"]
+atlas = ExtResource("5_lvpx6")
+region = Rect2(24, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc3ow"]
+atlas = ExtResource("5_lvpx6")
+region = Rect2(48, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt1ig"]
+atlas = ExtResource("5_lvpx6")
+region = Rect2(72, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36m2p"]
+atlas = ExtResource("5_lvpx6")
+region = Rect2(96, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs4ic"]
+atlas = ExtResource("5_lvpx6")
+region = Rect2(120, 0, 24, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("1_3vyb7")
@@ -91,6 +162,29 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_uy5fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvpx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nggnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6cxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5wgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od4tg")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
 }, {
 "duration": 1.0,
@@ -103,16 +197,59 @@ animations = [{
 "texture": SubResource("AtlasTexture_qlg0r")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"Idle Knight",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33hhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukil2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v8o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyo43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br0p3")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tuyoq")
 }],
 "loop": true,
-"name": &"jump",
+"name": &"jump Knight",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1crr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpk1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc3ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt1ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36m2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs4ic")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,12 +301,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_a38lo")
 }],
 "loop": true,
-"name": &"run",
+"name": &"run knight",
 "speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
-radius = 5.0
+radius = 4.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
@@ -177,21 +314,23 @@ collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+texture_filter = 1
+position = Vector2(1.1920929e-07, -7.0000014)
+scale = Vector2(1.167, 1.2)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.342309
+frame_progress = 0.59076136
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_fjrip")
 
 [node name="GapRay" type="RayCast2D" parent="."]
 position = Vector2(0, -15)
-target_position = Vector2(16, 16)
+target_position = Vector2(18, 18)
 collide_with_areas = true
 
 [node name="WallRay" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
-target_position = Vector2(15, 0)
+target_position = Vector2(16, 0)
