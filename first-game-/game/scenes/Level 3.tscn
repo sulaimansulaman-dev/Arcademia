@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0rhywh1qg215"]
+[gd_scene load_steps=16 format=3 uid="uid://c0rhywh1qg215"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_vk645"]
 [ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_5b2t4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_ejmty"]
 [ext_resource type="Texture2D" uid="uid://ch41uky16j6kv" path="res://game/space assets/frame.png" id="7_5b2t4"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_87dsr"]
+[ext_resource type="Texture2D" uid="uid://cpeew6ryic6kr" path="res://game/ship_parts/EngineBlaster.png" id="11_tx2jw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("4_4ogpd")
@@ -282,8 +283,14 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_87dsr")]
-position = Vector2(1334, 618)
+position = Vector2(1313.0001, 620)
 scale = Vector2(1.4, 1.4)
+
+[node name="EngineBlaster" type="Sprite2D" parent="Coins/Coin9"]
+position = Vector2(7.857047, -3.5714083)
+rotation = -0.29378507
+scale = Vector2(0.048115898, 0.035853256)
+texture = ExtResource("11_tx2jw")
 
 [node name="Platforms" type="Node" parent="."]
 
