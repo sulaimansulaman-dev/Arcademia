@@ -52,7 +52,7 @@
       font-style: italic;
     }
 
-    /* Help overlay (same style as Level 4) */
+    /* Help overlay */
     #helpOverlay {
       position: fixed;
       top: 0; left: 0;
@@ -216,34 +216,51 @@
   }
 
   // Buttons
+  const runBtn = document.getElementById('run');
+  const clearBtn = document.getElementById('clear');
+  const resetBtn = document.getElementById('reset');
+  const backBtn = document.getElementById('back');
+  const helpBtn = document.getElementById('help');
+
   document.getElementById('closeBlockWarning').onclick = () => {
     document.getElementById('blockWarningOverlay').style.display = 'none';
   };
-  document.getElementById('run').onclick = () => {
+  runBtn.onclick = () => {
     const missing = checkAllBlocksUsed();
     if (missing.length > 0) { showBlockWarning(missing); return; }
     sendToGodot({ type: 'program', commands: buildProgram() });
   };
-  document.getElementById('clear').onclick = () => workspace.clear();
-  document.getElementById('reset').onclick = () => sendToGodot({ type: 'reset_level' });
-  document.getElementById('back').onclick = () => sendToGodot({ type: 'back' });
-  document.getElementById('help').onclick = () => {
-    document.getElementById('helpOverlay').style.display = 'block';
-  };
-  document.getElementById('closeHelp').onclick = () => {
-    document.getElementById('helpOverlay').style.display = 'none';
-  };
+  clearBtn.onclick = () => workspace.clear();
+  resetBtn.onclick = () => sendToGodot({ type: 'reset_level' });
+  backBtn.onclick = () => sendToGodot({ type: 'back' });
+  helpBtn.onclick = () => document.getElementById('helpOverlay').style.display = 'block';
+  document.getElementById('closeHelp').onclick = () => document.getElementById('helpOverlay').style.display = 'none';
 
-  // ✅ Close help overlay on right-click anywhere
+  // ✅ Close help overlay on right-click
   document.getElementById('helpOverlay').addEventListener('contextmenu', (e) => {
-    e.preventDefault(); // stop browser context menu
+    e.preventDefault();
     document.getElementById('helpOverlay').style.display = 'none';
+  });
+
+  // ✅ Keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    const key = e.key.toLowerCase();
+    switch (key) {
+      case 'r': runBtn.click(); break;           // Run
+      case 'c': clearBtn.click(); break;         // Clear
+      case 'l': resetBtn.click(); break;         // Restart Level
+      case 'b': sendToGodot({ type: 'change_blocks' }); break; // Change Blocks
+      case 'h': helpBtn.click(); break;          // Help
+      case 'a': backBtn.click(); break;          // Back
+    }
   });
 
   window.onload = () => {
     const missing = checkAllBlocksUsed();
     if (missing.length > 0) showBlockWarning(missing);
   };
+
+
 </script>
 </body>
 </html>

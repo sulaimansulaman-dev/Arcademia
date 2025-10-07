@@ -59,7 +59,6 @@ html, body {
   left: 0;
   bottom: 0;
   right: 0;
-  
 }
 
 button {
@@ -158,7 +157,6 @@ button:hover, button:focus {
   <button id="reset">🔄 Reset Level</button>
   <button id="back">⬅️ Back</button>
   <button id="help">❓ Help</button>
-  
 </div>
 
 <!-- 🔀 Switch bar under top buttons -->
@@ -211,7 +209,7 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement":null,"nextStatement":null,"colour":260 }
 ]);
 
-/* Two toolboxes */
+/* Toolboxes */
 const toolboxMovement = {
   "kind":"flyoutToolbox",
   "contents":[
@@ -251,7 +249,7 @@ document.getElementById("switch").addEventListener("click",()=>{
   }
 });
 
-/* Program building */
+/* Build Program */
 function buildProgram(block){
   const commands=[];
   while(block){
@@ -273,13 +271,14 @@ function buildProgram(block){
   }
   return commands;
 }
+
 function getProgram(){
   const starts=workspace.getBlocksByType("start",false);
   if(!starts.length) return[];
   return buildProgram(starts[0].getNextBlock());
 }
 
-/* Required blocks check */
+/* Check Required Blocks */
 function checkAllBlocksUsed(){
   const required=["start","move_right","move_right_and_jump","if_else_block","controls_while"];
   return required.filter(t=>workspace.getBlocksByType(t,false).length===0);
@@ -314,10 +313,25 @@ const helpOverlay=document.getElementById("helpOverlay");
 document.getElementById("help").addEventListener("click",()=>helpOverlay.style.display="block");
 document.getElementById("closeHelp").addEventListener("click",()=>helpOverlay.style.display="none");
 
+/* ✅ Keyboard shortcuts */
+document.addEventListener("keydown",(e)=>{
+  if(e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return; // ignore typing
+  switch(e.key.toLowerCase()){
+    case "r": document.getElementById("run").click(); break;
+    case "c": document.getElementById("clear").click(); break;
+    case "l": document.getElementById("reset").click(); break;
+    case "b": document.getElementById("switch").click(); break;
+    case "h": document.getElementById("help").click(); break;
+    case "a": document.getElementById("back").click(); break;
+  }
+});
+
 window.addEventListener('load',()=>{
   const missing=checkAllBlocksUsed();
   if(missing.length>0) showBlockWarning(missing);
 });
+
+
 </script>
 
 </body>
