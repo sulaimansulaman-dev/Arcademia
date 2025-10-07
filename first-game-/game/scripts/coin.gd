@@ -7,6 +7,7 @@ var db_file_path: String = "user://students.json"
 
 func _ready() -> void:
 	add_to_group("spaceship_part")
+	get_scores_1_to_4_separately()
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -89,3 +90,19 @@ func save_students(students: Array) -> void:
 	file.store_string(JSON.stringify(students, "\t"))
 	file.close()
 	print("📂 Database updated successfully.")
+	
+func get_scores_1_to_4_separately() -> void:
+	if Globals.current_user.is_empty():
+		print("⚠️ No user logged in! Cannot retrieve scores.")
+		return
+
+	var student_scores: Dictionary = Globals.current_user.get("scores", {})
+
+	# Loop through levels 1 to 4 and store in Globals
+	for level in range(1, 5):
+		Globals["level_%d_score" % level] = int(student_scores.get(str(level), 0))
+
+	# Optional: print for debugging
+	print("🎯 Scores:")
+	for level in range(1, 5):
+		print("Level %d: %d" % [level, Globals["level_%d_score" % level]])
