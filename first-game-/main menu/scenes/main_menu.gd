@@ -6,26 +6,35 @@ extends Control
 @onready var final_level_button: Button = $"Final Level"
 
 func _ready():
-	# Disable buttons based on progress
+	# 🔹 Make sure we have the current user's data
+	if Globals.current_user.is_empty():
+		print("⚠️ No logged-in user found. Redirecting to login...")
+		get_tree().change_scene_to_file("res://avatar creation/scenes/StudentTeacher.tscn")
+		return
+
+	var unlocked_levels = Globals.current_user.get("unlocked_levels", 1)
+	Globals.unlocked_levels = unlocked_levels  # keep in sync
+
+	print("🎮 Logged in as:", Globals.current_user["username"], "| Unlocked Levels:", unlocked_levels)
+
+	# 🔹 Enable/disable buttons based on unlocked level
 	level_1_button.disabled = false
-	level_2_button.disabled = Globals.unlocked_levels < 2
-	level_3_button.disabled = Globals.unlocked_levels < 3
-	final_level_button.disabled = Globals.unlocked_levels < 4
+	level_2_button.disabled = unlocked_levels < 2
+	level_3_button.disabled = unlocked_levels < 3
+	final_level_button.disabled = unlocked_levels < 4
+
 
 func _on_level_1_pressed() -> void:
 	Globals.level_to_load = 1
 	get_tree().change_scene_to_file("res://game/scenes/LevelIntro.tscn")
 
-
 func _on_level_2_pressed() -> void:
 	Globals.level_to_load = 2
 	get_tree().change_scene_to_file("res://game/scenes/LevelIntro.tscn")
 
-
 func _on_level_3_pressed() -> void:
 	Globals.level_to_load = 3
 	get_tree().change_scene_to_file("res://game/scenes/LevelIntro.tscn")
-
 
 func _on_final_level_pressed() -> void:
 	Globals.level_to_load = 4
@@ -34,6 +43,6 @@ func _on_final_level_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
-
 func _on_sign_out_pressed() -> void:
+	Globals.current_user = {}
 	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentTeacher.tscn")
