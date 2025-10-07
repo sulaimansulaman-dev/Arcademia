@@ -1,28 +1,39 @@
 extends Node
 
-# Sound Effects
+# --- 🎚️ Sound Effects ---
 @onready var sfx_menuopen = preload("res://music and sfx/sfx/menu_open.wav")
 @onready var sfx_menuclose = preload("res://music and sfx/sfx/menu_close.wav")
 @onready var sfx_save = preload("res://music and sfx/sfx/save.wav")
 @onready var sfx_nav = preload("res://music and sfx/sfx/nav.wav")
-@onready var sfx_error = preload("res://music and sfx/sfx/error.wav")
 
-# Background Music
-@onready var bgm_mainmusic = preload("res://music and sfx/music/Elys.mp3")
-#@onready var bgm_level1 = preload("res://music and sfx/music/level1_theme.ogg")
-#@onready var bgm_level2 = preload("res://music and sfx/music/level2_theme.ogg")
-#@onready var bgm_level3 = preload("res://music and sfx/music/level3_theme.ogg")
-@onready var bgm_level4 = preload("res://music and sfx/music/Moonriding.mp3")
+# --- 🎶 Background Music ---
+@onready var bgm_main = preload("res://music and sfx/music/Elys.mp3")
+@onready var bgm_level_1 = preload("res://music and sfx/music/Moonriding.mp3")
+@onready var bgm_level_2 = preload("res://music and sfx/music/dwm.mp3")
+@onready var bgm_level_3 = preload("res://music and sfx/music/lasthope.mp3")
+@onready var bgm_level_4 = preload("res://music and sfx/music/refreshed.mp3")
 
-# Background music player
+# --- 🎛️ Players ---
 var bgm_player: AudioStreamPlayer
+var current_music: AudioStream = null
 
 func _ready():
-	bgm_player = AudioStreamPlayer.new()
-	bgm_player.volume_db = -10
-	add_child(bgm_player)
+	print("🎵 AudioManager ready and running.")
 
-#Play SFX (One-Shot)
+	if not bgm_player:
+		bgm_player = AudioStreamPlayer.new()
+		bgm_player.autoplay = false
+		bgm_player.volume_db = -10
+		add_child(bgm_player)
+
+	# ✅ Use 'scene_changed' — this is correct in Godot 4.x
+	if not get_tree().is_connected("scene_changed", Callable(self, "_on_scene_changed")):
+		get_tree().scene_changed.connect(Callable(self, "_on_scene_changed"))
+
+	# ✅ Play for the current scene when the game loads
+	_on_scene_changed()
+
+# --- 🔊 Sound Effects ---
 func play_sound(stream: AudioStream, volume_db: float = -8.0):
 	if not stream:
 		return
@@ -31,38 +42,63 @@ func play_sound(stream: AudioStream, volume_db: float = -8.0):
 	player.volume_db = volume_db
 	add_child(player)
 	player.play()
+	get_tree().create_timer(stream.get_length()).timeout.connect(func(): player.queue_free())
 
-	# Free after finish
-	get_tree().create_timer(stream.get_length()).timeout.connect(func():
-		if is_instance_valid(player):
-			player.queue_free()
-	)
-
-# Play Background Music
-
-func play_music(stream: AudioStream, volume_db: float = -10.0):
+# --- 🎵 Background Music ---
+func play_music(stream: AudioStream, fade_time: float = 1.0):
 	if not stream:
 		return
-	if bgm_player.stream == stream:
-		return # already playing this one
+	if current_music == stream:
+		return
 
-	bgm_player.stop()
-	# If the stream supports looping, enable it
-	if stream is AudioStreamWAV:
-		stream.loop = true
+	current_music = stream
+
+	if bgm_player.playing:
+		stop_music(fade_time)
+		await get_tree().create_timer(fade_time).timeout
 
 	bgm_player.stream = stream
-	bgm_player.volume_db = volume_db
+	bgm_player.bus = "Music" if AudioServer.get_bus_index("Music") != -1 else "Master"
+	bgm_player.volume_db = -10
 	bgm_player.play()
-	
-	
 
-# Optional fade-out (smooth transition)
-func stop_music(fade_time: float = 1.0):
-	if not bgm_player.playing:
-		return
-	var tween = create_tween()
-	tween.tween_property(bgm_player, "volume_db", -40, fade_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	tween.finished.connect(func():
+	# Loop properly
+	if bgm_player.stream is AudioStreamWAV:
+		bgm_player.stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+	elif bgm_player.stream is AudioStreamOggVorbis or bgm_player.stream is AudioStreamMP3:
+		bgm_player.stream.loop = true
+
+# --- ⏹️ Stop background music ---
+func stop_music(fade_out_time: float = 0.0):
+	if fade_out_time > 0.0:
+		var tween = create_tween()
+		tween.tween_property(bgm_player, "volume_db", -80, fade_out_time)
+		tween.finished.connect(func():
+			bgm_player.stop()
+			bgm_player.volume_db = -10)
+	else:
 		bgm_player.stop()
-		bgm_player.volume_db = -10)
+
+# --- 🎬 Handle scene changes ---
+func _on_scene_changed():
+	await get_tree().create_timer(0.05).timeout
+
+	var scene = get_tree().current_scene
+	if not scene:
+		return
+
+	print("Scene changed to:", scene.name)
+
+	match scene.name:
+		"Start", "StudentTeacher", "Login", "LoginStudent", "MainMenu", "LevelIntro", "SignUp", "AvatarCreation", "LevelOutro":
+			play_music(bgm_main)
+		"Level 1", "Game", "blocks":
+			play_music(bgm_level_1)
+		"Level 2":
+			play_music(bgm_level_2)
+		"Level 3":
+			play_music(bgm_level_3)
+		"Level 4":
+			play_music(bgm_level_4)
+		_:
+			play_music(bgm_main)

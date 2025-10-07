@@ -57,4 +57,4 @@ func _ready():
 				# done with slideshow → launch Blocks scene
 				get_tree().change_scene_to_file("res://game/scenes/Blocks.tscn")
 	)
-	AudioManager.stop_music(1.0)
+	

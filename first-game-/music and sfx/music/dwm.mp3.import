@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyk4mb0gr8dg5"
+path="res://.godot/imported/dwm.mp3-f353bb4c98d2e4182fdc80c351ac0069.mp3str"
+
+[deps]
+
+source_file="res://music and sfx/music/dwm.mp3"
+dest_files=["res://.godot/imported/dwm.mp3-f353bb4c98d2e4182fdc80c351ac0069.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

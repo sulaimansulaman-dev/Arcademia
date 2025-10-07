@@ -6,7 +6,7 @@ var images: Array[Texture2D] = []
 var current_index := 0 
 
 func _ready():
-	AudioManager.play_music(AudioManager.bgm_mainmusic)
+	#AudioManager.play_music(AudioManager.bgm_mainmusic)
 	image_display.expand = true
 	image_display.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	image_display.size = get_viewport_rect().size
