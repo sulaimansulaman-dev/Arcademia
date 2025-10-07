@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbvfja4ca4xtf"]
+[gd_scene load_steps=15 format=3 uid="uid://cbvfja4ca4xtf"]
 
 [ext_resource type="Script" uid="uid://bw4ch6ebjclvo" path="res://game/scripts/level_1.gd" id="1_tly25"]
 [ext_resource type="Script" uid="uid://bdkwe2xlb23cb" path="res://game/scripts/game_manager.gd" id="2_3j53k"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_vv5ki"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_flfgj"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_8r3nl"]
+[ext_resource type="Texture2D" uid="uid://cbnhuhdckg1jr" path="res://game/ship_parts/SpaceShip.png" id="10_3j53k"]
+[ext_resource type="Texture2D" uid="uid://dydrom1pwcq80" path="res://game/ship_parts/Wrench.png" id="11_2t5to"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("4_1ottd")
@@ -187,6 +189,8 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1080, 444)
 texture = ExtResource("2_tly25")
+flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
 position = Vector2(7.000004, -16.999985)
@@ -254,14 +258,14 @@ scale = Vector2(1.4, 1.4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Mid"
-layer_0/tile_data = PackedInt32Array(1966112, 262144, 0, 1966113, 262144, 0, 1966114, 262144, 1, 1966115, 262144, 1, 1900580, 262144, 1, 1966116, 262144, 1, 1966117, 262144, 0, 1966118, 262144, 0, 1966121, 262144, 1, 1966122, 262144, 1, 1966123, 262144, 1, 1966124, 262144, 0, 1966125, 262144, 0, 1966126, 262144, 1, 1966127, 262144, 1, 1966128, 262144, 1, 1966129, 262144, 0, 1966130, 262144, 0, 1966131, 262144, 1, 1966132, 262144, 1, 1966133, 262144, 1, 1966134, 262144, 1, 1966135, 262144, 1, 1966136, 262144, 0, 1966137, 262144, 0, 1966138, 262144, 1, 1966139, 262144, 1, 1900604, 262144, 0, 1966140, 262144, 1, 1966141, 262144, 0, 1966142, 262144, 0, 1966143, 262144, 0, 1966144, 262144, 0, 1769502, 262144, 1, 1835038, 262144, 1, 1900574, 262144, 1, 1966110, 262144, 1, 1966111, 262144, 0, 1900578, 262144, 0, 1835043, 262144, 0, 1900579, 262144, 1, 1769508, 262144, 0, 1835044, 262144, 1, 1900602, 262144, 0, 1835067, 262144, 0, 1900603, 262144, 1, 1900584, 262144, 1, 1900585, 262144, 1, 1900586, 262144, 1, 1835048, 262144, 0, 1835049, 262144, 1, 1769513, 262144, 0, 1835050, 262144, 0, 1900587, 262144, 0, 1900590, 262144, 0, 1900591, 262144, 1, 1900592, 262144, 0, 1835055, 262144, 0, 1900595, 262144, 0, 1900596, 262144, 1, 1900597, 262144, 1, 1900598, 262144, 1, 1900599, 262144, 0, 1835060, 262144, 0, 1835061, 262144, 1, 1835062, 262144, 0, 1769525, 262144, 0, 1966145, 262144, 1, 1900609, 262144, 1, 1835073, 262144, 1, 1769537, 262144, 1, 1900583, 262144, 0, 1966119, 262144, 1, 1966120, 262144, 1)
+layer_0/tile_data = PackedInt32Array(2031647, 262144, 1, 2097183, 262144, 1, 2162719, 262144, 1, 2228255, 262144, 1, 2228256, 262144, 0, 2228257, 262144, 0, 2228258, 262144, 0, 2162723, 262144, 0, 2228259, 262144, 1, 2097188, 262144, 0, 2162724, 262144, 1, 2228260, 262144, 1, 2031653, 262144, 0, 2097189, 262144, 1, 2162725, 262144, 1, 2228261, 262144, 1, 2228262, 262144, 0, 2228263, 262144, 0, 2162728, 262144, 0, 2228264, 262144, 1, 2097193, 262144, 0, 2162729, 262144, 1, 2228265, 262144, 1, 2031658, 262144, 0, 2097194, 262144, 1, 2162730, 262144, 1, 2228266, 262144, 1, 2097195, 262144, 0, 2162731, 262144, 1, 2228267, 262144, 1, 2162732, 262144, 0, 2228268, 262144, 1, 2228269, 262144, 0, 2228270, 262144, 0, 2162735, 262144, 0, 2228271, 262144, 1, 2097200, 262144, 0, 2162736, 262144, 1, 2228272, 262144, 1, 2162737, 262144, 0, 2228273, 262144, 1, 2228274, 262144, 0, 2228275, 262144, 0, 2162740, 262144, 0, 2228276, 262144, 1, 2097205, 262144, 0, 2162741, 262144, 1, 2228277, 262144, 1, 2031670, 262144, 0, 2097206, 262144, 1, 2162742, 262144, 1, 2228278, 262144, 1, 2097207, 262144, 0, 2162743, 262144, 1, 2228279, 262144, 1, 2162744, 262144, 0, 2228280, 262144, 1, 2228281, 262144, 0, 2228282, 262144, 0, 2162747, 262144, 0, 2228283, 262144, 1, 2097212, 262144, 0, 2162748, 262144, 1, 2228284, 262144, 1, 2162749, 262144, 0, 2228285, 262144, 1, 2228286, 262144, 0, 2228287, 262144, 0, 2228288, 262144, 0, 2228289, 262144, 1, 2031681, 262144, 1, 2097217, 262144, 1, 2162753, 262144, 1)
 
 [node name="Player" parent="." instance=ExtResource("5_vv5ki")]
-position = Vector2(707, 671)
+position = Vector2(727.00006, 760)
 scale = Vector2(1.4, 1.4)
 
 [node name="Killzone" parent="." instance=ExtResource("6_flfgj")]
-position = Vector2(921, 694)
+position = Vector2(1032, 817)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 1)
@@ -270,8 +274,21 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_8r3nl")]
-position = Vector2(1444, 656)
+position = Vector2(1426.9999, 750.99994)
+rotation = 3.2457743
 scale = Vector2(1.4, 1.4)
+
+[node name="Wrench" type="Sprite2D" parent="Coins/Coin9"]
+position = Vector2(-7.36887, 5.079552)
+rotation = -4.6407394
+scale = Vector2(0.03192513, 0.029157376)
+texture = ExtResource("11_2t5to")
+
+[node name="SpaceShip" type="Sprite2D" parent="Coins"]
+position = Vector2(1065, 607.00006)
+rotation = -0.030857548
+scale = Vector2(0.33176678, 0.26544863)
+texture = ExtResource("10_3j53k")
 
 [node name="Platforms" type="Node" parent="."]
 
