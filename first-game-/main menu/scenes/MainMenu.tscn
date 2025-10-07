@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bm3tmbs13bdom"]
+[gd_scene load_steps=45 format=3 uid="uid://bm3tmbs13bdom"]
 
 [ext_resource type="Script" uid="uid://cph5gm577f0lr" path="res://main menu/scenes/main_menu.gd" id="1_pabi3"]
 [ext_resource type="Texture2D" uid="uid://i5cuwbrtw661" path="res://avatar creation/ui/Main Menu in Outer Space.png" id="2_sp287"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c6cnlc23bxo5h" path="res://avatar creation/ui/Sign out button.png" id="9_q2beb"]
 [ext_resource type="Texture2D" uid="uid://cnkqn6otgiv6y" path="res://avatar creation/ui/Level 2 label.png" id="9_q7l6f"]
 [ext_resource type="Texture2D" uid="uid://bhwkybi861lhy" path="res://avatar creation/ui/Level 3 label.png" id="10_xjo21"]
+[ext_resource type="Texture2D" uid="uid://v75hpjivfpuo" path="res://avatar creation/ui/Final level label.png" id="13_q7l6f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3q48q"]
 
@@ -23,7 +24,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofd6k"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -68,14 +69,14 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pabi3"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj8ju"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -93,14 +94,15 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydyjn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqfww"]
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7l6f"]
-bg_color = Color(0.4213595, 0.3210284, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uku0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5oekl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4eb6"]
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn1jw"]
 bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
@@ -210,10 +212,10 @@ color = Color(0.129412, 0.027451, 0.215686, 1)
 [node name="ColorRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1600, 900)
 layout_mode = 0
-offset_left = -99.0
-offset_top = -208.0
-offset_right = 1631.0
-offset_bottom = 885.0
+offset_left = -80.0
+offset_top = -201.0
+offset_right = 1650.0
+offset_bottom = 892.0
 texture = ExtResource("2_sp287")
 expand_mode = 3
 
@@ -262,7 +264,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3q48q")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2t4tr")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2tc35")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_pabi3")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ydyjn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iqfww")
 disabled = true
 icon = ExtResource("5_q7l6f")
 icon_alignment = 1
@@ -278,10 +280,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.8117647, 0.9098039, 0.84313726, 0.5019608)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_q7l6f")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2e0cj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uku0h")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5oekl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ofd6k")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sp287")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_o4eb6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rn504")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_0fjmb")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3q48q")
@@ -298,10 +300,10 @@ expand_icon = true
 
 [node name="Final Level" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1012.0
-offset_top = 540.0
-offset_right = 1335.0
-offset_bottom = 756.0
+offset_left = 1000.0
+offset_top = 523.0
+offset_right = 1323.0
+offset_bottom = 739.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_colors/font_disabled_color = Color(0.8117647, 0.9098039, 0.84313726, 0.5019608)
 theme_override_fonts/font = ExtResource("2_tn1jw")
@@ -388,6 +390,11 @@ texture = ExtResource("9_q7l6f")
 position = Vector2(387.00003, 480.00003)
 scale = Vector2(0.24267574, 0.16674809)
 texture = ExtResource("10_xjo21")
+
+[node name="FinalLevelLabel" type="Sprite2D" parent="."]
+position = Vector2(1161.0001, 486)
+scale = Vector2(0.256836, 0.14404297)
+texture = ExtResource("13_q7l6f")
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
