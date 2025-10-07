@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c2tix0t3kt66b" path="res://game/scenes/player.tscn" id="5_vv5ki"]
 [ext_resource type="PackedScene" uid="uid://mxyvnf3t3g8r" path="res://game/scenes/killzone.tscn" id="6_flfgj"]
 [ext_resource type="PackedScene" uid="uid://22b02fc0m88x" path="res://game/scenes/coin.tscn" id="7_8r3nl"]
-[ext_resource type="Texture2D" uid="uid://cbnhuhdckg1jr" path="res://game/ship_parts/SpaceShip.png" id="10_3j53k"]
+[ext_resource type="Texture2D" uid="uid://b0dtmpt1gv55l" path="res://game/ship_parts/Brokenship.png" id="11_1ottd"]
 [ext_resource type="Texture2D" uid="uid://dydrom1pwcq80" path="res://game/ship_parts/Wrench.png" id="11_2t5to"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -241,10 +241,10 @@ unique_name_in_owner = true
 script = ExtResource("2_3j53k")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 758.0
-offset_top = 478.0
-offset_right = 900.0
-offset_bottom = 501.0
+offset_left = 715.0
+offset_top = 557.0
+offset_right = 857.0
+offset_bottom = 580.0
 theme_override_fonts/font = ExtResource("3_2t5to")
 theme_override_font_sizes/font_size = 8
 text = "Final Level"
@@ -285,10 +285,10 @@ scale = Vector2(0.03192513, 0.029157376)
 texture = ExtResource("11_2t5to")
 
 [node name="SpaceShip" type="Sprite2D" parent="Coins"]
-position = Vector2(1065, 607.00006)
+position = Vector2(1020, 597.00006)
 rotation = -0.030857548
 scale = Vector2(0.33176678, 0.26544863)
-texture = ExtResource("10_3j53k")
+texture = ExtResource("11_1ottd")
 
 [node name="Platforms" type="Node" parent="."]
 
