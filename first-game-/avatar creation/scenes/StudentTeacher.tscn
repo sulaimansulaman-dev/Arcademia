@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://ctntwxg2p85g0"]
+[gd_scene load_steps=16 format=3 uid="uid://ctntwxg2p85g0"]
 
 [ext_resource type="Script" uid="uid://b4j15mnxo2a78" path="res://avatar creation/scenes/student_teacher.gd" id="1_k6nfd"]
 [ext_resource type="Texture2D" uid="uid://uak3tyenyvy7" path="res://avatar creation/ui/Begining page.png" id="2_k6nfd"]
 [ext_resource type="FontFile" uid="uid://c1wcxniugtqaa" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_g5ukf"]
 [ext_resource type="Texture2D" uid="uid://b2ckkc0gdno3u" path="res://avatar creation/ui/Red Button with Golden _START_.png" id="4_k6nfd"]
-[ext_resource type="Texture2D" uid="uid://1usanrg3643i" path="res://avatar creation/ui/Glowing Speech Bubble on Checkered Background.png" id="5_hotob"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hotob"]
 
@@ -44,108 +43,6 @@ corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp1nj"]
 bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
-
-[sub_resource type="Animation" id="Animation_fxeog"]
-resource_name = "Bubble_in"
-length = 35.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.33333334, 1.5, 2.3333333, 3.5, 4.4, 5.36),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.25490198), Color(1, 1, 1, 0.45490196), Color(1, 1, 1, 0.6666667), Color(1, 1, 1, 0.7607843), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:visible_characters")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(5.47, 7.18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, -1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RichTextLabel:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(5.5),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_87di6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:visible_characters")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RichTextLabel:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_hotob"]
-resource_name = "type-text"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RichTextLabel:visible_characters")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lu23f"]
-_data = {
-&"Bubble_in": SubResource("Animation_fxeog"),
-&"RESET": SubResource("Animation_87di6"),
-&"type-text": SubResource("Animation_hotob")
-}
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_k6nfd")
@@ -206,38 +103,5 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_87di6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_cp1nj")
 icon = ExtResource("4_k6nfd")
 expand_icon = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_left = -490.0
-offset_top = 299.0
-offset_right = -129.0
-offset_bottom = 575.0
-texture = ExtResource("5_hotob")
-region_rect = Rect2(27, 100, 927, 750)
-patch_margin_right = 22
-patch_margin_bottom = 34
-
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.238
-anchor_bottom = 0.104
-offset_left = 79.0
-offset_top = 69.0
-offset_right = 204.232
-offset_bottom = 141.296
-theme_override_colors/default_color = Color(0.2, 0.06666667, 0, 1)
-theme_override_font_sizes/normal_font_size = 42
-theme_override_font_sizes/bold_font_size = 20
-text = "Hi, I’m Alex"
-autowrap_mode = 2
-tab_size = 8
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NinePatchRect"]
-libraries = {
-&"": SubResource("AnimationLibrary_lu23f")
-}
 
 [connection signal="pressed" from="StartButton1" to="." method="_on_start_button_1_pressed"]

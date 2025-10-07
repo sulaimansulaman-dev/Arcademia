@@ -24,6 +24,7 @@ func _on_save_button_2_pressed() -> void:
 	for student in students:
 		if student["username"] == username and student["password"] == pwd:
 			print("✅ Password correct for:", username)
+			Globals.current_user = student
 			get_tree().change_scene_to_file("res://main menu/scenes/MainMenu.tscn")
 			return
 	
