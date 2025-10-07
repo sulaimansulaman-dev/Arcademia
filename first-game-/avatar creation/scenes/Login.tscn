@@ -1,12 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://m1wywaxce48f"]
+[gd_scene load_steps=22 format=3 uid="uid://m1wywaxce48f"]
 
 [ext_resource type="Script" uid="uid://f2fav02yepyg" path="res://avatar creation/scenes/login.gd" id="1_kv00c"]
-[ext_resource type="Texture2D" uid="uid://dht0iymgclsrx" path="res://avatar creation/ui/Rectangle 130.png" id="2_yq2ht"]
-[ext_resource type="Texture2D" uid="uid://cnty4lwf80ycu" path="res://avatar creation/ui/Login_title.png" id="3_yydbn"]
+[ext_resource type="Texture2D" uid="uid://crbmis45du5mr" path="res://avatar creation/ui/background.jpg" id="2_73pyv"]
 [ext_resource type="FontFile" uid="uid://cxmm3y2mpwlja" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_ljn24"]
 [ext_resource type="FontFile" uid="uid://c1wcxniugtqaa" path="res://avatar creation/fonts/montserrat.regular.ttf" id="5_h7b4o"]
 [ext_resource type="PackedScene" uid="uid://dgdykjx4l6djc" path="res://avatar creation/scenes/OnScreenKeyboard.tscn" id="6_fq0ol"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_wldpv"]
+[ext_resource type="Texture2D" uid="uid://bbmpvgp0kr3mw" path="res://avatar creation/ui/Login button.png" id="7_fq0ol"]
+[ext_resource type="Texture2D" uid="uid://5rhkn4plypq2" path="res://avatar creation/ui/login heading.png" id="8_785mm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkrk"]
 bg_color = Color(0.986752, 0.986752, 0.986752, 1)
@@ -29,12 +30,7 @@ LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
 LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
 LineEdit/styles/normal = SubResource("StyleBoxFlat_rlkrk")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8e5g"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47blu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8yx2"]
 bg_color = Color(0.172549, 0.905882, 0.776471, 1)
@@ -126,39 +122,23 @@ custom_minimum_size = Vector2(1600, 900)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_right = 1603.0
-offset_bottom = 900.0
+offset_left = -745.0
+offset_top = -273.0
+offset_right = 2325.0
+offset_bottom = 909.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_yq2ht")
+texture = ExtResource("2_73pyv")
 expand_mode = 2
 stretch_mode = 5
-
-[node name="TitleImage" type="TextureRect" parent="ColorRect"]
-custom_minimum_size = Vector2(903, 190)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.00234375
-anchor_top = 0.0033333334
-anchor_right = -0.00234375
-anchor_bottom = 0.0033333334
-offset_left = 453.75
-offset_top = 4.0
-offset_right = 2478.75
-offset_bottom = 392.0
-grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_yydbn")
-metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0925
-anchor_top = -0.046666667
-anchor_right = -0.0925
-anchor_bottom = -0.046666667
+anchor_left = 0.18697068
+anchor_top = 0.15059222
+anchor_right = 0.18697068
+anchor_bottom = 0.15059222
 offset_left = 286.0
 offset_top = 501.0
 offset_right = 1644.0
@@ -168,10 +148,10 @@ metadata/_edit_use_anchors_ = true
 [node name="NameLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(125, 22)
-offset_left = 817.0
-offset_top = 247.0
-offset_right = 1035.0
-offset_bottom = 277.0
+offset_left = 828.0
+offset_top = 185.0
+offset_right = 1046.0
+offset_bottom = 215.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_ljn24")
 theme_override_font_sizes/normal_font_size = 24
@@ -180,58 +160,57 @@ text = "Password:"
 [node name="AgeLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
-offset_left = 106.0
-offset_top = 235.0
-offset_right = 352.0
-offset_bottom = 264.0
+offset_left = 112.0
+offset_top = 185.0
+offset_right = 358.0
+offset_bottom = 214.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_ljn24")
 theme_override_font_sizes/normal_font_size = 24
 text = "User Name:"
 
 [node name="NameEdit" type="LineEdit" parent="."]
-offset_left = 380.0
-offset_top = 233.0
-offset_right = 767.0
-offset_bottom = 268.0
+offset_left = 390.0
+offset_top = 181.0
+offset_right = 777.0
+offset_bottom = 216.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="AgeEdit" type="LineEdit" parent="."]
-offset_left = 1062.0
-offset_top = 234.0
-offset_right = 1449.0
-offset_bottom = 269.0
+offset_left = 1078.0
+offset_top = 182.0
+offset_right = 1465.0
+offset_bottom = 217.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="OnScreenKeyboard" parent="." instance=ExtResource("6_fq0ol")]
-offset_left = 805.0
-offset_top = 859.0
-offset_right = 805.0
-offset_bottom = 859.0
+offset_left = 782.0
+offset_top = 848.0
+offset_right = 782.0
+offset_bottom = 848.0
 
 [node name="StudentManager" type="Node2D" parent="."]
 
 [node name="SaveButton2" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 485.0
-offset_top = 353.0
-offset_right = 1044.16
-offset_bottom = 413.0
+offset_left = 527.0
+offset_top = 226.0
+offset_right = 1026.0
+offset_bottom = 445.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_h7b4o")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_b8e5g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_47blu")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_q8yx2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j0fik")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_rbger")
@@ -242,6 +221,13 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_47blu")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_785mm")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_fq0ol")
 theme_override_styles/focus = SubResource("StyleBoxFlat_73pyv")
-text = "Login"
+icon = ExtResource("7_fq0ol")
+icon_alignment = 1
+expand_icon = true
+
+[node name="LoginHeading" type="Sprite2D" parent="."]
+position = Vector2(754, 95)
+scale = Vector2(0.77636725, 0.41992182)
+texture = ExtResource("8_785mm")
 
 [connection signal="pressed" from="SaveButton2" to="." method="_on_save_button_2_pressed"]

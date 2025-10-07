@@ -1,20 +1,36 @@
-[gd_scene load_steps=22 format=3 uid="uid://dluuxm5pr46m2"]
+[gd_scene load_steps=33 format=3 uid="uid://dluuxm5pr46m2"]
 
 [ext_resource type="Script" uid="uid://l5v31ijntsby" path="res://avatar creation/scenes/login_teacher.gd" id="1_greu1"]
-[ext_resource type="Texture2D" uid="uid://dht0iymgclsrx" path="res://avatar creation/ui/Rectangle 130.png" id="2_vxara"]
-[ext_resource type="Texture2D" uid="uid://cnty4lwf80ycu" path="res://avatar creation/ui/Login_title.png" id="3_fn5wl"]
+[ext_resource type="Texture2D" uid="uid://cwthy3ftbrnel" path="res://avatar creation/ui/Cosmic Login Screen Design.png" id="2_vxara"]
 [ext_resource type="FontFile" uid="uid://cxmm3y2mpwlja" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_aq5ww"]
+[ext_resource type="Texture2D" uid="uid://f15kn3227yc4" path="res://avatar creation/ui/Sign-Up button.png" id="5_fn5wl"]
 [ext_resource type="FontFile" uid="uid://c1wcxniugtqaa" path="res://avatar creation/fonts/montserrat.regular.ttf" id="5_ve0si"]
 [ext_resource type="StyleBox" uid="uid://dm3ckbx1qbprs" path="res://student management/Button_shadow.tres" id="6_6ewfk"]
 [ext_resource type="PackedScene" uid="uid://dgdykjx4l6djc" path="res://avatar creation/scenes/OnScreenKeyboard.tscn" id="7_tsvva"]
+[ext_resource type="Texture2D" uid="uid://bbmpvgp0kr3mw" path="res://avatar creation/ui/Login button.png" id="8_aq5ww"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a6wx"]
-bg_color = Color(0.843137, 0.247059, 0.811765, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-corner_detail = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ve0si"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ewfk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxara"]
+bg_color = Color(0.101960786, 0.16470589, 0.6, 0.5803922)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c8ya6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fsvu3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1vn4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sgb4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xasw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a6nq7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0glc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40a4t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlkrk"]
 bg_color = Color(0.986752, 0.986752, 0.986752, 1)
@@ -37,61 +53,22 @@ LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
 LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
 LineEdit/styles/normal = SubResource("StyleBoxFlat_rlkrk")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8e5g"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b576u"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8yx2"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7rgq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0fik"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq5ww"]
+bg_color = Color(0.08627451, 0.12156863, 0.6, 0.5803922)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbger"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fn5wl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx0fi"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3w2g"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p78ld"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60uvs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x55p"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hajdp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47blu"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kjooc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_785mm"]
 bg_color = Color(0.172549, 0.905882, 0.776471, 1)
@@ -107,12 +84,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73pyv"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivdth"]
 
 [node name="AvatarCreation" type="Node2D"]
 script = ExtResource("1_greu1")
@@ -134,39 +106,23 @@ custom_minimum_size = Vector2(1600, 900)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_right = 1604.0
-offset_bottom = 906.0
+offset_left = -473.0
+offset_top = -127.0
+offset_right = 2018.0
+offset_bottom = 990.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_vxara")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TitleImage" type="TextureRect" parent="ColorRect"]
-custom_minimum_size = Vector2(903, 190)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.096346036
-anchor_top = -0.0033112583
-anchor_right = 0.096346036
-anchor_bottom = -0.0033112583
-offset_left = 453.75
-offset_top = 4.0
-offset_right = 2478.75
-offset_bottom = 392.0
-grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_fn5wl")
-metadata/_edit_use_anchors_ = true
-
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.10805746
-anchor_top = -0.026490066
-anchor_right = -0.10805746
-anchor_bottom = -0.026490066
+anchor_left = 0.13127258
+anchor_top = 0.09489705
+anchor_right = 0.13127258
+anchor_bottom = 0.09489705
 offset_left = 286.0
 offset_top = 501.0
 offset_right = 1644.0
@@ -176,10 +132,10 @@ metadata/_edit_use_anchors_ = true
 [node name="NameLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(125, 22)
-offset_left = 944.0
-offset_top = 212.0
-offset_right = 1162.0
-offset_bottom = 242.0
+offset_left = 841.0
+offset_top = 262.0
+offset_right = 1059.0
+offset_bottom = 292.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_aq5ww")
 theme_override_font_sizes/normal_font_size = 24
@@ -188,98 +144,97 @@ text = "Password:"
 [node name="AgeLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
-offset_left = 149.0
-offset_top = 198.0
-offset_right = 395.0
-offset_bottom = 227.0
+offset_left = 100.0
+offset_top = 264.0
+offset_right = 346.0
+offset_bottom = 293.0
 theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_aq5ww")
 theme_override_font_sizes/normal_font_size = 24
 text = "User Name:"
 
 [node name="SaveButton" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 566.0
-offset_top = 394.0
-offset_right = 1125.16
-offset_bottom = 454.0
+offset_left = 888.0
+offset_top = 314.0
+offset_right = 1279.0
+offset_bottom = 499.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_ve0si")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_6a6wx")
-theme_override_styles/focus = SubResource("StyleBoxFlat_6a6wx")
-text = "Sign Up"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ve0si")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6ewfk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vxara")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_c8ya6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fsvu3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_p1vn4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5sgb4")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6xasw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a6nq7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j0glc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_40a4t")
+icon = ExtResource("5_fn5wl")
+icon_alignment = 1
+expand_icon = true
 
 [node name="NameEdit" type="LineEdit" parent="."]
-offset_left = 422.0
-offset_top = 202.0
-offset_right = 809.0
-offset_bottom = 237.0
+offset_left = 369.0
+offset_top = 263.0
+offset_right = 756.0
+offset_bottom = 298.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Password" type="LineEdit" parent="."]
-offset_left = 1188.0
-offset_top = 204.0
-offset_right = 1575.0
-offset_bottom = 239.0
+offset_left = 1074.0
+offset_top = 257.0
+offset_right = 1461.0
+offset_bottom = 292.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_db2e0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="OnScreenKeyboard" parent="." instance=ExtResource("7_tsvva")]
-offset_left = 785.0
-offset_top = 876.0
-offset_right = 785.0
-offset_bottom = 876.0
+offset_left = 818.0
+offset_top = 878.0
+offset_right = 818.0
+offset_bottom = 878.0
 
 [node name="StudentManager" type="Node2D" parent="."]
 
 [node name="SaveButton2" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 561.0
-offset_top = 299.0
-offset_right = 1120.16
-offset_bottom = 359.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 269.0
+offset_top = 288.0
+offset_right = 687.0
+offset_bottom = 510.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_ve0si")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_b8e5g")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_q8yx2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_j0fik")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_rbger")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mx0fi")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_p78ld")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3x55p")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_47blu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b576u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_p7rgq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aq5ww")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_fn5wl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p3w2g")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_60uvs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hajdp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kjooc")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_785mm")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_fq0ol")
-theme_override_styles/focus = SubResource("StyleBoxFlat_73pyv")
-text = "Login"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ivdth")
+icon = ExtResource("8_aq5ww")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="SaveButton2" to="." method="_on_save_button_2_pressed"]
