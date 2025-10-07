@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dy2l75l7t56nr"]
+[gd_scene load_steps=18 format=3 uid="uid://dy2l75l7t56nr"]
 
 [ext_resource type="Script" uid="uid://d1phlt1x4nb8h" path="res://avatar creation/scenes/start.gd" id="1_hn7tl"]
 [ext_resource type="Texture2D" uid="uid://dht0iymgclsrx" path="res://avatar creation/ui/Rectangle 130.png" id="2_koo36"]
 [ext_resource type="Texture2D" uid="uid://b27w03sxcxix5" path="res://avatar creation/ui/ST-Title.png" id="3_w6iua"]
 [ext_resource type="FontFile" uid="uid://c1wcxniugtqaa" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_x7aud"]
+[ext_resource type="AudioStream" uid="uid://c3drht3cwmlhg" path="res://music and sfx/sfx/save.wav" id="5_koo36"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hotob"]
 bg_color = Color(0.843137, 0.247059, 0.811765, 1)
@@ -189,6 +190,9 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_lu23f")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_87di6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_fxeog")
 text = "Student"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_koo36")
 
 [connection signal="pressed" from="TeacherButton" to="." method="_on_teacher_button_pressed"]
 [connection signal="pressed" from="StudentButton" to="." method="_on_student_button_pressed"]

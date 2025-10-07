@@ -72,8 +72,8 @@ func _ready() -> void:
 
 	# Connect buttons
 	for cat in prev_buttons.keys():
-		prev_buttons[cat].pressed.connect(Callable(self, "cycle_texture").bind(cat, -1))
-		next_buttons[cat].pressed.connect(Callable(self, "cycle_texture").bind(cat, 1))
+		prev_buttons[cat].pressed.connect(Callable(self, "_on_avatar_button_pressed").bind(cat, -1))
+		next_buttons[cat].pressed.connect(Callable(self, "_on_avatar_button_pressed").bind(cat, 1))
 
 	save_button.pressed.connect(_on_save_pressed)
 
@@ -159,6 +159,12 @@ func _update_avatar() -> void:
 		avatar.get_node("FullSuit").texture = null
 		# Re-enable UI controls
 		_set_disabled_state_for_fullsuit(false)
+	
+func _on_avatar_button_pressed(category: String, direction: int) -> void:
+	# Play navigation sound when any avatar option changes
+	AudioManager.play_sound(AudioManager.sfx_nav, -8)
+	cycle_texture(category, direction)
+
 
 	_update_all_labels()
 	_center_avatar_and_scale()
@@ -185,7 +191,7 @@ func cycle_texture(category: String, direction: int) -> void:
 
 
 func _on_save_pressed() -> void:
-	AudioManager.play_sound(AudioManager.sfx_saved)
+	AudioManager.play_sound(AudioManager.sfx_save)
 	print("Save pressed:")
 	print("Skin:", current_skin)
 	print("Mouth:", current_mouth)
