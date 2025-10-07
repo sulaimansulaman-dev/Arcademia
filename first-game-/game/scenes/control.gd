@@ -3,7 +3,7 @@ extends Control
 @onready var avatar = $Avatar
 
 func _ready():
-	load_avatar("res://icon.svg")  # path where you expect the file
+	load_avatar("res://story/Alex.png")  # path where you expect the file
 
 func load_avatar(path: String):
 	var img = load(path)
