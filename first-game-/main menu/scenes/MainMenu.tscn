@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bm3tmbs13bdom"]
+[gd_scene load_steps=42 format=3 uid="uid://bm3tmbs13bdom"]
 
 [ext_resource type="Script" uid="uid://cph5gm577f0lr" path="res://main menu/scenes/main_menu.gd" id="1_pabi3"]
 [ext_resource type="Texture2D" uid="uid://i5cuwbrtw661" path="res://avatar creation/ui/Main Menu in Outer Space.png" id="2_sp287"]
@@ -29,43 +29,39 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp287"]
-bg_color = Color(0.17254902, 0.90588236, 0.7764706, 0.023529412)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka0fo"]
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rn504"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.6238016, 0.470506, 0.12000305, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fjmb"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q48q"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t4tr"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tc35"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -90,6 +86,13 @@ bg_color = Color(0.09803922, 0.15294118, 0.77254903, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjo21"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp287"]
+bg_color = Color(0.17254902, 0.90588236, 0.7764706, 0.023529412)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydyjn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7l6f"]
@@ -100,7 +103,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn1jw"]
-bg_color = Color(0.44313726, 0.011764706, 0.93333334, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -124,35 +127,35 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmumf"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1q8gn"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cq7u"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boliu"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2beb"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -173,7 +176,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjo21"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -227,7 +230,7 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3q48q")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2e0cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ofd6k")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sp287")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_ka0fo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rn504")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_0fjmb")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3q48q")
@@ -372,12 +375,12 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Nivel1Glorioso" type="Sprite2D" parent="."]
-position = Vector2(379.00003, 212)
+position = Vector2(367, 153)
 scale = Vector2(0.22705078, 0.16748045)
 texture = ExtResource("7_sp287")
 
 [node name="Level2Label" type="Sprite2D" parent="."]
-position = Vector2(1145, 182)
+position = Vector2(1157, 154)
 scale = Vector2(0.23339844, 0.14160156)
 texture = ExtResource("9_q7l6f")
 

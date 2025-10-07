@@ -9,7 +9,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5q7v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hotob"]
-bg_color = Color(0.843137, 0.247059, 0.811765, 1)
+bg_color = Color(0.2, 0.11764706, 0.8117647, 0.59607846)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -26,42 +26,42 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6cqt"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eox6m"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp1nj"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klnml"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5ukf"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewjsf"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -82,7 +82,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxeog"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -108,9 +108,10 @@ custom_minimum_size = Vector2(1600, 900)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_right = 1602.0
-offset_bottom = 900.0
+offset_left = -488.0
+offset_top = -111.0
+offset_right = 2125.0
+offset_bottom = 1005.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_koo36")

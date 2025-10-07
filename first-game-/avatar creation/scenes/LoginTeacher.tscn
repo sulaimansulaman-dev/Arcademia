@@ -14,17 +14,22 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ewfk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxara"]
-bg_color = Color(0.101960786, 0.16470589, 0.6, 0.5803922)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c8ya6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve0si"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fsvu3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ewfk"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1vn4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsvva"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sgb4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8ya6"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xasw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsvu3"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a6nq7"]
 
@@ -159,9 +164,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 888.0
+offset_left = 781.0
 offset_top = 314.0
-offset_right = 1279.0
+offset_right = 1172.0
 offset_bottom = 499.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -171,11 +176,11 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ve0si")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6ewfk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vxara")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_c8ya6")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_fsvu3")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_p1vn4")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5sgb4")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6xasw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_ve0si")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ewfk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_tsvva")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_c8ya6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_fsvu3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_a6nq7")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j0glc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_40a4t")
@@ -213,9 +218,9 @@ offset_bottom = 878.0
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 269.0
+offset_left = 493.0
 offset_top = 288.0
-offset_right = 687.0
+offset_right = 763.0
 offset_bottom = 510.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
