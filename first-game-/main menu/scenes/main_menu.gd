@@ -52,5 +52,6 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_sign_out_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	Globals.current_user = {}
 	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentTeacher.tscn")

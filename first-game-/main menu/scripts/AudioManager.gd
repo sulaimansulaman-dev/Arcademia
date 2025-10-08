@@ -1,39 +1,46 @@
 extends Node
 
-# sound effects variables
+# sound effects
 @onready var sfx_menuopen = preload("res://music and sfx/sfx/menu_open.wav")
 @onready var sfx_menuclose = preload("res://music and sfx/sfx/menu_close.wav")
 @onready var sfx_save = preload("res://music and sfx/sfx/save.wav")
 @onready var sfx_nav = preload("res://music and sfx/sfx/nav.wav")
 
-# background music variables
+# background Music
 @onready var bgm_main = preload("res://music and sfx/music/Elys.mp3")
 @onready var bgm_level_1 = preload("res://music and sfx/music/Moonriding.mp3")
 @onready var bgm_level_2 = preload("res://music and sfx/music/dwm.mp3")
 @onready var bgm_level_3 = preload("res://music and sfx/music/lasthope.mp3")
 @onready var bgm_level_4 = preload("res://music and sfx/music/refreshed.mp3")
 
-# music players
+# variables
 var bgm_player: AudioStreamPlayer
 var current_music: AudioStream = null
+var level_music_list: Array
+var last_level_track: AudioStream = null
 
 func _ready():
 	print("🎵 AudioManager ready and running.")
 
+	# prepare level music list
+	level_music_list = [bgm_level_1, bgm_level_2, bgm_level_3, bgm_level_4]
+	randomize()  # ensure randomness
+
+	# create audio player
 	if not bgm_player:
 		bgm_player = AudioStreamPlayer.new()
 		bgm_player.autoplay = false
 		bgm_player.volume_db = -10
 		add_child(bgm_player)
 
-	# ✅ Use 'scene_changed' — this is correct in Godot 4.x
+	# connect to scene changes
 	if not get_tree().is_connected("scene_changed", Callable(self, "_on_scene_changed")):
 		get_tree().scene_changed.connect(Callable(self, "_on_scene_changed"))
 
-	# ✅ Play for the current scene when the game loads
+	# start playing appropriate music
 	_on_scene_changed()
 
-# playing the sound effects
+# plays sound effects
 func play_sound(stream: AudioStream, volume_db: float = -8.0):
 	if not stream:
 		return
@@ -44,7 +51,7 @@ func play_sound(stream: AudioStream, volume_db: float = -8.0):
 	player.play()
 	get_tree().create_timer(stream.get_length()).timeout.connect(func(): player.queue_free())
 
-# play background music
+# plays background music
 func play_music(stream: AudioStream, fade_time: float = 1.0):
 	if not stream:
 		return
@@ -62,13 +69,13 @@ func play_music(stream: AudioStream, fade_time: float = 1.0):
 	bgm_player.volume_db = -10
 	bgm_player.play()
 
-	# loop music
+	# Looping
 	if bgm_player.stream is AudioStreamWAV:
 		bgm_player.stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
 	elif bgm_player.stream is AudioStreamOggVorbis or bgm_player.stream is AudioStreamMP3:
 		bgm_player.stream.loop = true
 
-# stop background music
+# stop background music ---
 func stop_music(fade_out_time: float = 0.0):
 	if fade_out_time > 0.0:
 		var tween = create_tween()
@@ -87,18 +94,34 @@ func _on_scene_changed():
 	if not scene:
 		return
 
-	print("Scene changed to:", scene.name)
+	var scene_name = scene.name
+	print("🎬 Scene changed to:", scene_name)
 
-	match scene.name:
+	match scene_name:
 		"Start", "StudentTeacher", "Login", "LoginStudent", "MainMenu", "LevelIntro", "SignUp", "AvatarCreation", "LevelOutro":
 			play_music(bgm_main)
-		"Level 1", "Game", "blocks":
-			play_music(bgm_level_1)
-		"Level 2":
-			play_music(bgm_level_2)
-		"Level 3":
-			play_music(bgm_level_3)
-		"Level 4":
-			play_music(bgm_level_4)
+
+		# Any level or block scene
+		"Level 1", "Level 2", "Level 3", "Level 4", "Game", "blocks":
+			var chosen_track = get_random_level_track()
+			play_music(chosen_track)
+
 		_:
 			play_music(bgm_main)
+
+# random level track picker
+func get_random_level_track() -> AudioStream:
+	if level_music_list.is_empty():
+		level_music_list = [bgm_level_1, bgm_level_2, bgm_level_3, bgm_level_4]
+
+	var shuffled = level_music_list.duplicate()
+	shuffled.shuffle()
+
+	var random_track = shuffled.pick_random()
+
+	# avoid repeating the same track twice in a row
+	if random_track == last_level_track and level_music_list.size() > 1:
+		random_track = shuffled.filter(func(x): return x != last_level_track).pick_random()
+
+	last_level_track = random_track
+	return random_track
