@@ -232,3 +232,7 @@ func save_students(students: Array[Dictionary]) -> void:
 	var f: FileAccess = FileAccess.open(DB_FILE_PATH, FileAccess.WRITE)
 	f.store_string(JSON.stringify(students, "\t")) # formatted JSON
 	f.close()
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")

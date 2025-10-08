@@ -35,6 +35,8 @@ func _ready() -> void:
 	password.add_theme_color_override("selection_color", Color(0.65,0.8,1.0,0.35))
 
 	_eye_btn = _add_eye_toggle(password)
+	
+	
 
 	# --- Connect Save button ---
 	if save_btn:
@@ -182,3 +184,7 @@ func save_students(students: Array[Dictionary]) -> void:
 	var f = FileAccess.open(DB_FILE_PATH, FileAccess.WRITE)
 	f.store_string(JSON.stringify(students, "\t"))  # Pretty JSON
 	f.close()
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginTeacher.tscn")

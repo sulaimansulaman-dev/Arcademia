@@ -147,6 +147,15 @@ theme_override_fonts/normal_font = ExtResource("4_ljn24")
 theme_override_font_sizes/normal_font_size = 24
 text = "Password:"
 
+[node name="BackButton" type="TextureButton" parent="ColorRect"]
+custom_minimum_size = Vector2(61, 61)
+layout_mode = 0
+offset_left = 143.0
+offset_top = 342.0
+offset_right = 204.0
+offset_bottom = 403.0
+texture_normal = ExtResource("4_yydbn")
+
 [node name="AgeLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(109, 22)
@@ -226,4 +235,5 @@ offset_bottom = 915.0
 [node name="StudentManager" type="Node2D" parent="."]
 
 [connection signal="pressed" from="ColorRect/Back/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]

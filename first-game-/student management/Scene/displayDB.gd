@@ -5,29 +5,30 @@ extends Control
 var db_file_path = "user://students.json"
 
 func _ready() -> void:
-	# Load students from JSON and show them in the ItemList
 	var students = load_students()
 
-	# Clear any old items before adding
 	item_list.clear()
 
 	for student in students:
+		var role = student.get("role", "")
+		if role != "Student":
+			continue  # skip anyone not a Student
+
 		var username = student.get("username", "unknown")
 		var password = student.get("password", "unknown")
 
-		# Add the student's basic info first
+		# Add the student's basic info
 		item_list.add_item("👤 " + username + " | 🔑 " + password)
 
-		# Get scores dictionary
+		# Add each level and score
 		var scores = student.get("scores", {})
-
-		# Add each level and score under the student
 		for level in scores.keys():
 			var score = scores[level]
 			item_list.add_item("    Level " + str(level) + ": " + str(score))
 
-		# Add a blank line separator for readability
+		# Blank line for readability
 		item_list.add_item("")
+
 
 # --- JSON loader ---
 func load_students() -> Array:
@@ -44,7 +45,7 @@ func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginTeacher.tscn")
 
 func _on_sign_out_pressed() -> void:
-	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentTeacher.tscn")
+	get_tree().change_scene_to_file("res://avatar creation/scenes/Start.tscn")
 
 
 func _on_update_pressed() -> void:
@@ -54,8 +55,10 @@ func _on_update_pressed() -> void:
 	var new_name = $nameEdit.text.strip_edges()
 	var new_password = $ageEdit.text.strip_edges()
 	
+	check_empty($nameEdit)
+	check_empty($ageEdit)
 	# --- Validation: password must be exactly 5 digits ---
-	if not new_password.is_valid_integer() or new_password.length() != 5:
+	if not new_password.is_valid_int() or new_password.length() != 5:
 		var msg = AcceptDialog.new()
 		msg.dialog_text = "⚠️ Password must be a 5-digit number!"
 		get_tree().root.add_child(msg)
@@ -95,7 +98,10 @@ func _on_delete_pressed() -> void:
 	var students = load_students()
 	var name_to_delete = $nameEdit.text.strip_edges()
 	var found = false
-
+	
+	check_empty($nameEdit)
+	
+	
 	# Filter out the student to delete
 	var updated_students = []
 	for student in students:
@@ -103,8 +109,7 @@ func _on_delete_pressed() -> void:
 			updated_students.append(student)
 		else:
 			found = true
-	$nameEdit.clear()
-	$ageEdit.clear()
+	
 
 	# Save the updated list back to the JSON file
 	if found:
@@ -116,8 +121,10 @@ func _on_delete_pressed() -> void:
 		msg.dialog_text = "🗑️ Deleted " + name_to_delete + " successfully!"
 		get_tree().root.add_child(msg)
 		msg.popup_centered()
-
+			
 		# Refresh UI
+		$nameEdit.clear()
+		$ageEdit.clear()
 		_ready()
 	else:
 		var msg = AcceptDialog.new()
@@ -126,3 +133,14 @@ func _on_delete_pressed() -> void:
 		msg.popup_centered()
 	$nameEdit.clear()
 	$ageEdit.clear()
+	
+func check_empty(le: LineEdit) -> bool:
+	var text = le.text.strip_edges()  # remove leading/trailing spaces
+	if text == "":
+		# Optionally show a quick error
+		var msg = AcceptDialog.new()
+		msg.dialog_text = "⚠️ Name and Password Field cannot be empty!"
+		get_tree().root.add_child(msg)
+		msg.popup_centered()
+		return true  # empty
+	return false  # not empty
