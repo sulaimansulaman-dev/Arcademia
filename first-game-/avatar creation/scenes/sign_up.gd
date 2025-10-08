@@ -7,6 +7,8 @@ extends Node2D
 var db_file_path = "user://students.json"  # File will be created automatically if missing
 
 func _on_save_button_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuopen)
+	
 	var username = userName.text
 	var pwd = password.text
 	var confirm_pwd = passwordConfirm.text
@@ -46,4 +48,5 @@ func save_students(students: Array) -> void:
 
 
 func _on_back_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginTeacher.tscn")

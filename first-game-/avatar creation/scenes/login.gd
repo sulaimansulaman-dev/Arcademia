@@ -7,6 +7,7 @@ var db_file_path = "user://students.json"
 
 # When "Login" button pressed
 func _on_save_button_2_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuopen)
 	var username = username_field.text
 	var pwd = password_field.text
 

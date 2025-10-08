@@ -80,6 +80,7 @@ func _on_delete_pressed():
 		push_warning("Failed to delete student ID %d" % id)
 
 func _on_item_selected(index: int) -> void:
+	AudioManager.play_sound(AudioManager.sfx_nav)
 	if index < 0 or index >= display_keys.size():
 		return
 	var id = display_keys[index]
