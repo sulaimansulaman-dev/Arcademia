@@ -66,7 +66,7 @@
       font-style: italic;
     }
 
-    /* Help overlay (Level 4 style) */
+    /* Help overlay */
     #helpOverlay {
       position: fixed;
       top: 0; left: 0;
@@ -319,6 +319,22 @@
     const missing = checkAllBlocksUsed();
     if (missing.length > 0) showBlockWarning(missing);
   };
+
+  // 🎹 Keyboard Shortcuts
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    switch (e.key.toLowerCase()) {
+      case 'r': document.getElementById('run').click(); break;
+      case 'c': document.getElementById('clear').click(); break;
+      case 'l': document.getElementById('reset').click(); break;
+      case 'b': document.getElementById('switchBlocks').click(); break;
+      case 'h': document.getElementById('help').click(); break;
+      case 'a': document.getElementById('back').click(); break;
+    }
+  });
+
+
 </script>
 </body>
 </html>
