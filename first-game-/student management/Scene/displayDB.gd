@@ -40,7 +40,10 @@ func load_students() -> Array:
 		if parsed != null:
 			return parsed
 	return []
-
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("back_action"):
+		_on_back_pressed()
+		
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginTeacher.tscn")
 
