@@ -8,10 +8,10 @@ extends Node
 
 # background Music
 @onready var bgm_main = preload("res://music and sfx/music/Elys.mp3")
-@onready var bgm_level_1 = preload("res://music and sfx/music/Moonriding.mp3")
-@onready var bgm_level_2 = preload("res://music and sfx/music/dwm.mp3")
-@onready var bgm_level_3 = preload("res://music and sfx/music/lasthope.mp3")
-@onready var bgm_level_4 = preload("res://music and sfx/music/refreshed.mp3")
+@onready var bgm_level_1 = preload("res://music and sfx/music/astro.mp3")
+@onready var bgm_level_2 = preload("res://music and sfx/music/Moonriding.mp3")
+@onready var bgm_level_3 = preload("res://music and sfx/music/herotime.mp3")
+@onready var bgm_level_4 = preload("res://music and sfx/music/hope.mp3")
 
 # variables
 var bgm_player: AudioStreamPlayer
