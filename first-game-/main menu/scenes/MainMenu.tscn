@@ -217,10 +217,10 @@ color = Color(0.129412, 0.027451, 0.215686, 1)
 [node name="ColorRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1600, 900)
 layout_mode = 0
-offset_left = -80.0
-offset_top = -201.0
-offset_right = 1650.0
-offset_bottom = 892.0
+offset_left = -38.0
+offset_top = -194.0
+offset_right = 1692.0
+offset_bottom = 899.0
 texture = ExtResource("2_sp287")
 expand_mode = 3
 
