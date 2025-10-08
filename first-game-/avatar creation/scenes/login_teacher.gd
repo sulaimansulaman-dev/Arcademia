@@ -54,6 +54,11 @@ func _on_save_button_2_pressed() -> void:
 	# --- Validation ---
 	if username.is_empty() or pwd.is_empty():
 		print("⚠️ Username and Password cannot be empty")
+		var msg = AcceptDialog.new()
+		msg.dialog_text = "⚠️ Username and Password cannot be empty"
+		get_tree().root.add_child(msg)
+		msg.popup_centered()
+
 		return
 
 	var students: Array[Dictionary] = load_students()
@@ -69,6 +74,11 @@ func _on_save_button_2_pressed() -> void:
 
 	# No match
 	print("❌ Wrong username or password. Try again")
+	var msg = AcceptDialog.new()
+	msg.dialog_text = "❌ Wrong username or password. Try again"
+	get_tree().root.add_child(msg)
+	msg.popup_centered()
+
 	password.text = ""  # clear password field
 
 
@@ -90,3 +100,7 @@ func load_students() -> Array[Dictionary]:
 				else:
 					print("Warning: Skipping non-dictionary entry in students.json")
 	return result
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://avatar creation/scenes/SelectUser.tscn")

@@ -18,7 +18,11 @@ func _on_save_button_2_pressed() -> void:
 			get_tree().change_scene_to_file("res://student management/Scene/display.tscn")
 			return
 
-	print("Password not found ❌")
+	var msg = AcceptDialog.new()
+	msg.dialog_text = "Password not found ❌"
+	get_tree().root.add_child(msg)
+	msg.popup_centered()
+
 
 
 # --- JSON loader ---
