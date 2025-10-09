@@ -226,7 +226,7 @@ text = "Name:"
 [node name="nameEdit" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 56.0
-offset_top = 127.0
+offset_top = 111.0
 offset_right = 455.0
 offset_bottom = 162.0
 size_flags_stretch_ratio = 0.0
@@ -251,7 +251,7 @@ layout_mode = 0
 offset_left = 57.0
 offset_top = 215.0
 offset_right = 456.0
-offset_bottom = 250.0
+offset_bottom = 264.0
 size_flags_stretch_ratio = 0.0
 theme = SubResource("Theme_x5pdj")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
