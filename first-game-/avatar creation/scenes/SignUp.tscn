@@ -108,11 +108,18 @@ metadata/_edit_use_anchors_ = true
 [node name="Back" type="TextureButton" parent="ColorRect"]
 custom_minimum_size = Vector2(61, 61)
 layout_mode = 0
-offset_left = 57.0
-offset_top = 59.0
-offset_right = 118.0
-offset_bottom = 122.0
+offset_left = 124.0
+offset_top = 58.0
+offset_right = 185.0
+offset_bottom = 121.0
 texture_normal = ExtResource("4_yydbn")
+
+[node name="Back" type="Button" parent="ColorRect/Back"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 58.0
+offset_bottom = 52.0
 
 [node name="NameLabel" type="RichTextLabel" parent="ColorRect"]
 clip_contents = false
@@ -139,6 +146,15 @@ theme_override_colors/default_color = Color(1, 0.866667, 0.537255, 1)
 theme_override_fonts/normal_font = ExtResource("4_ljn24")
 theme_override_font_sizes/normal_font_size = 24
 text = "Password:"
+
+[node name="BackButton" type="TextureButton" parent="ColorRect"]
+custom_minimum_size = Vector2(61, 61)
+layout_mode = 0
+offset_left = 143.0
+offset_top = 342.0
+offset_right = 204.0
+offset_bottom = 403.0
+texture_normal = ExtResource("4_yydbn")
 
 [node name="AgeLabel" type="RichTextLabel" parent="."]
 clip_contents = false
@@ -218,11 +234,6 @@ offset_bottom = 915.0
 
 [node name="StudentManager" type="Node2D" parent="."]
 
-[node name="Back" type="Button" parent="."]
-offset_left = 67.0
-offset_top = 68.0
-offset_right = 116.0
-offset_bottom = 114.0
-
+[connection signal="pressed" from="ColorRect/Back/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
