@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://cisowwf64s63a"]
+[gd_scene load_steps=24 format=3 uid="uid://cisowwf64s63a"]
 
 [ext_resource type="Script" uid="uid://bo2xk6g7u4ly8" path="res://avatar creation/scenes/login_student.gd" id="1_t7otd"]
 [ext_resource type="Texture2D" uid="uid://cwthy3ftbrnel" path="res://avatar creation/ui/Cosmic Login Screen Design.png" id="2_vms52"]
-[ext_resource type="Texture2D" uid="uid://gm3otljtnf5b" path="res://avatar creation/ui/left_button.png" id="3_lb5xe"]
 [ext_resource type="FontFile" uid="uid://cxmm3y2mpwlja" path="res://avatar creation/fonts/PressStart2P.ttf" id="4_f6ggw"]
 [ext_resource type="FontFile" uid="uid://c1wcxniugtqaa" path="res://avatar creation/fonts/montserrat.regular.ttf" id="5_5r5it"]
 [ext_resource type="Texture2D" uid="uid://f15kn3227yc4" path="res://avatar creation/ui/Sign-Up button.png" id="5_lb5xe"]
@@ -151,15 +150,6 @@ offset_right = 1644.0
 offset_bottom = 902.0
 metadata/_edit_use_anchors_ = true
 
-[node name="BackButton" type="TextureButton" parent="ColorRect"]
-custom_minimum_size = Vector2(61, 61)
-layout_mode = 0
-offset_left = 105.0
-offset_top = 156.0
-offset_right = 166.0
-offset_bottom = 217.0
-texture_normal = ExtResource("3_lb5xe")
-
 [node name="NameLabel" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(125, 22)
@@ -270,6 +260,5 @@ icon = ExtResource("8_f6ggw")
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="SaveButton2" to="." method="_on_save_button_2_pressed"]

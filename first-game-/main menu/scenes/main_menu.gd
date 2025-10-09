@@ -61,4 +61,4 @@ func _on_sign_out_pressed() -> void:
 	Globals.current_user = {}
 	for i in range(1, 5):
 		Globals["level_%d_score" % i] = 0
-	get_tree().change_scene_to_file("res://avatar creation/scenes/Start.tscn")
+	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentTeacher.tscn")
