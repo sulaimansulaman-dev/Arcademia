@@ -75,7 +75,7 @@ func _ready() -> void:
 		prev_buttons[cat].pressed.connect(Callable(self, "cycle_texture").bind(cat, -1))
 		next_buttons[cat].pressed.connect(Callable(self, "cycle_texture").bind(cat, 1))
 
-	save_button.pressed.connect(_on_save_pressed)
+	save_button.pressed.connect(_on_save_button_pressed)
 
 	_update_all_labels()
 	_update_avatar()
@@ -184,16 +184,7 @@ func cycle_texture(category: String, direction: int) -> void:
 	_update_avatar()
 
 
-func _on_save_pressed() -> void:
-	print("Save pressed:")
-	print("Skin:", current_skin)
-	print("Mouth:", current_mouth)
-	print("Eyes:", current_eyes)
-	print("Hair:", current_hair)
-	print("Accessories:", current_accessories)
-	print("Outfit:", current_outfit)
-	print("FullSuit:", current_fullsuit)
-	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentEntry.tscn")
+
 
 
 func _center_avatar_and_scale() -> void:
@@ -240,3 +231,15 @@ func _process(_delta: float) -> void:
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")
+
+
+func _on_save_button_pressed() -> void:
+	print("Save pressed:")
+	print("Skin:", current_skin)
+	print("Mouth:", current_mouth)
+	print("Eyes:", current_eyes)
+	print("Hair:", current_hair)
+	print("Accessories:", current_accessories)
+	print("Outfit:", current_outfit)
+	print("FullSuit:", current_fullsuit)
+	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentEntry.tscn")

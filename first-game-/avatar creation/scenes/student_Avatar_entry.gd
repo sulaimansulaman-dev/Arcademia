@@ -86,13 +86,18 @@ func _on_save_button_pressed() -> void:
 			_show_field_error(userName, "Username already exists")
 			return
 
+	
 	students.append(new_student)
 	save_students(students)
 
 	print("✅ Saved new student:", new_student)
 
-	# Switch to main menu
+	# ✅ Set current user for this session
+	Globals.set_current_user(new_student)
+
+	# Go straight to main menu
 	get_tree().change_scene_to_file("res://main menu/scenes/MainMenu.tscn")
+
 
 
 # --- Inline error helpers (no Label nodes needed) ---
@@ -184,4 +189,4 @@ func _process(_delta: float) -> void:
 		_on_back_button_pressed()
 		
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")	
+	get_tree().change_scene_to_file("res://avatar creation/scenes/AvatarCreation.tscn")	
