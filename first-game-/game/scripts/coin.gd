@@ -15,8 +15,6 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	var used_blocks: int = Globals.last_block_count
-
-
 	GameManager.set_final_score(used_blocks)
 	print("✅ Coin collected! Blocks used (Score): ", used_blocks)
 
@@ -25,8 +23,12 @@ func _on_body_entered(body: Node2D) -> void:
 	# Save progress for logged-in student
 	save_player_progress(Globals.level_to_load, used_blocks)
 
-	# Go to outro screen
+	# Go to outro screen after physics step
+	call_deferred("_go_to_outro")
+
+func _go_to_outro() -> void:
 	get_tree().change_scene_to_file("res://game/scenes/LevelOutro.tscn")
+
 
 
 func save_player_progress(level: int, score: int) -> void:

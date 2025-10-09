@@ -13,7 +13,7 @@ extends Control
 func _ready():
 	if Globals.current_user.is_empty():
 		print("⚠️ No logged-in user found. Redirecting to login...")
-		get_tree().change_scene_to_file("res://avatar creation/scenes/StudentTeacher.tscn")
+		get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")
 		return
 
 	Globals._update_scores_from_user() # ensure labels always reflect latest data
