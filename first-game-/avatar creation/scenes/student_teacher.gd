@@ -2,4 +2,4 @@ extends Node2D
 
 
 func _on_start_button_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://avatar creation/scenes/Start.tscn")
+	get_tree().change_scene_to_file("res://avatar creation/scenes/SelectUser.tscn")
