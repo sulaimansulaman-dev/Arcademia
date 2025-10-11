@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cr1ad8j6wnoug"
+path="res://.godot/imported/Elys.mp3-dd0e72aa612a673b8d29f8abf60e4b8b.mp3str"
+
+[deps]
+
+source_file="res://game/assets/music and sfx/music/Elys.mp3"
+dest_files=["res://.godot/imported/Elys.mp3-dd0e72aa612a673b8d29f8abf60e4b8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

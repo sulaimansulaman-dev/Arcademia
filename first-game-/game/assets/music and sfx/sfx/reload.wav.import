@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cimpulrrf07e5"
-path="res://.godot/imported/reload.wav-e4746992ff322dc51c31fa6e74b5bd59.sample"
+path="res://.godot/imported/reload.wav-c00cd0d6b9f0abb0ecbd6a11b5f1d48c.sample"
 
 [deps]
 
-source_file="res://music and sfx/sfx/reload.wav"
-dest_files=["res://.godot/imported/reload.wav-e4746992ff322dc51c31fa6e74b5bd59.sample"]
+source_file="res://game/assets/music and sfx/sfx/reload.wav"
+dest_files=["res://.godot/imported/reload.wav-c00cd0d6b9f0abb0ecbd6a11b5f1d48c.sample"]
 
 [params]
 

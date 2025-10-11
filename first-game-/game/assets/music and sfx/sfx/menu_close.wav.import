@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dh3r7kf36nhdo"
-path="res://.godot/imported/menu_close.wav-894bdf5fdf9924ea8b2729f9e9516038.sample"
+path="res://.godot/imported/menu_close.wav-826141dfd8563a2b5dbb7ae4890ef5c6.sample"
 
 [deps]
 
-source_file="res://music and sfx/sfx/menu_close.wav"
-dest_files=["res://.godot/imported/menu_close.wav-894bdf5fdf9924ea8b2729f9e9516038.sample"]
+source_file="res://game/assets/music and sfx/sfx/menu_close.wav"
+dest_files=["res://.godot/imported/menu_close.wav-826141dfd8563a2b5dbb7ae4890ef5c6.sample"]
 
 [params]
 

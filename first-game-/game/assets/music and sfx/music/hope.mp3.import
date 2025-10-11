@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dw1mr5867w38"
+path="res://.godot/imported/hope.mp3-afff262d87493f9b688443c2f6e1ae9b.mp3str"
+
+[deps]
+
+source_file="res://game/assets/music and sfx/music/hope.mp3"
+dest_files=["res://.godot/imported/hope.mp3-afff262d87493f9b688443c2f6e1ae9b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

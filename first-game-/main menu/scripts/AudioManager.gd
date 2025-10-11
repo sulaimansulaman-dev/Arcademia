@@ -1,29 +1,29 @@
 extends Node
 
 # sound effects
-@onready var sfx_menuopen = preload("res://music and sfx/sfx/menu_open.wav")
-@onready var sfx_menuclose = preload("res://music and sfx/sfx/menu_close.wav")
-@onready var sfx_save = preload("res://music and sfx/sfx/save.wav")
-@onready var sfx_nav = preload("res://music and sfx/sfx/nav.wav")
-@onready var sfx_error = preload("res://music and sfx/sfx/error.wav")
-@onready var sfx_optionselect = preload("res://music and sfx/sfx/option_select.wav")
-@onready var sfx_partfound = preload("res://music and sfx/sfx/part_found.wav")
-@onready var sfx_reload = preload("res://music and sfx/sfx/reload.wav")
-@onready var sfx_jump = preload("res://music and sfx/sfx/jump.wav")
-@onready var sfx_landing = preload("res://music and sfx/sfx/landing.wav")
-@onready var sfx_death = preload("res://music and sfx/sfx/death.wav")
+@onready var sfx_menuopen = preload("res://game/assets/music and sfx/sfx/menu_open.wav")
+@onready var sfx_menuclose = preload("res://game/assets/music and sfx/sfx/menu_close.wav")
+@onready var sfx_save = preload("res://game/assets/music and sfx/sfx/save.wav")
+@onready var sfx_nav = preload("res://game/assets/music and sfx/sfx/nav.wav")
+@onready var sfx_error = preload("res://game/assets/music and sfx/sfx/error.wav")
+@onready var sfx_optionselect = preload("res://game/assets/music and sfx/sfx/option_select.wav")
+@onready var sfx_partfound = preload("res://game/assets/music and sfx/sfx/part_found.wav")
+@onready var sfx_reload = preload("res://game/assets/music and sfx/sfx/reload.wav")
+@onready var sfx_jump = preload("res://game/assets/music and sfx/sfx/jump.wav")
+@onready var sfx_landing = preload("res://game/assets/music and sfx/sfx/landing.wav")
+@onready var sfx_death = preload("res://game/assets/music and sfx/sfx/death.wav")
 @onready var sfx_steps = [
-	preload("res://music and sfx/sfx/step_1.wav"),
-	preload("res://music and sfx/sfx/step_2.wav"),
-	preload("res://music and sfx/sfx/step_3.wav")
+	preload("res://game/assets/music and sfx/sfx/step_1.wav"),
+	preload("res://game/assets/music and sfx/sfx/step_2.wav"),
+	preload("res://game/assets/music and sfx/sfx/step_3.wav")
 ]
 
 # background Music
-@onready var bgm_main = preload("res://music and sfx/music/Elys.mp3")
-@onready var bgm_level_1 = preload("res://music and sfx/music/astro.mp3")
-@onready var bgm_level_2 = preload("res://music and sfx/music/Moonriding.mp3")
-@onready var bgm_level_3 = preload("res://music and sfx/music/herotime.mp3")
-@onready var bgm_level_4 = preload("res://music and sfx/music/hope.mp3")
+@onready var bgm_main = preload("res://game/assets/music and sfx/music/Elys.mp3")
+@onready var bgm_level_1 = preload("res://game/assets/music and sfx/music/astro.mp3")
+@onready var bgm_level_2 = preload("res://game/assets/music and sfx/music/Moonriding.mp3")
+@onready var bgm_level_3 = preload("res://game/assets/music and sfx/music/herotime.mp3")
+@onready var bgm_level_4 = preload("res://game/assets/music and sfx/music/hope.mp3")
 
 # variables
 var bgm_player: AudioStreamPlayer

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://do5d81e5ushia"
-path="res://.godot/imported/step_2.wav-422072293fc4f83469abbf0ee56a60b5.sample"
+uid="uid://c3drht3cwmlhg"
+path="res://.godot/imported/save.wav-f0445b03f5fc2bcb644e098df3000682.sample"
 
 [deps]
 
-source_file="res://music and sfx/sfx/step_2.wav"
-dest_files=["res://.godot/imported/step_2.wav-422072293fc4f83469abbf0ee56a60b5.sample"]
+source_file="res://game/assets/music and sfx/sfx/save.wav"
+dest_files=["res://.godot/imported/save.wav-f0445b03f5fc2bcb644e098df3000682.sample"]
 
 [params]
 
