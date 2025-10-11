@@ -1,73 +1,31 @@
-[gd_scene load_steps=17 format=3 uid="uid://dy2l75l7t56nr"]
+[gd_scene load_steps=16 format=3 uid="uid://ctntwxg2p85g0"]
 
-[ext_resource type="Script" uid="uid://d1phlt1x4nb8h" path="res://avatar creation/scenes/start.gd" id="1_hn7tl"]
-[ext_resource type="Texture2D" uid="uid://dht0iymgclsrx" path="res://avatar creation/ui/Rectangle 130.png" id="2_koo36"]
-[ext_resource type="Texture2D" uid="uid://b27w03sxcxix5" path="res://avatar creation/ui/ST-Title.png" id="3_w6iua"]
+[ext_resource type="Script" uid="uid://b4j15mnxo2a78" path="res://avatar creation/scenes/student_teacher.gd" id="1_hn7tl"]
+[ext_resource type="Texture2D" uid="uid://uak3tyenyvy7" path="res://avatar creation/ui/Begining page.png" id="2_koo36"]
+[ext_resource type="Texture2D" uid="uid://b2ckkc0gdno3u" path="res://avatar creation/ui/Red Button with Golden _START_.png" id="4_w6iua"]
 [ext_resource type="FontFile" uid="uid://c1wcxniugtqaa" path="res://avatar creation/fonts/montserrat.regular.ttf" id="4_x7aud"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hotob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6nfd"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hotob"]
-bg_color = Color(0.843137, 0.247059, 0.811765, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-corner_detail = 5
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kg0i"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fxeog"]
+color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g636n"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6cqt"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eox6m"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp1nj"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klnml"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5ukf"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxeog"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewjsf"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5ukf"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klnml"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu23f"]
 bg_color = Color(0.172549, 0.905882, 0.776471, 1)
@@ -83,24 +41,20 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxeog"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp1nj"]
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 
-[node name="StudentTeacher" type="Node2D"]
+[node name="Start" type="Node2D"]
 script = ExtResource("1_hn7tl")
-metadata/_edit_vertical_guides_ = [835.0, 564.0, 1413.0]
+metadata/_edit_vertical_guides_ = [835.0, 564.0, 1413.0, 1000.0]
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
+custom_minimum_size = Vector2(1600, 900)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1600.0
+offset_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.129412, 0.027451, 0.215686, 1)
@@ -110,85 +64,44 @@ custom_minimum_size = Vector2(1600, 900)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_right = 1602.0
-offset_bottom = 900.0
+offset_left = -720.0
+offset_top = -122.0
+offset_right = 2284.0
+offset_bottom = 981.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_koo36")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="TitleImage" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(903, 190)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 275.0
-offset_top = 38.0
-offset_right = 2300.0
-offset_bottom = 426.0
-grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_w6iua")
-
-[node name="TeacherButton" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
+[node name="StartButton1" type="Button" parent="."]
+custom_minimum_size = Vector2(200.16, 60)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 405.0
-offset_top = 449.0
-offset_right = 1252.0
-offset_bottom = 539.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_x7aud")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_hotob")
-theme_override_styles/focus = SubResource("StyleBoxFlat_hotob")
-text = "Teacher"
-
-[node name="StudentButton" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 381.0
-offset_top = 266.0
-offset_right = 1229.0
-offset_bottom = 357.0
+offset_left = 637.0
+offset_top = 482.0
+offset_right = 1021.0
+offset_bottom = 862.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x7aud")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_3kg0i")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_g636n")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_e6cqt")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_eox6m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cp1nj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_klnml")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hotob")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_k6nfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hotob")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxLine_fxeog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fxeog")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ewjsf")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_g5ukf")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ewjsf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_klnml")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_lu23f")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_87di6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_fxeog")
-text = "Student"
+theme_override_styles/focus = SubResource("StyleBoxFlat_cp1nj")
+icon = ExtResource("4_w6iua")
+expand_icon = true
 
-[connection signal="pressed" from="TeacherButton" to="." method="_on_teacher_button_pressed"]
-[connection signal="pressed" from="StudentButton" to="." method="_on_student_button_pressed"]
+[connection signal="pressed" from="StartButton1" to="." method="_on_start_button_1_pressed"]

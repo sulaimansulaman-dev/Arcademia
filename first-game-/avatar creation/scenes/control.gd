@@ -74,7 +74,7 @@ func _ready() -> void:
 		prev_buttons[cat].pressed.connect(Callable(self, "cycle_texture").bind(cat, -1))
 		next_buttons[cat].pressed.connect(Callable(self, "cycle_texture").bind(cat, 1))
 
-	save_button.pressed.connect(_on_save_pressed)
+	save_button.pressed.connect(_on_save_button_pressed)
 
 	_update_all_labels()
 	_update_avatar()
@@ -235,7 +235,22 @@ func _set_disabled_state_for_fullsuit(active: bool) -> void:
 	prev_buttons["Outfit"].tooltip_text = tooltip_text
 	next_buttons["Outfit"].tooltip_text = tooltip_text
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("back_action"):
+		_on_back_button_pressed()
 
 func _on_back_pressed() -> void:
 	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")
+
+
+func _on_save_button_pressed() -> void:
+	print("Save pressed:")
+	print("Skin:", current_skin)
+	print("Mouth:", current_mouth)
+	print("Eyes:", current_eyes)
+	print("Hair:", current_hair)
+	print("Accessories:", current_accessories)
+	print("Outfit:", current_outfit)
+	print("FullSuit:", current_fullsuit)
+	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentEntry.tscn")

@@ -5,6 +5,7 @@ extends Area2D
 
 var db_file_path: String = "user://students.json"
 
+
 func _ready() -> void:
 	add_to_group("spaceship_part")
 
@@ -14,12 +15,6 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	var used_blocks: int = Globals.last_block_count
-	var max_blocks: int = 10
-
-	# Calculate score: fewer blocks = higher score
-	var score: int = 10 - int((float(used_blocks - 5) / (max_blocks - 5)) * 9)
-	score = clamp(score, 1, 10)
-
 	GameManager.set_final_score(used_blocks)
 	print("✅ Coin collected! Blocks used (Score): ", used_blocks)
 	
@@ -30,8 +25,12 @@ func _on_body_entered(body: Node2D) -> void:
 	# Save progress for logged-in student
 	save_player_progress(Globals.level_to_load, used_blocks)
 
-	# Go to outro screen
+	# Go to outro screen after physics step
+	call_deferred("_go_to_outro")
+
+func _go_to_outro() -> void:
 	get_tree().change_scene_to_file("res://game/scenes/LevelOutro.tscn")
+
 
 
 func save_player_progress(level: int, score: int) -> void:
@@ -42,19 +41,18 @@ func save_player_progress(level: int, score: int) -> void:
 	var students: Array = load_students()
 	for student in students:
 		if student.get("username", "") == Globals.current_user.get("username", ""):
-			# ensure "scores" exists and is a Dictionary
 			if not student.has("scores") or typeof(student["scores"]) != TYPE_DICTIONARY:
 				student["scores"] = {}
 
 			# store/update the score for this level
 			student["scores"][str(level)] = score
 
-			# explicitly type and cast old_unlocked to avoid inference warning/error
+			# unlock next level
 			var old_unlocked: int = int(student.get("unlocked_levels", 1))
 			student["unlocked_levels"] = max(old_unlocked, level + 1)
 
-			# update the runtime current user
-			Globals.current_user = student
+			# update runtime current user (auto-refreshes Globals)
+			Globals.set_current_user(student)
 
 			print("💾 Progress saved for:", student["username"])
 			print("   Scores:", student["scores"])
@@ -72,13 +70,11 @@ func load_students() -> Array:
 	var content: String = file.get_as_text()
 	file.close()
 
-	# Parse JSON safely (no explicit type, fully compatible)
 	var parse_res = JSON.parse_string(content)
 	if parse_res == null:
 		print("⚠️ Failed to parse students.json (invalid JSON).")
 		return []
 
-	# Expecting an array at top level
 	if typeof(parse_res) == TYPE_ARRAY:
 		return parse_res
 	else:

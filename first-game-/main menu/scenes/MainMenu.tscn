@@ -1,18 +1,20 @@
-[gd_scene load_steps=30 format=3 uid="uid://bm3tmbs13bdom"]
+[gd_scene load_steps=48 format=3 uid="uid://bm3tmbs13bdom"]
 
 [ext_resource type="Script" uid="uid://cph5gm577f0lr" path="res://main menu/scenes/main_menu.gd" id="1_pabi3"]
-[ext_resource type="Texture2D" uid="uid://dht0iymgclsrx" path="res://avatar creation/ui/Rectangle 130.png" id="2_pabi3"]
+[ext_resource type="Texture2D" uid="uid://i5cuwbrtw661" path="res://avatar creation/ui/Main Menu in Outer Space.png" id="2_sp287"]
 [ext_resource type="FontFile" uid="uid://c1wcxniugtqaa" path="res://avatar creation/fonts/montserrat.regular.ttf" id="2_tn1jw"]
-[ext_resource type="Texture2D" uid="uid://b2gpw1t2voh0u" path="res://main menu/png/Menu_title.png" id="4_2tc35"]
-[ext_resource type="AudioStream" uid="uid://cy3eyekklvtyn" path="res://music and sfx/sfx/menu_open.wav" id="5_2t4tr"]
-[ext_resource type="AudioStream" uid="uid://dh3r7kf36nhdo" path="res://music and sfx/sfx/menu_close.wav" id="6_3q48q"]
+[ext_resource type="Texture2D" uid="uid://dqabi1vsjei43" path="res://avatar creation/ui/EngineBlaster.png" id="4_2e0cj"]
+[ext_resource type="Texture2D" uid="uid://bnm6fjkujedyi" path="res://avatar creation/ui/SteeringWheel.png" id="5_q7l6f"]
+[ext_resource type="Texture2D" uid="uid://dkedkk3ay0val" path="res://avatar creation/ui/FuelTank.png" id="6_xjo21"]
+[ext_resource type="Texture2D" uid="uid://cesn6ipxo2cda" path="res://avatar creation/ui/Nivel 1 Glorioso.png" id="7_sp287"]
+[ext_resource type="Texture2D" uid="uid://cnhmfq14ib0ve" path="res://avatar creation/ui/SpaceShip.png" id="7_ydyjn"]
+[ext_resource type="Texture2D" uid="uid://dygr54sr05yof" path="res://avatar creation/ui/exit button (2).png" id="8_yeuov"]
+[ext_resource type="Texture2D" uid="uid://c6cnlc23bxo5h" path="res://avatar creation/ui/Sign out button.png" id="9_q2beb"]
+[ext_resource type="Texture2D" uid="uid://cnkqn6otgiv6y" path="res://avatar creation/ui/Level 2 label.png" id="9_q7l6f"]
+[ext_resource type="Texture2D" uid="uid://bhwkybi861lhy" path="res://avatar creation/ui/Level 3 label.png" id="10_xjo21"]
+[ext_resource type="Texture2D" uid="uid://v75hpjivfpuo" path="res://avatar creation/ui/Final level label.png" id="13_q7l6f"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7l6f"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3q48q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2e0cj"]
 bg_color = Color(0.172549, 0.905882, 0.776471, 1)
@@ -22,82 +24,100 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofd6k"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp287"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka0fo"]
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rn504"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.6238016, 0.470506, 0.12000305, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fjmb"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q48q"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t4tr"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tc35"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pabi3"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj8ju"]
-bg_color = Color(0.172549, 0.905882, 0.776471, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2e0cj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjo21"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp287"]
+bg_color = Color(0.17254902, 0.90588236, 0.7764706, 0.023529412)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqfww"]
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uku0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5oekl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4eb6"]
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yeuov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7l6f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydyjn"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn1jw"]
-bg_color = Color(0.843137, 0.247059, 0.811765, 1)
+bg_color = Color(0.62352943, 0.47058824, 0.12156863, 0.5254902)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka0fo"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_boliu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjv2s"]
 bg_color = Color(1, 0.278431, 0.184314, 1)
@@ -107,42 +127,42 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1sr5"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.20784314, 0.23137255, 0.7294118, 0.64705884)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmumf"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1q8gn"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cq7u"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boliu"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2beb"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -163,21 +183,23 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjo21"]
-bg_color = Color(1, 0.278431, 0.184314, 1)
+bg_color = Color(0.3647059, 0.24705882, 0.8117647, 0.4)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cq7u"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 7.0
-offset_bottom = 12.0
+offset_left = -11.0
+offset_top = 25.0
+offset_right = 757.0
+offset_bottom = 457.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pabi3")
@@ -186,32 +208,36 @@ metadata/_edit_vertical_guides_ = [705.0]
 [node name="ColorRect2" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -188.0
+offset_top = -200.0
+offset_right = 1732.0
+offset_bottom = 880.0
 color = Color(0.129412, 0.027451, 0.215686, 1)
 
 [node name="ColorRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1600, 900)
 layout_mode = 0
-offset_right = 1603.0
-offset_bottom = 900.0
-texture = ExtResource("2_pabi3")
+offset_left = -38.0
+offset_top = -194.0
+offset_right = 1692.0
+offset_bottom = 899.0
+texture = ExtResource("2_sp287")
 expand_mode = 3
 
 [node name="Level 1" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
 layout_mode = 0
-offset_left = 494.0
-offset_top = 258.0
-offset_right = 1053.16
-offset_bottom = 318.0
+offset_left = 209.99998
+offset_top = 160.0
+offset_right = 535.5011
+offset_bottom = 369.3525
+rotation = -0.0048431065
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_q7l6f")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3q48q")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2e0cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ofd6k")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sp287")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_ka0fo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rn504")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_0fjmb")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3q48q")
@@ -219,23 +245,23 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2t4tr")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2tc35")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_pabi3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_mj8ju")
-text = "Level 1
+text = "
 "
+icon = ExtResource("4_2e0cj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Level 2" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
 layout_mode = 0
-offset_left = 496.0
-offset_top = 346.0
-offset_right = 1055.16
-offset_bottom = 406.0
+offset_left = 1016.0
+offset_top = 185.0
+offset_right = 1301.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 0.5019608)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_q7l6f")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2e0cj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ofd6k")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2e0cj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xjo21")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sp287")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rn504")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_0fjmb")
@@ -243,25 +269,26 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3q48q")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2t4tr")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2tc35")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_pabi3")
-theme_override_styles/focus = SubResource("StyleBoxFlat_mj8ju")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iqfww")
 disabled = true
-text = "Level 2"
+icon = ExtResource("5_q7l6f")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Level 3" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
 layout_mode = 0
-offset_left = 499.0
-offset_top = 438.0
-offset_right = 1058.16
-offset_bottom = 498.0
+offset_left = 246.0
+offset_top = 506.0
+offset_right = 534.0
+offset_bottom = 699.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 0.5019608)
+theme_override_colors/font_disabled_color = Color(0.8117647, 0.9098039, 0.84313726, 0.5019608)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_q7l6f")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2e0cj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uku0h")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5oekl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ofd6k")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sp287")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_o4eb6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rn504")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_0fjmb")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3q48q")
@@ -270,23 +297,25 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_2tc35")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_pabi3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_mj8ju")
 disabled = true
-text = "Level 3
+text = "
 "
+icon = ExtResource("6_xjo21")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Final Level" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
 layout_mode = 0
-offset_left = 499.0
-offset_top = 541.0
-offset_right = 1058.16
-offset_bottom = 601.0
+offset_left = 1019.0
+offset_top = 513.0
+offset_right = 1310.0
+offset_bottom = 713.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 0.5019608)
+theme_override_colors/font_disabled_color = Color(0.8117647, 0.9098039, 0.84313726, 0.5019608)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_tn1jw")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_tn1jw")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_tn1jw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yeuov")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_q7l6f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ydyjn")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_tn1jw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tn1jw")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_tn1jw")
@@ -296,37 +325,20 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_tn1jw")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_tn1jw")
 theme_override_styles/focus = SubResource("StyleBoxFlat_tn1jw")
 disabled = true
-text = "Final Level"
-
-[node name="TitleImage" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(903, 190)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0657728
-anchor_top = 0.03003003
-anchor_right = -0.0657728
-anchor_bottom = 0.03003003
-offset_left = 453.75
-offset_top = 4.0
-offset_right = 2478.75
-offset_bottom = 392.0
-grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_2tc35")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
+icon = ExtResource("7_ydyjn")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Exit" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
 layout_mode = 0
-offset_left = 499.0
-offset_top = 639.0
-offset_right = 1058.16
-offset_bottom = 699.0
+offset_left = -5.0
+offset_top = 703.0
+offset_right = 234.0
+offset_bottom = 905.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_ka0fo")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_boliu")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_gjv2s")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_e1sr5")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_xmumf")
@@ -337,20 +349,22 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_q2beb")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuov")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ydyjn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_xjo21")
-text = "Exit
+text = "
 "
+icon = ExtResource("8_yeuov")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Sign Out" type="Button" parent="."]
-custom_minimum_size = Vector2(559.16, 60)
 layout_mode = 0
-offset_left = 500.0
-offset_top = 740.0
-offset_right = 1059.16
-offset_bottom = 800.0
+offset_left = 1336.0
+offset_top = 693.0
+offset_right = 1651.0
+offset_bottom = 915.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_tn1jw")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_ka0fo")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4cq7u")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_gjv2s")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_e1sr5")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_xmumf")
@@ -361,19 +375,75 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_q2beb")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yeuov")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ydyjn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_xjo21")
-text = "Sign Out
+text = "
 "
+icon = ExtResource("9_q2beb")
+icon_alignment = 1
+expand_icon = true
 
-[node name="sfx_menuopen" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_2t4tr")
-autoplay = true
-bus = &"SFX"
-playback_type = 1
+[node name="Nivel1Glorioso" type="Sprite2D" parent="."]
+position = Vector2(367, 153)
+scale = Vector2(0.22705078, 0.16748045)
+texture = ExtResource("7_sp287")
 
-[node name="sfx_menuclose" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_3q48q")
-autoplay = true
-bus = &"SFX"
+[node name="Level2Label" type="Sprite2D" parent="."]
+position = Vector2(1157, 154)
+scale = Vector2(0.23339844, 0.14160156)
+texture = ExtResource("9_q7l6f")
+
+[node name="Level3Label" type="Sprite2D" parent="."]
+position = Vector2(387.00003, 480.00003)
+scale = Vector2(0.24267574, 0.16674809)
+texture = ExtResource("10_xjo21")
+
+[node name="FinalLevelLabel" type="Sprite2D" parent="."]
+position = Vector2(1166.0001, 463)
+scale = Vector2(0.26318356, 0.14404297)
+texture = ExtResource("13_q7l6f")
+
+[node name="lblLevel1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.009000001
+offset_left = 315.0
+offset_top = 341.0
+offset_right = 416.0
+offset_bottom = 366.012
+theme_override_font_sizes/font_size = 27
+text = "Score: 0"
+
+[node name="lblLevel2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.009000001
+offset_left = 1108.0
+offset_top = 374.0
+offset_right = 1209.0
+offset_bottom = 401.163
+theme_override_font_sizes/font_size = 27
+text = "Score: 0"
+
+[node name="lblLevel3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.009000001
+offset_left = 340.0
+offset_top = 704.0
+offset_right = 441.0
+offset_bottom = 731.163
+theme_override_font_sizes/font_size = 27
+text = "Score: 0"
+
+[node name="lblLevel4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.009000001
+offset_left = 1121.0
+offset_top = 718.0
+offset_right = 1222.0
+offset_bottom = 745.163
+theme_override_font_sizes/font_size = 27
+text = "Score: 0"
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]

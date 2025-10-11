@@ -1,47 +1,114 @@
 extends Node2D
 
-@onready var userName : LineEdit = $NameEdit
-@onready var password : LineEdit = $Password
+@onready var userName: LineEdit = $NameEdit
+@onready var password: LineEdit = $Password
 
-var db_file_path = "user://students.json"
+const DB_FILE_PATH: String = "user://students.json"
 
+var _eye_btn: Button
+var _pw_visible := false
+
+func _ready() -> void:
+	# Mask the password input
+	password.secret = true
+	password.secret_character = "*"
+
+	# Add an eye toggle button inside the password field
+	_add_password_eye_toggle()
+
+func _add_password_eye_toggle() -> void:
+	_eye_btn = Button.new()
+	_eye_btn.text = "👁"                  # swap to TextureButton + PNG if you prefer
+	_eye_btn.flat = true
+	_eye_btn.focus_mode = Control.FOCUS_NONE
+	_eye_btn.tooltip_text = "Show/Hide password"
+
+	# Nest the button inside the LineEdit and anchor to the right edge
+	password.add_child(_eye_btn)
+	_eye_btn.anchor_left = 1.0
+	_eye_btn.anchor_right = 1.0
+	_eye_btn.anchor_top = 0.0
+	_eye_btn.anchor_bottom = 1.0
+	# Tweak these to fit your theme
+	_eye_btn.offset_left = -34
+	_eye_btn.offset_right = -4
+	_eye_btn.offset_top = 2
+	_eye_btn.offset_bottom = -2
+	_eye_btn.custom_minimum_size = Vector2(28, 0)
+
+	_eye_btn.pressed.connect(_on_eye_pressed)
+
+func _on_eye_pressed() -> void:
+	_pw_visible = not _pw_visible
+	password.secret = not _pw_visible
+	_eye_btn.text = "🙈" if _pw_visible else "👁"
 
 func _on_save_button_pressed() -> void:
 	#AudioManager.play_sound(AudioManager.sfx_save)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/control.tscn")
 
 func _on_save_button_2_pressed() -> void:
+	var username: String = userName.text.strip_edges()
+	var pwd: String      = password.text.strip_edges()
+
+	# --- Validation ---
 	#AudioManager.play_sound(AudioManager.sfx_save)
 	var username = userName.text.strip_edges()
 	var pwd = password.text.strip_edges()
 	
 	# 🔹 Check if fields are empty
 	if username.is_empty() or pwd.is_empty():
-		AudioManager.play_sound(AudioManager.sfx_error)
-		print("⚠️ Username and Password cannot be empty")
+		var msg = AcceptDialog.new()
+		msg.dialog_text = "⚠️ Username and Password cannot be empty"
+		get_tree().root.add_child(msg)
+		msg.popup_centered()
+		
 		return
 
-	var students = load_students()
-	
-	# 🔹 Check each student
-	for student in students:
-		if student["username"] == username and student["password"] == pwd:
+	var students: Array[Dictionary] = load_students()
+
+	# --- Check each student ---
+	for student: Dictionary in students:
+		var s_user: String = str(student.get("username", ""))
+		var s_pass: String = str(student.get("password", ""))
+		if s_user == username and s_pass == pwd:
 			print("✅ Password correct for:", username)
+			# Assumes Globals is an autoload (Project Settings → AutoLoad)
 			Globals.current_user = student
 			get_tree().change_scene_to_file("res://main menu/scenes/MainMenu.tscn")
 			return
+
+	# --- If no student matched ---
+	var msg = AcceptDialog.new()
+	msg.dialog_text = "⚠️ Username and Password Incorrect"
+	get_tree().root.add_child(msg)
+	msg.popup_centered()
 	
 	# 🔹 If no student matched
 	#AudioManager.play_sound(AudioManager.sfx_error)
 	print("❌ Wrong username or password. Try again")
 	password.text = ""  # clear password field
 
-func load_students() -> Array:
-	if FileAccess.file_exists(db_file_path):
-		var file = FileAccess.open(db_file_path, FileAccess.READ)
-		var content = file.get_as_text()
+# --- Helpers ---
+func load_students() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	if FileAccess.file_exists(DB_FILE_PATH):
+		var file: FileAccess = FileAccess.open(DB_FILE_PATH, FileAccess.READ)
+		var content: String = file.get_as_text()
 		file.close()
-		var parsed = JSON.parse_string(content)
-		if parsed != null:
-			return parsed
-	return []
+
+		var parsed: Variant = JSON.parse_string(content)
+		if parsed is Array:
+			for item in (parsed as Array):
+				if item is Dictionary:
+					result.append(item as Dictionary)
+				else:
+					print("Warning: Skipping non-dictionary entry in students.json")
+	return result
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("back_action"):
+		_on_back_button_pressed()
+		
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://avatar creation/scenes/SelectUser.tscn")

@@ -66,7 +66,6 @@
       font-style: italic;
     }
 
-    /* Help overlay (Level 4 style) */
     #helpOverlay {
       position: fixed;
       top: 0; left: 0;
@@ -103,7 +102,6 @@
       border-radius: 6px;
     }
 
-    /* Block warning overlay */
     #blockWarningOverlay {
       display:none;
       position:fixed;
@@ -153,7 +151,6 @@
 
   <div id="blocklyDiv"></div>
 
-  <!-- Help Overlay -->
   <div id="helpOverlay">
     <div id="helpContent">
       <h2>Level 2 – Help</h2>
@@ -181,7 +178,6 @@
     </div>
   </div>
 
-  <!-- Block Warning -->
   <div id="blockWarningOverlay">
     <div>
       <h2>Please use these blocks</h2>
@@ -238,7 +234,6 @@
     zoom: { controls: true, startScale: 1.2, maxScale: 3, minScale: 0.3, scaleSpeed: 1.2 }
   });
 
-  // Switch toolbox
   document.getElementById('switchBlocks').onclick = () => {
     showingRepeat = !showingRepeat;
     workspace.updateToolbox(showingRepeat ? repeatToolbox : movementToolbox);
@@ -247,7 +242,6 @@
       : "🔁 Switch to Repeat Block";
   };
 
-  // Build program
   function buildProgram() {
     const starts = workspace.getBlocksByType('start', false);
     if (!starts.length) return [];
@@ -291,32 +285,49 @@
   }
 
   // Buttons
-  document.getElementById('run').onclick = () => {
+  const runBtn = document.getElementById('run');
+  const clearBtn = document.getElementById('clear');
+  const resetBtn = document.getElementById('reset');
+  const backBtn = document.getElementById('back');
+  const helpBtn = document.getElementById('help');
+  const switchBtn = document.getElementById('switchBlocks');
+
+  runBtn.onclick = () => {
     const missing = checkAllBlocksUsed();
     if (missing.length > 0) { showBlockWarning(missing); return; }
     sendToGodot({ type: 'program', commands: buildProgram() });
   };
-  document.getElementById('clear').onclick = () => workspace.clear();
-  document.getElementById('reset').onclick = () => sendToGodot({ type:'reset_level' });
-  document.getElementById('back').onclick = () => sendToGodot({ type:'back' });
+  clearBtn.onclick = () => workspace.clear();
+  resetBtn.onclick = () => sendToGodot({ type:'reset_level' });
+  backBtn.onclick = () => sendToGodot({ type:'back' });
 
   // Help overlay
   const helpOverlay = document.getElementById('helpOverlay');
-  document.getElementById('help').onclick = () => helpOverlay.style.display = 'block';
+  helpBtn.onclick = () => helpOverlay.style.display = 'block';
   document.getElementById('closeHelp').onclick = () => helpOverlay.style.display = 'none';
-
-  // ✅ Close Help overlay on right-click
   helpOverlay.addEventListener('contextmenu', e => {
     e.preventDefault();
     helpOverlay.style.display = 'none';
   });
-
   document.getElementById('closeBlockWarning').onclick = () => document.getElementById('blockWarningOverlay').style.display = 'none';
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', e => {
+    const key = e.key.toLowerCase();
+    if (key === 'r') runBtn.click();
+    else if (key === 'c') clearBtn.click();
+    else if (key === 'l') resetBtn.click();
+    else if (key === 'b') switchBtn.click();
+    else if (key === 'h') helpBtn.click();
+    else if (key === 'a') backBtn.click();
+  });
 
   window.addEventListener('load', () => {
     const missing = checkAllBlocksUsed();
     if (missing.length > 0) showBlockWarning(missing);
   });
+
+
 </script>
 </body>
 </html>
