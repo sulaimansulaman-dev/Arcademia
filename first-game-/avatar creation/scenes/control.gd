@@ -58,6 +58,7 @@ var previous_outfit := 0
 }
 
 func _ready() -> void:
+	
 	# Load textures (required folders must have at least 1 image)
 	skin_textures = load_textures("res://avatar creation/assets/avatars/skin/")
 	mouth_textures = load_textures("res://avatar creation/assets/avatars/mouth/")
@@ -125,6 +126,7 @@ func _update_all_labels() -> void:
 
 
 func _update_avatar() -> void:
+	AudioManager.play_sound(AudioManager.sfx_nav)
 	avatar.get_node("Skin").texture = skin_textures[current_skin]
 	avatar.get_node("Mouth").texture = mouth_textures[current_mouth]
 	avatar.get_node("Eyes").texture = eyes_textures[current_eyes]
@@ -163,7 +165,6 @@ func _update_avatar() -> void:
 	_center_avatar_and_scale()
 
 func cycle_texture(category: String, direction: int) -> void:
-	AudioManager.play_sound(AudioManager.sfx_nav)
 	match category:
 		"Skin":
 			current_skin = (current_skin + direction + skin_textures.size()) % skin_textures.size()
@@ -184,17 +185,7 @@ func cycle_texture(category: String, direction: int) -> void:
 	_update_avatar()
 
 
-func _on_save_pressed() -> void:
-	AudioManager.play_sound(AudioManager.sfx_save)
-	print("Save pressed:")
-	print("Skin:", current_skin)
-	print("Mouth:", current_mouth)
-	print("Eyes:", current_eyes)
-	print("Hair:", current_hair)
-	print("Accessories:", current_accessories)
-	print("Outfit:", current_outfit)
-	print("FullSuit:", current_fullsuit)
-	get_tree().change_scene_to_file("res://avatar creation/scenes/StudentEntry.tscn")
+
 
 
 func _center_avatar_and_scale() -> void:
@@ -239,12 +230,13 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("back_action"):
 		_on_back_button_pressed()
 
-func _on_back_pressed() -> void:
+func _on_back_button_pressed() -> void:
 	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")
 
 
 func _on_save_button_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_save)
 	print("Save pressed:")
 	print("Skin:", current_skin)
 	print("Mouth:", current_mouth)

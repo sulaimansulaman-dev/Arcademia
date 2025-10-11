@@ -17,4 +17,5 @@ func _process(_delta: float) -> void:
 		_on_back_button_pressed()
 
 func _on_back_button_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/Start.tscn")

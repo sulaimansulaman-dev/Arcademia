@@ -53,6 +53,7 @@ func _on_eye_pressed() -> void:
 	_eye_btn.text = "🙈" if _pw_visible else "👁"
 
 func _on_save_button_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_save)
 	var username: String = userName.text.strip_edges()
 	var pwd: String = password.text.strip_edges()
 
@@ -62,10 +63,10 @@ func _on_save_button_pressed() -> void:
 		_show_field_error(userName, "Username required")
 		has_empty = true
 	if pwd.is_empty():
-		AudioManager.play_sound(AudioManager.sfx_error)
 		_show_field_error(password, "Required: 5-digit PIN")
 		has_empty = true
 	if has_empty:
+		AudioManager.play_sound(AudioManager.sfx_error)
 		return
 
 	# Enforce exactly 5 digits (numbers only)
@@ -191,4 +192,5 @@ func _process(_delta: float) -> void:
 		_on_back_button_pressed()
 		
 func _on_back_button_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/AvatarCreation.tscn")	

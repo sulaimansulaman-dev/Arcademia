@@ -44,20 +44,17 @@ func _on_eye_pressed() -> void:
 	_eye_btn.text = "🙈" if _pw_visible else "👁"
 
 func _on_save_button_pressed() -> void:
-	#AudioManager.play_sound(AudioManager.sfx_save)
+	AudioManager.play_sound(AudioManager.sfx_menuopen)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/control.tscn")
 
 func _on_save_button_2_pressed() -> void:
+	
 	var username: String = userName.text.strip_edges()
 	var pwd: String      = password.text.strip_edges()
-
-	# --- Validation ---
-	#AudioManager.play_sound(AudioManager.sfx_save)
-	var username = userName.text.strip_edges()
-	var pwd = password.text.strip_edges()
 	
 	# 🔹 Check if fields are empty
 	if username.is_empty() or pwd.is_empty():
+		AudioManager.play_sound(AudioManager.sfx_error)
 		var msg = AcceptDialog.new()
 		msg.dialog_text = "⚠️ Username and Password cannot be empty"
 		get_tree().root.add_child(msg)
@@ -75,6 +72,7 @@ func _on_save_button_2_pressed() -> void:
 			print("✅ Password correct for:", username)
 			# Assumes Globals is an autoload (Project Settings → AutoLoad)
 			Globals.current_user = student
+			AudioManager.play_sound(AudioManager.sfx_menuopen)
 			get_tree().change_scene_to_file("res://main menu/scenes/MainMenu.tscn")
 			return
 
@@ -85,7 +83,7 @@ func _on_save_button_2_pressed() -> void:
 	msg.popup_centered()
 	
 	# 🔹 If no student matched
-	#AudioManager.play_sound(AudioManager.sfx_error)
+	AudioManager.play_sound(AudioManager.sfx_error)
 	print("❌ Wrong username or password. Try again")
 	password.text = ""  # clear password field
 
@@ -111,4 +109,5 @@ func _process(_delta: float) -> void:
 		_on_back_button_pressed()
 		
 func _on_back_button_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/SelectUser.tscn")

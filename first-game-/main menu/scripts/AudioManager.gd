@@ -54,16 +54,35 @@ func _ready():
 	# start playing appropriate music
 	_on_scene_changed()
 
-# plays sound effects
-func play_sound(stream: AudioStream, volume_db: float = -8.0):
+# plays sound effects safely
+# Plays a sound effect safely without lambda issues
+func play_sound(stream: AudioStream, volume_db: float = -12.0):
 	if not stream:
 		return
-	var player = AudioStreamPlayer.new()
+	
+	var player := AudioStreamPlayer.new()
 	player.stream = stream
 	player.volume_db = volume_db
 	add_child(player)
+	
 	player.play()
-	get_tree().create_timer(stream.get_length()).timeout.connect(func(): player.queue_free())
+
+	# Use a one-shot timer node to queue_free the player safely
+	var timer := Timer.new()
+	timer.wait_time = stream.get_length()
+	timer.one_shot = true
+	add_child(timer)
+
+	timer.timeout.connect(Callable(self, "_on_sound_finished").bind(player, timer))
+	timer.start()
+
+# Callback to safely free the player and timer
+func _on_sound_finished(player: AudioStreamPlayer, timer: Timer):
+	if is_instance_valid(player):
+		player.queue_free()
+	if is_instance_valid(timer):
+		timer.queue_free()
+
 
 # plays background music
 func play_music(stream: AudioStream, fade_time: float = 1.0):

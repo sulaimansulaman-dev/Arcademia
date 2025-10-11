@@ -85,8 +85,7 @@ func _add_eye_toggle(field: LineEdit, is_confirm: bool) -> Button:
 	return btn
 
 func _on_save_button_pressed() -> void:
-	AudioManager.play_sound(AudioManager.sfx_menuopen)
-	
+	AudioManager.play_sound(AudioManager.sfx_save)
 	var username: String    = userName.text.strip_edges()
 	var pwd: String         = password.text.strip_edges()
 	var confirm_pwd: String = passwordConfirm.text.strip_edges()
@@ -140,23 +139,105 @@ func _on_save_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://student management/Scene/display.tscn")
 
 
-func load_students() -> Array:
-	if FileAccess.file_exists(db_file_path):
-		var file = FileAccess.open(db_file_path, FileAccess.READ)
-		var content = file.get_as_text()
-		file.close()
-		var parsed = JSON.parse_string(content)
-		if parsed != null:
-			return parsed
-	return []
+# ==========================
+#   Inline error helpers
+# ==========================
+func _show_field_error(le: LineEdit, msg: String) -> void:
+	# Clear input and show red placeholder + red border
+	le.text = ""
+	le.placeholder_text = msg
+
+	# Red placeholder & caret
+	le.add_theme_color_override("placeholder_color", Color(1.0, 0.3, 0.3, 0.95))
+	le.add_theme_color_override("caret_color", Color(1.0, 0.25, 0.25, 1.0))
+
+	# Red border via StyleBoxFlat (Godot 4: per-side/per-corner)
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = Color(0, 0, 0, 0) # keep background transparent; just draw border
+	sb.border_width_left = 2
+	sb.border_width_top = 2
+	sb.border_width_right = 2
+	sb.border_width_bottom = 2
+	sb.border_color = Color(1.0, 0.2, 0.2, 1.0)
+	sb.corner_radius_top_left = 8
+	sb.corner_radius_top_right = 8
+	sb.corner_radius_bottom_right = 8
+	sb.corner_radius_bottom_left = 8
+	le.add_theme_stylebox_override("normal", sb)
+	le.add_theme_stylebox_override("focus", sb)
+
+	# Ensure placeholder shows even if focused
+	if le.has_focus():
+		le.release_focus()
+	le.queue_redraw()
+
+	# Light shake to draw attention (optional)
+	_shake_line_edit(le)
+
+func _clear_field_error(le: LineEdit) -> void:
+	# Restore standard placeholders
+	if le == password:
+		le.placeholder_text = "5-digit PIN"
+	elif le == passwordConfirm:
+		le.placeholder_text = "Repeat 5-digit PIN"
+	elif le == userName:
+		le.placeholder_text = ""  # or set your own hint
+
+	# Restore colours back to theme/previous overrides
+	le.remove_theme_color_override("placeholder_color")
+	le.remove_theme_color_override("caret_color")
+
+	# Remove red border overrides
+	le.remove_theme_stylebox_override("normal")
+	le.remove_theme_stylebox_override("focus")
+
+func _shake_line_edit(le: LineEdit) -> void:
+	# Simple horizontal shake (may be subtle inside Containers)
+	var start := le.position
+	var t := create_tween()
+	t.tween_property(le, "position:x", start.x - 6, 0.05)
+	t.tween_property(le, "position:x", start.x + 6, 0.05)
+	t.tween_property(le, "position:x", start.x,       0.05)
 
 
-func save_students(students: Array) -> void:
-	var file = FileAccess.open(db_file_path, FileAccess.WRITE)
-	file.store_string(JSON.stringify(students, "\t"))  # formatted JSON
-	file.close()
+# ==========================
+#        Data helpers
+# ==========================
+func _is_five_digit_pin(p: String) -> bool:
+	# Exactly 5 chars AND all digits 0–9 (leading zeros allowed)
+	if p.length() != 5:
+		return false
+	for ch in p:
+		if ch < "0" or ch > "9":
+			return false
+	return true
 
+func load_students() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	if FileAccess.file_exists(DB_FILE_PATH):
+		var f: FileAccess = FileAccess.open(DB_FILE_PATH, FileAccess.READ)
+		var content: String = f.get_as_text()
+		f.close()
 
-func _on_back_pressed() -> void:
+		var parsed: Variant = JSON.parse_string(content)
+		if parsed is Array:
+			# Safely coerce each element to Dictionary
+			for item in (parsed as Array):
+				if item is Dictionary:
+					result.append(item as Dictionary)
+				else:
+					print("Warning: Skipping non-dictionary entry in students.json")
+	return result
+
+func save_students(students: Array[Dictionary]) -> void:
+	var f: FileAccess = FileAccess.open(DB_FILE_PATH, FileAccess.WRITE)
+	f.store_string(JSON.stringify(students, "\t")) # formatted JSON
+	f.close()
+	
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("back_action"):
+		_on_back_button_pressed()
+
+func _on_back_button_pressed() -> void:
 	AudioManager.play_sound(AudioManager.sfx_menuclose)
-	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginTeacher.tscn")
+	get_tree().change_scene_to_file("res://avatar creation/scenes/LoginStudent.tscn")

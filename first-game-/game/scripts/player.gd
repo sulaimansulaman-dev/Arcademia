@@ -15,30 +15,35 @@ signal blockly_step_done
 
 var step_cooldown: float = 0.0
 
-func _play_step_sound():
-	if step_cooldown > 0.0:
+func _play_step_sound() -> void:
+	if AudioManager.sfx_steps.is_empty():
 		return
 
-	var step_sound = AudioManager.sfx_steps.pick_random()
-	if not step_sound:
-		return
-	
-	AudioManager.play_sound(step_sound, -16.0)
-	
-	var player = AudioStreamPlayer.new()
+	var step_sound: AudioStream = AudioManager.sfx_steps.pick_random()  # explicitly typed
+	var player: AudioStreamPlayer = AudioStreamPlayer.new()
 	player.stream = step_sound
-	player.pitch_scale = randf_range(0.95, 1.05)
+	player.volume_db = -18.0  # quieter footsteps
+	player.pitch_scale = randf_range(0.95, 1.05)  # slight random pitch variation
 	add_child(player)
 	player.play()
 
-	# Use a local reference captured by the lambda
-	var player_ref = player
-	get_tree().create_timer(step_sound.get_length()).timeout.connect(func():
-		if player_ref and player_ref.is_inside_tree():
-			player_ref.queue_free()
-	)
-
+	# Timer to safely free the player after the sound finishes
+	var timer: Timer = Timer.new()
+	timer.wait_time = step_sound.get_length()
+	timer.one_shot = true
+	add_child(timer)
+	timer.timeout.connect(Callable(self, "_on_step_sound_finished").bind(player, timer))
+	timer.start()
+	
 	step_cooldown = 0.25
+
+func _on_step_sound_finished(player: AudioStreamPlayer, timer: Timer) -> void:
+	if is_instance_valid(player):
+		player.queue_free()
+	if is_instance_valid(timer):
+		timer.queue_free()
+
+	
 
 # === Blockly API ===
 func blockly_move(direction: int, steps: int) -> void:
