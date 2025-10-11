@@ -6,7 +6,6 @@ extends Node2D
 var db_file_path = "user://students.json"  # database file
 
 func _on_save_button_pressed() -> void:
-	AudioManager.play_sound(AudioManager.sfx_save)
 	var username = userName.text.strip_edges()
 	var pwd = password.text.strip_edges()
 
@@ -14,7 +13,8 @@ func _on_save_button_pressed() -> void:
 	if username == "" or pwd == "":
 		AudioManager.play_sound(AudioManager.sfx_error)
 		print("Error: Fields cannot be empty ❌")
-		return
+	else:
+		AudioManager.play_sound(AudioManager.sfx_save)
 
 	# --- Create new student entry ---
 	var new_student = {

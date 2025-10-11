@@ -53,6 +53,7 @@ func refresh_student_list():
 	#grade_input.text = ""
 
 func _on_update_pressed():
+	AudioManager.play_sound(AudioManager.sfx_optionselect)
 	var sel = student_list.get_selected_items()
 	if sel.size() == 0:
 		push_warning("Select a student to update")
@@ -68,6 +69,7 @@ func _on_update_pressed():
 		push_warning("Failed to update student ID %d" % id)
 
 func _on_delete_pressed():
+	AudioManager.play_sound(AudioManager.sfx_optionselect)
 	var sel = student_list.get_selected_items()
 	if sel.size() == 0:
 		push_warning("Select a student to delete")

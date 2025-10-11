@@ -22,6 +22,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 	GameManager.set_final_score(used_blocks)
 	print("✅ Coin collected! Blocks used (Score): ", used_blocks)
+	
+	AudioManager.play_sound(AudioManager.sfx_partfound)
 
 	animation_player.play("pickup")
 

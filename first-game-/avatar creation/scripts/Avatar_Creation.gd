@@ -160,8 +160,6 @@ func _update_avatar() -> void:
 		_set_disabled_state_for_fullsuit(false)
 	
 func _on_avatar_button_pressed(category: String, direction: int) -> void:
-	# Play navigation sound when any avatar option changes
-	AudioManager.play_sound(AudioManager.sfx_nav, -8)
 	cycle_texture(category, direction)
 
 

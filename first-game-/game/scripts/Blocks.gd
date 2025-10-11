@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 			last_player_pos = player_node.position
 
 func go_back() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuclose)
 	var menu_path = "res://main menu/scenes/MainMenu.tscn"
 	if ResourceLoader.exists(menu_path):
 		get_tree().change_scene_to_file(menu_path)
@@ -83,6 +84,7 @@ func load_game(scene_path: String, run_last_program: bool = false) -> void:
 		await _run_program(last_program)
 
 func reload_level() -> void:
+	#AudioManager.play_sound(AudioManager.sfx_reload)
 	Engine.time_scale = 1
 	last_program.clear()
 	program_running = false
@@ -108,6 +110,7 @@ func _on_web_view_ipc_message(message: String) -> void:
 
 # --- Run program: delegate each command to _execute_command (keeps behavior consistent) ---
 func _run_program(commands: Array) -> void:
+	AudioManager.play_sound(AudioManager.sfx_optionselect)
 	program_running = true
 	idle_time = 0.0
 	if player_node:

@@ -5,6 +5,7 @@ signal player_died
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		AudioManager.play_sound(AudioManager.sfx_death)
 		print("You Died!")
 		Engine.time_scale = 0.5
 		body.get_node("CollisionShape2D").queue_free()

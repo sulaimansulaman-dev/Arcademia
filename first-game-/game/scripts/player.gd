@@ -6,11 +6,39 @@ const TILE_SIZE = (16)* 1.4   # <-- updated for your tiles
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
 # === Blockly movement state ===
 var blockly_target: Vector2 = Vector2.ZERO
 var blockly_active: bool = false
 
 signal blockly_step_done
+
+var step_cooldown: float = 0.0
+
+func _play_step_sound():
+	if step_cooldown > 0.0:
+		return
+
+	var step_sound = AudioManager.sfx_steps.pick_random()
+	if not step_sound:
+		return
+	
+	AudioManager.play_sound(step_sound, -16.0)
+	
+	var player = AudioStreamPlayer.new()
+	player.stream = step_sound
+	player.pitch_scale = randf_range(0.95, 1.05)
+	add_child(player)
+	player.play()
+
+	# Use a local reference captured by the lambda
+	var player_ref = player
+	get_tree().create_timer(step_sound.get_length()).timeout.connect(func():
+		if player_ref and player_ref.is_inside_tree():
+			player_ref.queue_free()
+	)
+
+	step_cooldown = 0.25
 
 # === Blockly API ===
 func blockly_move(direction: int, steps: int) -> void:
@@ -27,6 +55,7 @@ func blockly_move(direction: int, steps: int) -> void:
 func blockly_jump() -> void:
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		AudioManager.play_sound(AudioManager.sfx_jump)
 		
 func blockly_move_and_jump(steps: int) -> void:
 	# Snap current X to grid
@@ -42,12 +71,20 @@ func blockly_move_and_jump(steps: int) -> void:
 	# Trigger jump at the same time
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		AudioManager.play_sound(AudioManager.sfx_jump)
 
+var was_on_floor: bool = false
 
 # === Physics process ===
 func _physics_process(delta: float) -> void:
+	var on_floor_now = is_on_floor()
+	
+	# Landing sound
+	if on_floor_now and not was_on_floor:
+		AudioManager.play_sound(AudioManager.sfx_landing)
+	
 	# Apply gravity
-	if not is_on_floor():
+	if not on_floor_now:
 		velocity += get_gravity() * delta
 
 	# Handle Blockly movement
@@ -55,9 +92,15 @@ func _physics_process(delta: float) -> void:
 		_handle_blockly_movement()
 	else:
 		velocity.x = 0
-
+		
+	step_cooldown = max(0.0, step_cooldown - delta)
+	
 	move_and_slide()
 	_update_animation()
+
+	# Update the state for next frame
+	was_on_floor = on_floor_now
+
 
 # === Blockly movement handler ===
 func _handle_blockly_movement() -> void:
@@ -84,7 +127,11 @@ func _update_animation() -> void:
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("Idle")
-		
+	
+	if animated_sprite.animation == "run" and abs(velocity.x) > 5 and is_on_floor():
+		_play_step_sound()
+			
+
 func is_ground_ahead() -> bool:
 	if $GapRay.is_colliding():
 		print("Colliding")

@@ -5,6 +5,18 @@ extends Node
 @onready var sfx_menuclose = preload("res://music and sfx/sfx/menu_close.wav")
 @onready var sfx_save = preload("res://music and sfx/sfx/save.wav")
 @onready var sfx_nav = preload("res://music and sfx/sfx/nav.wav")
+@onready var sfx_error = preload("res://music and sfx/sfx/error.wav")
+@onready var sfx_optionselect = preload("res://music and sfx/sfx/option_select.wav")
+@onready var sfx_partfound = preload("res://music and sfx/sfx/part_found.wav")
+@onready var sfx_reload = preload("res://music and sfx/sfx/reload.wav")
+@onready var sfx_jump = preload("res://music and sfx/sfx/jump.wav")
+@onready var sfx_landing = preload("res://music and sfx/sfx/landing.wav")
+@onready var sfx_death = preload("res://music and sfx/sfx/death.wav")
+@onready var sfx_steps = [
+	preload("res://music and sfx/sfx/step_1.wav"),
+	preload("res://music and sfx/sfx/step_2.wav"),
+	preload("res://music and sfx/sfx/step_3.wav")
+]
 
 # background Music
 @onready var bgm_main = preload("res://music and sfx/music/Elys.mp3")
@@ -18,12 +30,14 @@ var bgm_player: AudioStreamPlayer
 var current_music: AudioStream = null
 var level_music_list: Array
 var last_level_track: AudioStream = null
+var track_queue: Array = []
 
 func _ready():
 	print("🎵 AudioManager ready and running.")
 
 	# prepare level music list
 	level_music_list = [bgm_level_1, bgm_level_2, bgm_level_3, bgm_level_4]
+	_reset_track_queue()  # initialize the queue
 	randomize()  # ensure randomness
 
 	# create audio player
@@ -109,19 +123,17 @@ func _on_scene_changed():
 		_:
 			play_music(bgm_main)
 
-# random level track picker
+# --- helper: refill and shuffle the queue when empty
+func _reset_track_queue():
+	track_queue = level_music_list.duplicate()
+	track_queue.shuffle()
+
+# --- new improved random track logic (no repeats until all played)
 func get_random_level_track() -> AudioStream:
-	if level_music_list.is_empty():
-		level_music_list = [bgm_level_1, bgm_level_2, bgm_level_3, bgm_level_4]
+	if track_queue.is_empty():
+		_reset_track_queue()
 
-	var shuffled = level_music_list.duplicate()
-	shuffled.shuffle()
-
-	var random_track = shuffled.pick_random()
-
-	# avoid repeating the same track twice in a row
-	if random_track == last_level_track and level_music_list.size() > 1:
-		random_track = shuffled.filter(func(x): return x != last_level_track).pick_random()
-
-	last_level_track = random_track
-	return random_track
+	var next_track = track_queue.pop_front()
+	track_queue.append(next_track)  # move played song to the back
+	last_level_track = next_track
+	return next_track

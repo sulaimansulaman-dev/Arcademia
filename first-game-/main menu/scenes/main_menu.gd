@@ -48,7 +48,6 @@ func _on_final_level_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	AudioManager.play_sound(AudioManager.sfx_menuclose)
-	$sfx_menuclose.play()
 	get_tree().quit()
 
 func _on_sign_out_pressed() -> void:

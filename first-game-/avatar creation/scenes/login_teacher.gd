@@ -7,16 +7,20 @@ var db_file_path = "user://students.json"
 
 
 func _on_save_button_pressed() -> void:
+	AudioManager.play_sound(AudioManager.sfx_menuopen)
 	get_tree().change_scene_to_file("res://avatar creation/scenes/SignUp.tscn")
 
 func _on_save_button_2_pressed() -> void:
+	
 	var username = userName.text.strip_edges()
 	var pwd = password.text.strip_edges()
 	
 	# 🔹 Check if fields are empty
 	if username.is_empty() or pwd.is_empty():
+		AudioManager.play_sound(AudioManager.sfx_error)
 		print("⚠️ Username and Password cannot be empty")
-		return
+	else:
+		AudioManager.play_sound(AudioManager.sfx_menuopen)
 
 	var students = load_students()
 	

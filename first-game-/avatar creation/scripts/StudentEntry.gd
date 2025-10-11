@@ -5,6 +5,7 @@ extends Node
 
 
 func _on_save_pressed():
+	AudioManager.play_sound(AudioManager.sfx_save)
 	name = name_input.text.strip_edges()
 	var age = int(age_input.text) if age_input.text != "" else 0
 

@@ -163,6 +163,7 @@ func _update_avatar() -> void:
 	_center_avatar_and_scale()
 
 func cycle_texture(category: String, direction: int) -> void:
+	AudioManager.play_sound(AudioManager.sfx_nav)
 	match category:
 		"Skin":
 			current_skin = (current_skin + direction + skin_textures.size()) % skin_textures.size()
