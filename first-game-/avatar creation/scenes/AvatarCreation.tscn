@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6c3ll4og48xw"]
+[gd_scene load_steps=11 format=3 uid="uid://ci57e4jgvlpm0"]
 
 [ext_resource type="Script" uid="uid://bxstdt1cw5j1b" path="res://avatar creation/scenes/control.gd" id="1_w8jrs"]
 [ext_resource type="Texture2D" uid="uid://8lvsp02um5lp" path="res://avatar creation/ui/Avatar Creation in Space.png" id="2_64e0i"]

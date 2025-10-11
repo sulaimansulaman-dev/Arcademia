@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dy2l75l7t56nr"]
+[gd_scene load_steps=20 format=3 uid="uid://1g4a3nglan2x"]
 
 [ext_resource type="Script" uid="uid://d1phlt1x4nb8h" path="res://avatar creation/scenes/start.gd" id="1_gjvim"]
 [ext_resource type="Texture2D" uid="uid://c2dprllf2sdx3" path="res://avatar creation/ui/Select user.jpg" id="2_f758u"]
