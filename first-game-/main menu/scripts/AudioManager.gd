@@ -55,7 +55,6 @@ func _ready():
 	_on_scene_changed()
 
 # plays sound effects safely
-# Plays a sound effect safely without lambda issues
 func play_sound(stream: AudioStream, volume_db: float = -12.0):
 	if not stream:
 		return

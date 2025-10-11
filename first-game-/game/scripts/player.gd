@@ -19,7 +19,7 @@ func _play_step_sound() -> void:
 	if AudioManager.sfx_steps.is_empty():
 		return
 
-	var step_sound: AudioStream = AudioManager.sfx_steps.pick_random()  # explicitly typed
+	var step_sound: AudioStream = AudioManager.sfx_steps.pick_random() 
 	var player: AudioStreamPlayer = AudioStreamPlayer.new()
 	player.stream = step_sound
 	player.volume_db = -18.0  # quieter footsteps
