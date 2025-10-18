@@ -282,12 +282,12 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("7_04lll")]
-position = Vector2(1378.9999, 551)
+position = Vector2(1390, 548.99994)
 rotation = -0.0024915773
 scale = Vector2(1.4, 1.4)
 
 [node name="SteeringWheel" type="Sprite2D" parent="Coins/Coin"]
-position = Vector2(7.157081, -5.696411)
+position = Vector2(5.7213516, -2.8428612)
 scale = Vector2(0.026268695, 0.026508106)
 texture = ExtResource("11_40ski")
 
