@@ -25,7 +25,7 @@ func _ready():
 			]
 		3:
 			images = [
-				load("res://story/assets/level1_steering_wheel.jpg")
+				load("res://story/assets/level3_3.PNG")
 			]
 		4:
 			images = [

@@ -283,11 +283,11 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_87dsr")]
-position = Vector2(1313.0001, 620)
+position = Vector2(1324, 615.00006)
 scale = Vector2(1.4, 1.4)
 
 [node name="EngineBlaster" type="Sprite2D" parent="Coins/Coin9"]
-position = Vector2(7.857047, -3.5714083)
+position = Vector2(3.571373, 0.71422195)
 rotation = -0.29378507
 scale = Vector2(0.048115898, 0.035853256)
 texture = ExtResource("11_tx2jw")
