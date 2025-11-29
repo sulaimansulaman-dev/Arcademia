@@ -114,8 +114,7 @@ Full team list included in `/docs/User Manual` and `/docs/Developers Manual`.
 ---
 
 ## 📝 License
-This project is developed for educational and research purposes. Licensing terms can be added here.
-
+This project is developed for educational and research purposes. 
 ---
 
 ## ❤️ Acknowledgements
