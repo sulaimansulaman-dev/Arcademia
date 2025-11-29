@@ -58,12 +58,12 @@ The game runs on a **custom arcade machine** (HP EliteDesk + joystick + physical
 ---
 
 ## 📂 Project Structure (Short Overview)
-/avatar creation/ – Avatar creator scenes & scripts
-/game/ – Main game logic & levels
-/blockly/ – Block-based coding interface
-/scripts/ – Gameplay scripts (Player.gd, Blocks.gd, Globals.gd)
-/ui/ – Main menu, login, buttons, backgrounds
-/assets/ – Music, SFX, fonts, sprites
+- /avatar creation/ – Avatar creator scenes & scripts
+- /game/ – Main game logic & levels
+- /blockly/ – Block-based coding interface
+- /scripts/ – Gameplay scripts (Player.gd, Blocks.gd, Globals.gd)
+- /ui/ – Main menu, login, buttons, backgrounds
+- /assets/ – Music, SFX, fonts, sprites
 
 ---
 
